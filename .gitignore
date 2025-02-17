@@ -3,3 +3,5 @@
 *.o
 *.swp
 **/.DS_Store
+*.in
+*.out

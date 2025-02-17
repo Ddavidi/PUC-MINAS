@@ -47,7 +47,6 @@ int main(void) {
         
         printf("%s\n", isPalindromo(entrada) ? "SIM" : "NAO");
         scanf(" %[^\n]", entrada);
-   
     }
 
     return 0;
