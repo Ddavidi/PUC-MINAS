@@ -2,22 +2,53 @@ import java.util.Scanner;
 
 class Is{
     public static int tamanhoEntrada(String entrada){
-        return entrada.lenght();
+        return entrada.length();
     }
 
     public static boolean isFim(String entrada){
-        return entrada.charAt(0) == 'F' && ntrada.charAt(1) == 'I' && ntrada.charAt(2) == 'M' && ntrada.charAt(3) == '\0';
+        return entrada.charAt(0) == 'F' && entrada.charAt(1) == 'I' && entrada.charAt(2) == 'M';
     }
 
     public static boolean isInt(String entrada, int tam){
-        
+        boolean flag = true;
+
+        for(int i=0;i<tam;i++){
+            if(entrada.charAt(i)<'0' || entrada.charAt(i)>'9'){
+                flag = false;
+            }
+        }
+
+        return flag;
+    }
+
+    public static boolean isReal(String entrada, int tam){
+        boolean flag = true;
+        boolean temPonto = true;
+
+        for(int i=0;i<tam;i++){
+            if(entrada.charAt(i) == ','){
+                temPonto = true;
+            }
+            else if(entrada.charAt(i)<'0' || entrada.charAt(i) > '9') {
+                flag = false;
+            }
+        }
+
+        return flag && temPonto;
     }
 
     public static boolean isConsoante(String entrada, int tam){
         boolean flag = true;
         
         for(int i=0;i<tam;i++){
-            if (entrada.charAt(i) == 'A' || entrada.charAt(i) == 'E' || entrada.charAt(i) == 'I' || entrada.charAt(i) == 'O' || entrada.charAt(i) == 'U') || (letra < 97 || letra > 122) {
+            if((entrada.charAt(i) >= 'A' && entrada.charAt(i) <= 'Z') || (entrada.charAt(i) >= 'a' && entrada.charAt(i) <= 'z')){  
+                if ((entrada.charAt(i) == 'A' || entrada.charAt(i) == 'E' || entrada.charAt(i) == 'I' || entrada.charAt(i) == 'O' || entrada.charAt(i) == 'U'
+                || entrada.charAt(i) != 'a' || entrada.charAt(i) != 'e' || entrada.charAt(i) != 'i' || entrada.charAt(i) != 'o' || entrada.charAt(i) != 'u')  
+                || (entrada.charAt(i) < 97 || entrada.charAt(i) > 122)) {    
+                    flag = false;
+            }
+        }
+            else {
                 flag = false;
             }
         }
@@ -29,7 +60,8 @@ class Is{
         boolean flag = true;
 
         for(int i=0;i<tam;i++){
-            if (entrada.charAt(i) != 'A' || entrada.charAt(i) != 'E' || entrada.charAt(i) != 'I' || entrada.charAt(i) != 'O' || entrada.charAt(i) != 'U') {
+            if (entrada.charAt(i) != 'A' || entrada.charAt(i) != 'E' || entrada.charAt(i) != 'I' || entrada.charAt(i) != 'O' || entrada.charAt(i) != 'U' 
+            || entrada.charAt(i) != 'a' || entrada.charAt(i) != 'e' || entrada.charAt(i) != 'i' || entrada.charAt(i) != 'o' || entrada.charAt(i) != 'u') {
                 flag = false;
             }
         }
@@ -41,16 +73,18 @@ class Is{
         Scanner scan = new Scanner(System.in);
 
         String entrada = scan.nextLine();
+        
+        int tam = tamanhoEntrada(entrada);
 
         while(!isFim(entrada)){
-            int tam = tamanhoEntrada(entrada);
-
-            System.out.print("%s ", isVogal(entrada, tam) ? "SIM" : "NAO");
-            System.out.print("%s ", isConsoante(entrada, tam) ? "SIM" : "NAO");
+            System.out.print(isVogal(entrada, tam) ? "SIM " : "NAO ");
+            System.out.print(isConsoante(entrada, tam) ? "SIM " : "NAO ");
+            System.out.print(isInt(entrada, tam) ? "SIM " : "NAO ");
+            System.out.print(isReal(entrada, tam) ? "SIM\n" : "NAO\n");
 
             entrada = scan.nextLine();
 
-            int tam = tamanhoEntrada(entrada, tam);
+            tam = tamanhoEntrada(entrada);
         }
     }
 }
