@@ -1,3 +1,12 @@
+/*
+   ==UserScript==
+ @name         TP01Q06 - Is
+ @namespace    https://github.com/Ddavidi/PUC-MINAS
+ @description  VERDE PUC MINAS - TP01Q06 - Is
+ @author       @ddavidi_
+   ==/UserScript==
+*/
+
 import java.util.Scanner;
 
 class Is{
