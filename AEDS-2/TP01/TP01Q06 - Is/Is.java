@@ -6,7 +6,6 @@
  @author       @ddavidi_
    ==/UserScript==
 */
-
 import java.util.Scanner;
 
 class Is{
@@ -32,7 +31,7 @@ class Is{
 
     public static boolean isReal(String entrada, int tam){
         boolean flag = true;
-        boolean temPonto = true;
+        boolean temPonto = false;
 
         for(int i=0;i<tam;i++){
             if(entrada.charAt(i) == ','){
@@ -51,14 +50,10 @@ class Is{
         
         for(int i=0;i<tam;i++){
             if((entrada.charAt(i) >= 'A' && entrada.charAt(i) <= 'Z') || (entrada.charAt(i) >= 'a' && entrada.charAt(i) <= 'z')){  
-                if ((entrada.charAt(i) == 'A' || entrada.charAt(i) == 'E' || entrada.charAt(i) == 'I' || entrada.charAt(i) == 'O' || entrada.charAt(i) == 'U'
-                || entrada.charAt(i) != 'a' || entrada.charAt(i) != 'e' || entrada.charAt(i) != 'i' || entrada.charAt(i) != 'o' || entrada.charAt(i) != 'u')  
-                || (entrada.charAt(i) < 97 || entrada.charAt(i) > 122)) {    
+                if (entrada.charAt(i) == 'A' || entrada.charAt(i) == 'E' || entrada.charAt(i) == 'I' || entrada.charAt(i) == 'O' || entrada.charAt(i) == 'U'
+                || entrada.charAt(i) == 'a' || entrada.charAt(i) == 'e' || entrada.charAt(i) == 'i' || entrada.charAt(i) == 'o' || entrada.charAt(i) == 'u'){    
                     flag = false;
-            }
-        }
-            else {
-                flag = false;
+                }
             }
         }
 
@@ -69,8 +64,8 @@ class Is{
         boolean flag = true;
 
         for(int i=0;i<tam;i++){
-            if (entrada.charAt(i) != 'A' || entrada.charAt(i) != 'E' || entrada.charAt(i) != 'I' || entrada.charAt(i) != 'O' || entrada.charAt(i) != 'U' 
-            || entrada.charAt(i) != 'a' || entrada.charAt(i) != 'e' || entrada.charAt(i) != 'i' || entrada.charAt(i) != 'o' || entrada.charAt(i) != 'u') {
+            if (!(entrada.charAt(i) == 'A' || entrada.charAt(i) == 'E' || entrada.charAt(i) == 'I' || entrada.charAt(i) == 'O' || entrada.charAt(i) == 'U' || 
+              entrada.charAt(i) == 'a' || entrada.charAt(i) == 'e' || entrada.charAt(i) == 'i' || entrada.charAt(i) == 'o' || entrada.charAt(i) == 'u')) {
                 flag = false;
             }
         }
