@@ -1,6 +1,6 @@
 /*
    ==UserScript==
- @name         TP01Q01 - Palíndromo
+ @name         TP01Q02 - Palíndromo em C
  @namespace    https://github.com/Ddavidi/PUC-MINAS
  @description  VERDE PUC MINAS - TP01Q01 - Palíndromo
  @author       @ddavidi_
@@ -38,11 +38,11 @@ int isPalindromo(char entrada[]){
 }
 
 int main(void) {
-    
+    setbuf(stdout, NULL);
     char entrada[99];
 
-    scanf("%[^\n]", entrada);
-    
+    scanf(" %[^\n]", entrada);
+
     while(!isEnd(entrada)){
         
         printf("%s\n", isPalindromo(entrada) ? "SIM" : "NAO");
