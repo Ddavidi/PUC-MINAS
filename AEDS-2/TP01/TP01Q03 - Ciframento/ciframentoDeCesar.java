@@ -26,7 +26,7 @@ class ciframentoDeCesar {
     }
 
     public static void main(String[] args){
-        Scanner scan = new Scanner(System.in);
+        Scanner scan = new Scanner(System.in, "UTF-8");
 
         String entrada = scan.nextLine();
 
