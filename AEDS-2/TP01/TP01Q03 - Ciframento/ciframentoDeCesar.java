@@ -9,7 +9,7 @@
 
 import java.util.Scanner;
 
-class ciframentoDeCesar {
+class CiframentoDeCesar {
     public static void cifrandoEntrada(String entrada){
         int tam = entrada.length();
 
@@ -26,7 +26,7 @@ class ciframentoDeCesar {
     }
 
     public static void main(String[] args){
-        Scanner scan = new Scanner(System.in, "UTF-8");
+        Scanner scan = new Scanner(System.in);
 
         String entrada = scan.nextLine();
 
