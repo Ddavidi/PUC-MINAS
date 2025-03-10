@@ -7,49 +7,29 @@
    ==/UserScript==
 */
 
-import java.io.File;
-import java.io.IOException;
-import java.io.PrintWriter;
 import java.io.RandomAccessFile;
 import java.util.Scanner;
 
-public class Arquivo {
-
-    public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-
-        try {
-            PrintWriter arquivo = new PrintWriter(new File("pub.in"));
-
-            int n = scan.nextInt();
-
-            for(int i=0; i < n; i++) {
-                double valor = scan.nextDouble();
-                arquivo.printf("%f%n", valor);
+class Arquivo{
+    static Scanner sc = new Scanner(System.in);
+    public static void main(String[] args) throws Exception{
+        RandomAccessFile arquivo = new RandomAccessFile("fileName.txt", "rw");
+        int n = Integer.parseInt(sc.nextLine());
+        float input;
+        for(int i = 0; i < n; i++){
+            input = Float.parseFloat(sc.nextLine());
+            arquivo.writeFloat(input);
+        }
+        float output;
+        for(long i = n - 1; i >= 0; i--){
+            arquivo.seek(i*Float.BYTES);
+            output = arquivo.readFloat();
+            if(output % 1 == 0){
+                System.out.println((int)output);
+            } else {
+                System.out.println(output);
             }
-
-            arquivo.close();
-
-            RandomAccessFile arquivoLeitura = new RandomAccessFile("pub.in", "r");
-
-            long tamanhoArquivo = arquivoLeitura.length();
-            long i = tamanhoArquivo;
-
-            while (i > 0) {
-                i--;
-                arquivoLeitura.seek(i);
-                              
-                if (i == 0 || arquivoLeitura.readByte() == '\n') {
-                    if (i != 0) arquivoLeitura.seek(i + 1); 
-                    System.out.println(arquivoLeitura.readLine());
-                }
-            }
-
-            arquivoLeitura.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            scan.close();
-        }    
+        }
+        arquivo.close();
     }
 }
