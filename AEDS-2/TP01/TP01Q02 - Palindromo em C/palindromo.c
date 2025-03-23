@@ -27,10 +27,10 @@ int isPalindromo(char entrada[]){
     int tamEntrada = tamanhoEntrada(entrada);
     int flag = 1;
 
-    for(int i=0; i<=tamEntrada/2; i++){
+    for(int i=0; i<tamEntrada/2; i++){
         if(entrada[i] != entrada[tamEntrada - 1 - i]){
             flag = 0;
-            i = tamEntrada/2;
+            i = tamEntrada;
         }
     }
 

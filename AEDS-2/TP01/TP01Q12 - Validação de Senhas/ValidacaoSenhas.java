@@ -15,7 +15,8 @@ class ValidacaoSenhas {
         Boolean maiuscula = false, 
                 minuscula = false,
                 numero = false,
-                caracterEspecial = false;
+                caracterEspecial = false,
+                tamanhoValido = false;
 
         for(int i=0; i<tam; i++){
             if(entrada.charAt(i) >= 'A' && entrada.charAt(i) <= 'Z') maiuscula = true;
@@ -24,7 +25,9 @@ class ValidacaoSenhas {
             else caracterEspecial = true;
         }
 
-        return maiuscula && minuscula && numero && caracterEspecial;
+        if(tam>=8) tamanhoValido = true;
+
+        return maiuscula && minuscula && numero && caracterEspecial && tamanhoValido;
     }
 
     public static boolean isEnd(String entrada) {
@@ -41,8 +44,10 @@ class ValidacaoSenhas {
         String entrada = scan.nextLine();
         
         while(!isEnd(entrada)){
-            System.out.println(senhaValida(entrada) ? "SIM" : "N\u00C3O");
+            System.out.println(senhaValida(entrada) ? "SIM" : "NAO");
             entrada = scan.nextLine();
         }
+
+        scan.close();
     }
 }

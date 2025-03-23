@@ -83,6 +83,7 @@ public class HTML {
             count++;
             index += pattern.length();
         }
-        return count;
-    }
+
+        return count;
+    }
 }
