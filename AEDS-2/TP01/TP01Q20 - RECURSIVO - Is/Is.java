@@ -1,15 +1,15 @@
 /*
    ==UserScript==
- @name         TP01Q20 - RECURSIVO - Is
+ @name         TP01Q06 - Is
  @namespace    https://github.com/Ddavidi/PUC-MINAS
- @description  VERDE PUC MINAS - TP01Q20 - RECURSIVO - Is
+ @description  VERDE PUC MINAS - TP01Q06 - Is
  @author       @ddavidi_
    ==/UserScript==
- */
+*/
+
 import java.util.Scanner;
 
 class Is {
-
     public static int tamanhoEntrada(String entrada) {
         return entrada.length();
     }
@@ -18,94 +18,72 @@ class Is {
         return entrada.charAt(0) == 'F' && entrada.charAt(1) == 'I' && entrada.charAt(2) == 'M';
     }
 
-    public static boolean isInt(String entrada, int tam) {
-        if (tam == 0) {
+    public static boolean isInt(String entrada, int tam, int pos) {
+        if (pos >= tam) {
             return true;
         }
-
-        char atual = entrada.charAt(tam - 1);
-        if (atual < '0' || atual > '9') {
+        if (entrada.charAt(pos) < '0' || entrada.charAt(pos) > '9') {
             return false;
         }
-
-        return isInt(entrada, tam - 1);
+        return isInt(entrada, tam, pos + 1);
     }
 
-    public static boolean isReal(String entrada, int tam) {
-        return isRealHelper(entrada, tam, false);
-    }
-
-    private static boolean isRealHelper(String entrada, int tam, boolean temPonto) {
-        if (tam == 0) {
-            return temPonto;
+    public static boolean isReal(String entrada, int tam, int pos, int countPonto) {
+        if (pos >= tam) {
+            return countPonto <= 1;
         }
-
-        char atual = entrada.charAt(tam - 1);
-
-        if (atual == ',') {
-            if (temPonto) {
-                return false;
-            }
-            return isRealHelper(entrada, tam - 1, true);
-        }
-
-        if (atual < '0' || atual > '9') {
+        char c = entrada.charAt(pos);
+        if ((c < '0' || c > '9') && (c != ',' && c != '.')) {
             return false;
         }
-
-        return isRealHelper(entrada, tam - 1, temPonto);
+        if (c == '.' || c == ',') {
+            return isReal(entrada, tam, pos + 1, countPonto + 1);
+        }
+        return isReal(entrada, tam, pos + 1, countPonto);
     }
 
-    public static boolean isConsoante(String entrada, int tam) {
-        if (tam == 0) {
+    public static boolean isConsoante(String entrada, int tam, int pos) {
+        if (pos >= tam) {
             return true;
         }
-
-        char atual = entrada.charAt(tam - 1);
-
-        if ((atual >= 'A' && atual <= 'Z') || (atual >= 'a' && atual <= 'z')) {
-            if (atual == 'A' || atual == 'E' || atual == 'I' || atual == 'O' || atual == 'U'
-                    || atual == 'a' || atual == 'e' || atual == 'i' || atual == 'o' || atual == 'u') {
-                return false;
-            }
-        }
-
-        return isConsoante(entrada, tam - 1);
-    }
-
-    public static boolean isVogal(String entrada, int tam) {
-        if (tam == 0) {
-            return true;
-        }
-
-        char atual = entrada.charAt(tam - 1);
-
-        boolean ehVogal = (atual == 'A' || atual == 'E' || atual == 'I' || atual == 'O' || atual == 'U'
-                || atual == 'a' || atual == 'e' || atual == 'i' || atual == 'o' || atual == 'u');
-
-        if (!ehVogal) {
+        char c = entrada.charAt(pos);
+        if (!((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))) {
             return false;
         }
+        if (c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U' ||
+            c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
+            return false;
+        }
+        return isConsoante(entrada, tam, pos + 1);
+    }
 
-        return isVogal(entrada, tam - 1);
+    public static boolean isVogal(String entrada, int tam, int pos) {
+        if (pos >= tam) {
+            return true;
+        }
+        char c = entrada.charAt(pos);
+        if (!(c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U' || 
+              c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u')) {
+            return false;
+        }
+        return isVogal(entrada, tam, pos + 1);
     }
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-
         String entrada = scan.nextLine();
-
         int tam = tamanhoEntrada(entrada);
 
         while (!isFim(entrada)) {
-            System.out.print(isVogal(entrada, tam) ? "SIM " : "NAO ");
-            System.out.print(isConsoante(entrada, tam) ? "SIM " : "NAO ");
-            System.out.print(isInt(entrada, tam) ? "SIM " : "NAO ");
-            System.out.print(isReal(entrada, tam) ? "SIM\n" : "NAO\n");
+            System.out.print(isVogal(entrada, tam, 0) ? "SIM " : "NAO ");
+            System.out.print(isConsoante(entrada, tam, 0) ? "SIM " : "NAO ");
+            System.out.print(isInt(entrada, tam, 0) ? "SIM " : "NAO ");
+            System.out.print(isReal(entrada, tam, 0, 0) ? "SIM\n" : "NAO\n");
 
             entrada = scan.nextLine();
-
             tam = tamanhoEntrada(entrada);
         }
+
+        scan.close();
     }
 }

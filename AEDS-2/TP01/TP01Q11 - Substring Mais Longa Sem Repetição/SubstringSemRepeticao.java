@@ -47,12 +47,9 @@ class SubstringSemRepeticao {
         Scanner scan = new Scanner(System.in);
 
         String entrada = scan.nextLine();
-        int numInteracoes = 0;
 
         while(!isEnd(entrada)){
             System.out.println(SubstringMaisLongaSemRepeticao(entrada));
-            numInteracoes++;
-            if(numInteracoes == 3) System.out.println(0);
             entrada = scan.nextLine();
         }
     }
