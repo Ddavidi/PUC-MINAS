@@ -10,6 +10,7 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
+import java.util.Arrays;
 
 public class Principal {
     // Classe Show como estática interna
@@ -58,10 +59,8 @@ public class Principal {
                     i++; // Pula a aspa inicial
                     while (i < linha.length()) {
                         if (i + 1 < linha.length() && linha.charAt(i) == '"' && linha.charAt(i + 1) == '"') {
-                            // Encontrou aspas duplas escapadas ("")
-                            i += 2; // Pula as duas aspas sem adicionar nada
+                            i += 2; // Pula as duas aspas
                         } else if (linha.charAt(i) == '"') {
-                            // Fim do campo entre aspas
                             i++; // Pula a aspa final
                             break;
                         } else {
@@ -113,6 +112,10 @@ public class Principal {
             String DURATION = partes[9];
             String[] LISTED_IN = partes[10].equals("NaN") ? new String[0] : partes[10].split(",\\s*");
             String DESCRIPTION = partes[11];
+
+            // Ordena os arrays alfabeticamente
+            Arrays.sort(CAST);
+            Arrays.sort(LISTED_IN);
 
             return new Show(SHOW_ID, TYPE, TITLE, DIRECTOR, CAST, COUNTRY, DATE_ADDED, RELEASE_YEAR, RATING, DURATION,
                     LISTED_IN, DESCRIPTION);
