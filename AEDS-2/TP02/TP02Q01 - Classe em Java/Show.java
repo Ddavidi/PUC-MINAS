@@ -1,13 +1,4 @@
-/*
-   ==UserScript==
- @name         TP02Q01 - Classe em Java
- @namespace    https://github.com/Ddavidi/PUC-MINAS
- @description  VERDE PUC MINAS - TP02Q01 - Classe em Java
- @author       @ddavidi_
-   ==/UserScript==
-*/
-
-class Show {
+public class Show {
     private String SHOW_ID;
     private String TYPE;
     private String TITLE;
@@ -21,7 +12,8 @@ class Show {
     private String[] LISTED_IN;
     private String DESCRIPTION;
 
-    Show (String SHOW_ID, String TYPE, String TITLE, String DIRECTOR, String[] CAST, String COUNTRY, String DATE_ADDED, String RELEASE_YEAR, String RATING, String DURATION, String[] LISTED_IN, String DESCRIPTION){
+    Show(String SHOW_ID, String TYPE, String TITLE, String DIRECTOR, String[] CAST, String COUNTRY, String DATE_ADDED,
+         String RELEASE_YEAR, String RATING, String DURATION, String[] LISTED_IN, String DESCRIPTION) {
         this.SHOW_ID = SHOW_ID;
         this.TYPE = TYPE;
         this.TITLE = TITLE;
@@ -40,68 +32,76 @@ class Show {
         return SHOW_ID;
     }
 
-    public static Show ler(String linha){
-        String partes[] = new String[100]; // atributos
-
-        String campo = "";
+    public static Show ler(String linha) {
+        String[] partes = new String[12]; // Esperamos exatamente 12 campos
+        StringBuilder campo = new StringBuilder();
         int i = 0;
         int j = 0;
 
-        while(i < linha.length()){
-            if(linha.charAt(i) == '"'){
-                i++;
-                while(linha.charAt(i) != '"'){
-                    campo += linha.charAt(i);
-                    i++;
+        while (i < linha.length() && j < 12) {
+            if (linha.charAt(i) == '"') {
+                i++; // Pula a aspa inicial
+                while (i < linha.length()) {
+                    if (i + 1 < linha.length() && linha.charAt(i) == '"' && linha.charAt(i + 1) == '"') {
+                        // Encontrou aspas duplas escapadas ("")
+                        campo.append('"');
+                        i += 2; // Pula as duas aspas
+                    } else if (linha.charAt(i) == '"') {
+                        // Fim do campo entre aspas
+                        i++; // Pula a aspa final
+                        break;
+                    } else {
+                        campo.append(linha.charAt(i));
+                        i++;
+                    }
                 }
-                i++;
-
-                System.out.println(campo);
-
-                partes[j] = campo;
+                partes[j] = campo.toString();
                 j++;
-                campo = "";
-                i++;
-            }
-
-            else if(linha.charAt(i) == ','){
-                if(campo.isEmpty()){
-                    partes[j] = "NaN";
-                    j++;
-                    i++;
-                } else{
-                    System.out.println(campo);
-                    partes[j] = campo;
-                    j++;
-                    campo = "";
-                    i++;
+                campo.setLength(0); // Limpa o StringBuilder
+                if (i < linha.length() && linha.charAt(i) == ',') {
+                    i++; // Pula a vírgula após o campo
                 }
-            }
-            
-            else {
-                campo += linha.charAt(i);
+            } else if (linha.charAt(i) == ',') {
+                partes[j] = campo.length() == 0 ? "NaN" : campo.toString();
+                j++;
+                campo.setLength(0);
+                i++;
+            } else {
+                campo.append(linha.charAt(i));
                 i++;
             }
         }
 
+        // Adiciona o último campo, se houver
+        if (campo.length() > 0 && j < 12) {
+            partes[j] = campo.toString();
+            j++;
+        } else if (j < 12) {
+            partes[j] = "NaN";
+        }
+
+        // Preenche campos restantes com "NaN", se necessário
+        while (j < 12) {
+            partes[j] = "NaN";
+            j++;
+        }
+
+        // Atribuição dos campos
         String SHOW_ID = partes[0];
         String TYPE = partes[1];
         String TITLE = partes[2];
         String DIRECTOR = partes[3];
-        String CAST[] = partes[4].equals("NaN") ? new String[0] : partes[4].split(",\\s*");
+        String[] CAST = partes[4].equals("NaN") ? new String[0] : partes[4].split(",\\s*");
         String COUNTRY = partes[5];
         String DATE_ADDED = partes[6];
         String RELEASE_YEAR = partes[7];
         String RATING = partes[8];
         String DURATION = partes[9];
-        String LISTED_IN[] = partes[10].equals("NaN") ? new String[0] : partes[10].split(",\\s*");
+        String[] LISTED_IN = partes[10].equals("NaN") ? new String[0] : partes[10].split(",\\s*");
         String DESCRIPTION = partes[11];
 
-        System.out.println("ID:" + SHOW_ID);
-
-        Show show = new Show(SHOW_ID, TYPE, TITLE, DIRECTOR, CAST, COUNTRY, DATE_ADDED, RELEASE_YEAR, RATING, DURATION, LISTED_IN, DESCRIPTION);
-        
-        return show;
+        return new Show(SHOW_ID, TYPE, TITLE, DIRECTOR, CAST, COUNTRY, DATE_ADDED, RELEASE_YEAR, RATING, DURATION,
+                LISTED_IN, DESCRIPTION);
     }
 
     public void mostreShow(String id) {
@@ -133,19 +133,18 @@ class Show {
             }
 
             // Exibe a saída formatada
-            System.out.printf("=> %s ## %s ## %s ## %s ## %s ## %s ## %s ## %s ## %s ## %s ## %s\n",
-                SHOW_ID != null ? SHOW_ID : "NaN",
-                TITLE != null ? TITLE : "NaN",
-                TYPE != null ? TYPE : "NaN",
-                DIRECTOR != null ? DIRECTOR : "NaN",
-                castStr,
-                COUNTRY != null ? COUNTRY : "NaN",
-                DATE_ADDED != null ? DATE_ADDED : "NaN",
-                RELEASE_YEAR != null ? RELEASE_YEAR : "NaN",
-                RATING != null ? RATING : "NaN",
-                DURATION != null ? DURATION : "NaN",
-                listedInStr
-            );
+            System.out.printf("=> %s ## %s ## %s ## %s ## %s ## %s ## %s ## %s ## %s ## %s ## %s ##\n",
+                    SHOW_ID != null ? SHOW_ID : "NaN",
+                    TITLE != null ? TITLE : "NaN",
+                    TYPE != null ? TYPE : "NaN",
+                    DIRECTOR != null ? DIRECTOR : "NaN",
+                    castStr,
+                    COUNTRY != null ? COUNTRY : "NaN",
+                    DATE_ADDED != null ? DATE_ADDED : "NaN",
+                    RELEASE_YEAR != null ? RELEASE_YEAR : "NaN",
+                    RATING != null ? RATING : "NaN",
+                    DURATION != null ? DURATION : "NaN",
+                    listedInStr);
         }
     }
 }
