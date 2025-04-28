@@ -59,15 +59,10 @@ public class Principal {
                     i++; // Pula a aspa inicial
                     while (i < linha.length()) {
                         if (i + 1 < linha.length() && linha.charAt(i) == '"' && linha.charAt(i + 1) == '"') {
-<<<<<<< HEAD
                             // Encontrou aspas duplas escapadas ("")
                             i += 2; // Pula as duas aspas sem adicionar nada
                         } else if (linha.charAt(i) == '"') {
                             // Fim do campo entre aspas
-=======
-                            i += 2; // Pula as duas aspas
-                        } else if (linha.charAt(i) == '"') {
->>>>>>> e9fe99597bba7e9b9b8cb30a8925f9f6ab313667
                             i++; // Pula a aspa final
                             break;
                         } else {
@@ -120,13 +115,10 @@ public class Principal {
             String[] LISTED_IN = partes[10].equals("NaN") ? new String[0] : partes[10].split(",\\s*");
             String DESCRIPTION = partes[11];
 
-<<<<<<< HEAD
-=======
             // Ordena os arrays alfabeticamente
             Arrays.sort(CAST);
             Arrays.sort(LISTED_IN);
 
->>>>>>> e9fe99597bba7e9b9b8cb30a8925f9f6ab313667
             return new Show(SHOW_ID, TYPE, TITLE, DIRECTOR, CAST, COUNTRY, DATE_ADDED, RELEASE_YEAR, RATING, DURATION,
                     LISTED_IN, DESCRIPTION);
         }
