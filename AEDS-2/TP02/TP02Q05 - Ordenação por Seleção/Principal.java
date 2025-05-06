@@ -1,8 +1,8 @@
 /*
    ==UserScript==
- @name         TP02Q03 - Pesquisa Sequencial em Java
+ @name         TP02Q05 - Ordenação por Seleção
  @namespace    https://github.com/Ddavidi/PUC-MINAS
- @description  VERDE PUC MINAS - TP02Q03 - Pesquisa Sequencial em Java
+ @description  VERDE PUC MINAS - TP02Q05 - Ordenação por Seleção
  @author       @ddavidi_
    ==/UserScript==
 */
@@ -35,22 +35,11 @@ public class Principal {
             entrada = sc.nextLine();
         }
 
-        entrada = sc.nextLine();
-        while(!entrada.equals("FIM")){
-            boolean found = false;
-            for(int j = 0; j < i; j++){
-                if(arrayShows[j].getTitle().equals(entrada)){
-                    found = true;
-                    j = i;
-                }
+        Show.ordenarPorTitulo(arrayShows);
+        for (int j = 0; j < i; j++) {
+            if (arrayShows[j] != null) {
+                arrayShows[j].imprimir();
             }
-            if(found){
-                System.out.println("SIM");
-            }
-            else{
-                System.out.println("NAO");
-            }
-            entrada = sc.nextLine();
         }
 
         sc.close();
@@ -166,7 +155,7 @@ class Show {
         return lista;
     }
 
-    private void ler(String linha) {
+    public void ler(String linha) {
         try {
             String[] partes = linha.split(",(?=([^\"]*\"[^\"]*\")*[^\"]*$)", -1);
             this.show_id = partes[0].trim().isEmpty() ? "NaN" : partes[0].trim();
@@ -188,9 +177,6 @@ class Show {
 
     private String[] separarString(String str) {
         String[] partes = str.replace("\"", "").split(", ");
-        for (int i = 0; i < partes.length; i++) {
-            partes[i] = partes[i].trim();
-        }
         return partes;
     }
 
@@ -212,13 +198,13 @@ class Show {
         System.out.printf("] ##\n");
     }
 
-    private static void swap(String [] cast, int i, int j) {
+    public static void swap(String [] cast, int i, int j) {
         String aux = cast[i];
         cast[i] = cast[j];
         cast[j] = aux;
     }
 
-    private static void ordenarCast(String[] cast) {
+    public static void ordenarCast(String[] cast) {
         for(int i = 0; i < cast.length; i++){
             int menor  = i;
             for(int j = i + 1; j < cast.length; j++){
@@ -231,6 +217,25 @@ class Show {
             }
         }
     }
+
+    public static void ordenarPorTitulo(Show[] lista) {
+        int n = lista.length;
+        for (int i = 0; i < n - 1; i++) {
+            int menor = i;
+            for (int j = i + 1; j < n; j++) {
+                if (lista[j] != null && lista[menor] != null &&
+                    lista[j].getTitle().toLowerCase().compareTo(lista[menor].getTitle().toLowerCase()) < 0) {
+                    menor = j;
+                }
+            }
+            if (menor != i) {
+                Show temp = lista[i];
+                lista[i] = lista[menor];
+                lista[menor] = temp;
+            }
+        }
+    }
+
 }
 
 class Date {

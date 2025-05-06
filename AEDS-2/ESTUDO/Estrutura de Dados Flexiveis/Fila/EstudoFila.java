@@ -59,13 +59,12 @@ class EstudoFila {
 
         Fila fila = new Fila();
 
-        fila.inserir(2);
         fila.inserir(4);
-        fila.mostrar();
         fila.inserir(5);
-        fila.mostrar();
-        fila.remover();
-        fila.mostrar();
+        fila.inserir(6);
 
+        fila.remover();
+
+        fila.mostrar();
     }
 }
