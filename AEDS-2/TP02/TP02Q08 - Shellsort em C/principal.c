@@ -67,6 +67,10 @@ char* dateToString(Date* date) {
     return str;
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 55f6d08b19555f57d2968514554fc294436a11ff
 void freeDate(Date* data) {
     if (data != NULL) {
         free(data);
@@ -173,7 +177,11 @@ void freeShow(Show* show) {
 
 Show* cloneShow(const Show* original) {
     if (original == NULL) return NULL;
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 55f6d08b19555f57d2968514554fc294436a11ff
     Show* clone = newShow();
     if (clone != NULL) {
         snprintf(clone->show_id, sizeof(clone->show_id), "%s", original->show_id);
@@ -221,23 +229,39 @@ void ordenarCast(char cast[MAX_CAST][50], int count) {
 
 void trim(char *str) {
     int start = 0, end = strlen(str) - 1;
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 55f6d08b19555f57d2968514554fc294436a11ff
     // Avança enquanto for espaço no início
     while (isspace((unsigned char)str[start])) {
         start++;
     }
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 55f6d08b19555f57d2968514554fc294436a11ff
     // Retrocede enquanto for espaço no fim
     while (end >= start && isspace((unsigned char)str[end])) {
         end--;
     }
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 55f6d08b19555f57d2968514554fc294436a11ff
     // Move a string para o início
     int i = 0;
     while (start <= end) {
         str[i++] = str[start++];
     }
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 55f6d08b19555f57d2968514554fc294436a11ff
     str[i] = '\0'; // Termina a string
 }
 
@@ -254,10 +278,17 @@ void replace_char(char *str, char antigo) {
 void lerShow(Show* show, const char* linha) {
     char partes[MAX_PARTES][MAX_STRING];
     int parte_idx = 0;
+<<<<<<< HEAD
 
     const char* start = linha;
     int in_quotes = 0;
 
+=======
+    
+    const char* start = linha;
+    int in_quotes = 0;
+    
+>>>>>>> 55f6d08b19555f57d2968514554fc294436a11ff
     // Divide a linha em partes, considerando aspas e vírgulas
     for (const char* p = linha; *p; p++) {
         if (*p == '"') {
@@ -274,13 +305,21 @@ void lerShow(Show* show, const char* linha) {
     strncpy(partes[parte_idx], start, strlen(start));
     partes[parte_idx][strlen(start)] = '\0';
     replace_char(partes[parte_idx], '"'); // Remove aspas
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 55f6d08b19555f57d2968514554fc294436a11ff
     // Preenche os campos do Show, atribuindo "NaN" para valores vazios
     snprintf(show->show_id, sizeof(show->show_id), "%s", strlen(partes[0]) > 0 ? partes[0] : "NaN");
     snprintf(show->type, sizeof(show->type), "%s", strlen(partes[1]) > 0 ? partes[1] : "NaN");
     snprintf(show->title, sizeof(show->title), "%s", strlen(partes[2]) > 0 ? partes[2] : "NaN");
     snprintf(show->director, sizeof(show->director), "%s", strlen(partes[3]) > 0 ? partes[3] : "NaN");
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 55f6d08b19555f57d2968514554fc294436a11ff
     // Processa o elenco
     char* cast_raw = partes[4];
     if (strlen(cast_raw) > 0) {
@@ -296,13 +335,21 @@ void lerShow(Show* show, const char* linha) {
         snprintf(show->cast[0], sizeof(show->cast[0]), "NaN"); // Preenche com "NaN"
         show->cast_count = 1;
     }
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 55f6d08b19555f57d2968514554fc294436a11ff
     snprintf(show->country, sizeof(show->country), "%s", strlen(partes[5]) > 0 ? partes[5] : "NaN");
     show->date_added = strlen(partes[6]) > 0 ? parseDate(partes[6]) : newDate();
     show->release_year = strlen(partes[7]) > 0 ? atoi(partes[7]) : 1900;
     snprintf(show->rating, sizeof(show->rating), "%s", strlen(partes[8]) > 0 ? partes[8] : "NaN");
     snprintf(show->duration, sizeof(show->duration), "%s", strlen(partes[9]) > 0 ? partes[9] : "NaN");
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 55f6d08b19555f57d2968514554fc294436a11ff
     // Processa os gêneros
     char* listed_raw = partes[10];
     if (strlen(listed_raw) > 0) {
@@ -317,7 +364,11 @@ void lerShow(Show* show, const char* linha) {
         snprintf(show->listed_in[0], sizeof(show->listed_in[0]), "NaN"); // Preenche com "NaN"
         show->listed_count = 1;
     }
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 55f6d08b19555f57d2968514554fc294436a11ff
     snprintf(show->description, sizeof(show->description), "%s", strlen(partes[11]) > 0 ? partes[11] : "NaN");
 }
 
@@ -327,22 +378,37 @@ Show* lerArquivo(const char* filename, int* total) {
         perror("Erro ao abrir o arquivo");
         return NULL;
     }
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 55f6d08b19555f57d2968514554fc294436a11ff
     Show* shows = (Show*)malloc(MAX_SHOWS * sizeof(Show));
     if (!shows) {
         fclose(file);
         return NULL;
     }
+<<<<<<< HEAD
 
     char linha[1024];
     int index = 0;
 
+=======
+    
+    char linha[1024];
+    int index = 0;
+    
+>>>>>>> 55f6d08b19555f57d2968514554fc294436a11ff
     fgets(linha, sizeof(linha), file); // Pula o cabeçalho
     while (fgets(linha, sizeof(linha), file) && index < MAX_SHOWS) {
         linha[strcspn(linha, "\r\n")] = '\0'; // Remove newline
         lerShow(&shows[index++], linha);
     }
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 55f6d08b19555f57d2968514554fc294436a11ff
     fclose(file);
     *total = index;
     return shows;
@@ -355,11 +421,19 @@ void imprimirShow(const Show* show) {
         if (i < show->cast_count - 1) printf(", ");
     }
     printf("] ## %s ## %s %d, %04d ## %d ## %s ## %s ## [", show->country, show->date_added.month,
+<<<<<<< HEAD
            show->date_added.day, show->date_added.year, show->release_year, show->rating, show->duration);
     for (int i = 0; i < show->listed_count; i++) {
         printf("%s", show->listed_in[i]);
         if (i < show->listed_count - 1) printf(", ");
     }
+=======
+        show->date_added.day, show->date_added.year, show->release_year, show->rating, show->duration);
+        for (int i = 0; i < show->listed_count; i++) {
+            printf("%s", show->listed_in[i]);
+            if (i < show->listed_count - 1) printf(", ");
+        }
+>>>>>>> 55f6d08b19555f57d2968514554fc294436a11ff
     printf("] ##\n");
 }
 
@@ -378,6 +452,7 @@ void swapShow(Show *a, Show *b) {
     *b = temp;
 }
 
+<<<<<<< HEAD
 void shellSort(Show* array, int tamanho) {
     int h = 1;
 
@@ -413,6 +488,69 @@ void shellSort(Show* array, int tamanho) {
 
             array[j] = temp;
         }
+=======
+int getMonthNumber(const char* month) {
+    const char* months[] = {
+        "january", "february", "march", "april", "may", "june",
+        "july", "august", "september", "october", "november", "december"
+    };
+
+    char lowerMonth[20];
+    toLowerString(month, lowerMonth);
+
+    for (int i = 0; i < 12; i++) {
+        if (strcmp(lowerMonth, months[i]) == 0) {
+            return i + 1;
+        }
+    }
+    return 0; // Mês inválido
+}
+
+int compareDates(Show* a, Show* b) {
+    int yearA = a->date_added.year;
+    int yearB = b->date_added.year;
+    if (yearA != yearB) return yearA - yearB;
+
+    int monthA = getMonthNumber(a->date_added.month);
+    int monthB = getMonthNumber(b->date_added.month);
+    if (monthA != monthB) return monthA - monthB;
+
+    return a->date_added.day - b->date_added.day;
+}
+
+int compareShowByDate(Show* a, Show* b) {
+    int dateCmp = compareDates(a, b);
+    if (dateCmp != 0) return dateCmp;
+
+    // Desempate por title (case-insensitive)
+    char titleA[256], titleB[256];
+    toLowerString(a->title, titleA);
+    toLowerString(b->title, titleB);
+    return strcmp(titleA, titleB);
+}
+
+
+int partition(Show* array, int low, int high) {
+    Show pivot = array[high];
+    int i = low - 1;
+
+    for (int j = low; j < high; j++) {
+        if (compareShowByDate(&array[j], &pivot) <= 0) {
+            i++;
+            swapShow(&array[i], &array[j]);
+        }
+    }
+
+    swapShow(&array[i + 1], &array[high]);
+    return i + 1;
+}
+
+void quicksort(Show* array, int low, int high) {
+    if (low < high) {
+        int pivotIndex = partition(array, low, high);
+        quicksort(array, low, pivotIndex - 1);
+        quicksort(array, pivotIndex + 1, high);
+>>>>>>> 55f6d08b19555f57d2968514554fc294436a11ff
     }
 }
 
@@ -444,7 +582,11 @@ int main() {
         scanf("%s", entrada);
     }
 
+<<<<<<< HEAD
     shellSort(arr, i);
+=======
+    quicksort(arr, 0, i - 1);
+>>>>>>> 55f6d08b19555f57d2968514554fc294436a11ff
 
     for (int j = 0; j < i; j++) {
         if (strcmp(arr[j].show_id, "NaN") != 0) {
