@@ -71,6 +71,19 @@ A impedância depende da frequência `ω` do circuito.
 
 ---
 
+## 📌 Receita de Bolo: O Passo a Passo Geral para Circuitos CA
+
+Para resolver *qualquer* problema de circuito CA (Corrente Alternada), você sempre vai seguir estes 6 passos lógicos:
+
+1. **Ache o ω** da fonte (o número que multiplica o 't').
+2. **Converta a fonte para fasor** (Lembrete: se for seno, subtraia 90° para virar cosseno).
+3. **Calcule a impedância** de cada componente usando as fórmulas: `R ➡️ R`, `L ➡️ jωL`, `C ➡️ 1/(jωC)`.
+4. **Combine as impedâncias** (Série ➡️ soma, Paralelo ➡️ produto sobre soma) para achar a impedância equivalente (Z_eq) do circuito.
+5. **Aplique a Lei de Ohm (V = Z * I)** e/ou as Leis de Kirchhoff para achar o valor que o problema pede.
+6. **Volte para o domínio do tempo** transformando o fasor resultante na forma `Vm * cos(ωt + φ)`.
+
+---
+
 ## 💡 Vamos ver isso na prática (Problema 9.20)
 
 **Enunciado:** Um circuito tem corrente `i = 7,5 cos(10t + 30°)` A e tensão de saída `v = 120 cos(10t + 75°)` V. Determine a impedância Z.
@@ -84,6 +97,9 @@ As duas já estão em cosseno e são positivas. É só pegar o número da frente
 - `V = 120 ∠ 75° V`
 
 **Passo 3: Aplicar a Lei de Ohm Fasorial**
+> **🤔 Por que pulamos o cálculo de L e C (Passo 3 da receita)?** 
+> *Neste problema específico, nós não temos o desenho do circuito detalhando onde estão os indutores e capacitores. O problema trata o circuito como uma "caixa preta" e já nos dá a tensão e a corrente finais, pedindo diretamente o `Z` total da caixa. Então pulamos direto para o Passo 5 da nossa receita!*
+
 Queremos achar a impedância do circuito que está causando essa mudança na onda.
 - `Z = V / I`
 - `Z = (120 ∠ 75°) / (7,5 ∠ 30°)`
