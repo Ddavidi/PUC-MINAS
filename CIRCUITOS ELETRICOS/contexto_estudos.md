@@ -9,6 +9,8 @@ Este arquivo serve como um índice e registro de tudo o que estamos estudando so
 ## 📁 Estrutura do Repositório
 - `Fundamentos de Circuitos Elétricos Sadiku - 5 Edição - Completo.pdf`: O livro base.
 - `contexto_estudos.md`: Este índice.
+- `folha_de_cola_por_capitulo.md`: Resumo consolidado de fórmulas e passo a passo (separado por capítulos 6, 7, 9 e 11) para a prova.
+- `folha_de_cola_por_temas.md`: Resumo consolidado de fórmulas e métodos (separado por lógica/temas) para a prova.
 - `code/`: Scripts Python auxiliares (extração de texto e imagens do PDF).
 - `capitulo_XX/`: Pastas organizadas por capítulo (06, 07, 09, 11).
   - `conceitos_importantes.md`: Arquivo central com o resumo teórico e passo a passo do capítulo.
