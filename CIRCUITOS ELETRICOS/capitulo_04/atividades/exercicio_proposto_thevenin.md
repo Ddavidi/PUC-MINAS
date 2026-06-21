@@ -4,7 +4,7 @@ Agora é a sua vez! Eu criei este circuito especialmente para você treinar a Re
 
 **Enunciado:** Determine a Resistência de Thevenin ($R_{th}$) e a Tensão de Thevenin ($V_{th}$) vistas pelos terminais A e B no circuito abaixo.
 
-![Circuito Proposto](/c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/_base_dados_ia/imagens_geradas/thevenin_proposto.png)
+![Circuito Proposto](../../_base_dados_ia/imagens_geradas/thevenin_proposto.png)
 
 ---
 

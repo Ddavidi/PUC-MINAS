@@ -4,7 +4,7 @@ Este é um exercício clássico que mistura fonte de tensão e fonte de corrente
 
 **Enunciado:** Determine o circuito equivalente de Thevenin (ou seja, encontre $R_{th}$ e $V_{th}$) visto pelos terminais A e B no circuito abaixo.
 
-![Circuito Original](/c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/_base_dados_ia/imagens_geradas/thevenin_ex.png)
+![Circuito Original](../../_base_dados_ia/imagens_geradas/thevenin_ex.png)
 
 ---
 
@@ -15,7 +15,7 @@ A regra é: olhe pelos terminais A e B com **todas as fontes independentes desli
 - Fonte de Corrente de $2A \implies$ Vira um Circuito Aberto (nós a arrancamos do circuito).
 
 O circuito para calcularmos a $R_{th}$ fica assim:
-![Circuito para Rth](/c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/_base_dados_ia/imagens_geradas/thevenin_rth.png)
+![Circuito para Rth](../../_base_dados_ia/imagens_geradas/thevenin_rth.png)
 
 **Resolvendo:**
 1. Olhando de trás para frente (da esquerda para a direita em direção aos terminais A-B).
@@ -35,7 +35,7 @@ A regra é: ligue as fontes de volta, deixe os terminais A e B **abertos** (no v
 Como o terminal A está no vazio, **nenhuma corrente passa pelo resistor de $1 \, \Omega$**. Logo, a queda de tensão nele é zero. Isso significa que a tensão no terminal A é exatamente igual à tensão no Nó C ($V_{th} = V_A = V_C$).
 
 Vamos desenhar a nossa missão usando a Análise Nodal no Nó C:
-![Circuito para Vth](/c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/_base_dados_ia/imagens_geradas/thevenin_vth.png)
+![Circuito para Vth](../../_base_dados_ia/imagens_geradas/thevenin_vth.png)
 
 **Resolvendo (Aplicando LKC no Nó C):**
 1. Corrente saindo para a esquerda (passando pelo de $4 \, \Omega$): $\frac{V_C - 32}{4}$
