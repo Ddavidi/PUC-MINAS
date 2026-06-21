@@ -74,3 +74,42 @@ Multiplicando a Eq 2 por $2$ e subtraindo da Eq 1, chegamos nos valores finais.
 > - **$V_1 = \frac{238}{13} \, V$** (aprox. $18,3 \, V$)
 > - **$V_2 = 17 \, V$**
 > - **$V_3 = \frac{573}{26} \, V$** (aprox. $22,04 \, V$)
+
+---
+
+## O Caminho Ninja: Método de Inspeção (Matrizes)
+
+Como vimos, resolver o sistema de 3 equações na mão dá trabalho. Mas com a sua calculadora, você pode usar o **Método de Inspeção** e pular toda a montagem das equações, montando a matriz diretamente "de cabeça" só olhando pro desenho.
+
+A regra da matriz $[G] \cdot [V] = [I]$ é a seguinte:
+1. **Diagonal Principal (Posições 1,1 | 2,2 | 3,3):** Soma de todas as condutâncias ligadas no nó (sempre positivo).
+2. **Posições Fora da Diagonal:** Condutância que liga um nó ao outro (sempre negativo).
+3. **Vetor de Corrente (Depois do igual):** Correntes de fonte **entrando** no nó são Positivas. **Saindo** são Negativas.
+
+Montando no olhômetro:
+- Para o $V_1$: As condutâncias encostadas nele são 4S e 3S (Soma = **7**). Entre V1 e V2 tem 3S (vira **-3**). Entre V1 e V3 tem 4S (vira **-4**). As fontes de corrente nele (8A e 3A) estão saindo, logo **-11**.
+- Para o $V_2$: Encostadas nele (3S, 1S, 2S = **6**). Entre V2 e V1 tem **-3**. Entre V2 e V3 tem **-2**. Fonte entrando nele é 3A (**+3**).
+- Para o $V_3$: Encostadas nele (4S e 2S = **6**). Entre V3 e V1 tem **-4**. Entre V3 e V2 tem **-2**. Fonte de -25A "saindo" significa que, na verdade, entra +25A. Logo: **25**.
+
+Olhe como a matriz se forma em 30 segundos sem fazer conta de frações:
+$$
+\begin{bmatrix}
+7 & -3 & -4 \\
+-3 & 6 & -2 \\
+-4 & -2 & 6
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+V_1 \\
+V_2 \\
+V_3
+\end{bmatrix}
+=
+\begin{bmatrix}
+-11 \\
+3 \\
+25
+\end{bmatrix}
+$$
+
+Este é exatamente o mesmo sistema que montamos lá em cima. Agora é só jogar isso no aplicativo `Equação` da sua Casio e correr pro abraço!
