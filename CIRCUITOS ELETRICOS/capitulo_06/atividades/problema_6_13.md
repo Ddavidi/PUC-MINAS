@@ -1,6 +1,7 @@
 # Problema 6.13
 
-**Enunciado:** Determine a tensão nos capacitores do circuito da Figura 6.49 em CC (Corrente Contínua).
+**Enunciado:** Determine a tensão nos capacitores do circuito da Figura 6.49 em CC (Corrente Contínua).  
+*(Página 215 do Livro / Página 235 do PDF)*
 
 ---
 

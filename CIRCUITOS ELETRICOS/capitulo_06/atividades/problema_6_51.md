@@ -1,6 +1,7 @@
 # Problema 6.51
 
-**Enunciado:** Determine a indutância equivalente ($L_{eq}$) nos terminais a-b do circuito da Figura 6.73.
+**Enunciado:** Determine a indutância equivalente ($L_{eq}$) nos terminais a-b do circuito da Figura 6.73.  
+*(Página 218 do Livro / Página 238 do PDF)*
 
 ---
 

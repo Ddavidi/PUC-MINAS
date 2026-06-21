@@ -1,6 +1,7 @@
 # Problema 6.46
 
-**Enunciado:** Determine $v_C$, $i_L$ e a energia armazenada no capacitor e no indutor no circuito da Figura 6.69 em condições de CC (Corrente Contínua).
+**Enunciado:** Determine $v_C$, $i_L$ e a energia armazenada no capacitor e no indutor no circuito da Figura 6.69 em condições de CC (Corrente Contínua).  
+*(Página 218 do Livro / Página 238 do PDF)*
 
 ---
 

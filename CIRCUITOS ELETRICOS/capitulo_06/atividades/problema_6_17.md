@@ -1,6 +1,7 @@
 # Problema 6.17
 
-**Enunciado:** Determine a capacitância equivalente para cada um dos circuitos da Figura 6.51.
+**Enunciado:** Determine a capacitância equivalente para cada um dos circuitos da Figura 6.51.  
+*(Página 215 do Livro / Página 235 do PDF)*
 
 ---
 
