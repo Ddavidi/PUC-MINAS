@@ -1,30 +1,35 @@
 # Contexto de Estudos — Circuitos Elétricos
 
-Este arquivo serve como um índice e registro de tudo o que estamos estudando sobre Circuitos Elétricos, para que a IA (Antigravity) e você (o aluno) possam sempre se lembrar de onde paramos e o que já foi visto.
+Este arquivo serve como um índice e registro de tudo o que estamos estudando sobre Circuitos Elétricos. A estrutura foi desenhada para separar os estudos por capítulos, isolando teorias, atividades e exercícios.
 
 ## 📚 Material Base
 - **Livro:** Fundamentos de Circuitos Elétricos (Sadiku, 5ª Edição)
-- **Foco Atual:** Capítulo 9 (Senoides e Fasores)
+- **Capítulos Alvo da Prova:** 6, 7, 9 e 11
 
-## 📁 Estrutura da Pasta
-- `capitulo9_senoides_fasores.txt`: Texto bruto extraído do capítulo 9.
-- `capitulo9_imagens/`: Imagens renderizadas das páginas do capítulo 9 para leitura de circuitos.
-- `conceitos_importantes/`: Pasta contendo documentos formatados com explicações de teoria e resoluções.
-  - `fasores_e_lei_de_ohm.md`: Explicação base sobre fasores, receita geral de CA e como aplicar Z = V/I.
-  - `impedancia_resistor_e_9_28.md`: Explicação da impedância em resistores (Z = R) e resolução passo a passo do Problema 9.28.
-  - `resolucao_problemas_cap9.md`: Guia de resolução dos 15 problemas propostos (Níveis 1 ao 4).
-  - `resumo_capitulo9.md`: Resumo completo da teoria do Capítulo 9.
+## 📁 Estrutura do Repositório
+- `Fundamentos de Circuitos Elétricos Sadiku - 5 Edição - Completo.pdf`: O livro base.
+- `contexto_estudos.md`: Este índice.
+- `code/`: Scripts Python auxiliares (extração de texto e imagens do PDF).
+- `capitulo_XX/`: Pastas organizadas por capítulo (06, 07, 09, 11).
+  - `conceitos_importantes.md`: Arquivo central com o resumo teórico e passo a passo do capítulo.
+  - `pdfs_extras/`: Slides, listas ou material complementar da professora.
+  - `exercicios_propostos/`: Local para PDFs e exercícios passados em aula.
+  - `atividades/`: Arquivos individuais `.md` com a resolução bem detalhada de cada problema do livro.
+  - `imagens/`: (Opcional) Imagens dos circuitos renderizadas do PDF.
 
 ## 🎯 Progresso Atual
-1. Extração do PDF e criação de base de texto completada.
-2. Renderização das páginas do capítulo 9 para visualização dos circuitos completada.
-3. Resumo da teoria do Cap. 9 finalizado.
-4. Explicação inicial de Fasores e Lei de Ohm Fasorial (Z = V/I) com receita de 6 passos realizada.
-5. Todos os 15 problemas alvo do Capítulo 9 foram resolvidos e documentados.
-6. Explicação da impedância puramente resistiva (Z = R) e resolução aprofundada do Problema 9.28 concluídas.
+### Capítulo 9 (Senoides e Fasores)
+1. Extração do PDF (texto e imagens) concluída.
+2. Resumo da teoria criado (`capitulo_09/conceitos_importantes.md`).
+3. Explicação de Fasores, Lei de Ohm Fasorial (Z = V/I) e da receita geral de CA realizadas.
+4. Explicação de impedância resistiva (Z = R) e passo a passo criados.
+5. Os 15 exercícios alvo foram divididos em arquivos `.md` isolados dentro de `capitulo_09/atividades/`.
+
+### Capítulos 6, 7, 11
+- Pastas criadas e estrutura pronta para iniciar os estudos.
 
 ## 📝 Próximos Passos Sugeridos
-- Evoluir para o Problema 9.30 (que envolve Resistor em paralelo com Capacitor).
-- Aprofundar em conceitos específicos caso haja dúvidas (ex: divisão de tensão, divisor de corrente, equivalência estrela-triângulo em CA).
+- Iniciar a prática intensiva dos problemas isolados na pasta `capitulo_09/atividades/` (sugestão: começar pelos problemas nível 1).
+- Ou, extrair o texto e imagens do próximo capítulo (ex: Capítulo 6) usando os scripts da pasta `code/`.
 
-> *Instrução para a IA em chats futuros: Leia este arquivo para recuperar o contexto do que o aluno já estudou e quais arquivos estão disponíveis.*
+> *Instrução para a IA em chats futuros: Leia este arquivo para entender a organização do repositório, onde salvar novos arquivos e recuperar o contexto do aluno.*
