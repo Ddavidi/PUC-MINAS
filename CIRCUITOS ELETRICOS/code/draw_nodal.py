@@ -20,6 +20,7 @@ with schemdraw.Drawing(file=os.path.join(img_dir, "nodal_proposto.png"), show=Fa
     d += elm.Line().left().length(3)
     d.pop()
     d += elm.Line().right().length(3)
-    d += elm.SourceI().up().label('1A')
-    d += elm.Line().left().length(3)
-    d += elm.Ground()
+    # Corrigindo: desenha para baixo (em direção ao terra principal) 
+    # mas com a seta apontando para cima (reverse), ou seja, entrando no nó V2.
+    d += elm.SourceI().down().reverse().label('1A')
+    d += elm.Line().left().length(3+3+3) # Fecha o fio do terra embaixo

@@ -20,6 +20,5 @@ with schemdraw.Drawing(file=os.path.join(img_dir, "nodal_proposto_resolvido.png"
     d += elm.Line().left().length(3)
     d.pop()
     d += elm.Line().right().length(3)
-    d += elm.SourceI().up().label('1A')
-    d += elm.Line().left().length(3)
-    d += elm.Ground()
+    d += elm.SourceI().down().reverse().label('1A')
+    d += elm.Line().left().length(3+3+3)
