@@ -20,6 +20,11 @@ Este arquivo serve como um índice e registro de tudo o que estamos estudando so
   - `_base_dados_ia/`: Pasta (oculta/irrelevante para o usuário) contendo extrações brutas de texto em `.txt` e dezenas de páginas renderizadas em `.png` para leitura visual da IA.
 
 ## 🎯 Progresso Atual
+
+### Resgate da Base (Capítulos 1 a 4)
+- [x] Criação da estrutura de pastas e extração completa de dezenas de páginas.
+- [x] Elaboração do **[Resgate da Base Teórica](file:///c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/resgate_da_base.md)** focado em Nodal, Malhas e Thevenin.
+
 ### Capítulo 6 (Capacitores e Indutores)
 - [x] Extração de PDFs
 - [x] Resumo Teórico / Dicas de Resolução (`conceitos_importantes.md` e `resumo_basico_cap6.md`)
