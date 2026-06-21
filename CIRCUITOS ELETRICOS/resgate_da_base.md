@@ -8,6 +8,8 @@ Se você não dominar os três tópicos abaixo, vai ser muito difícil sobrevive
 A Análise Nodal usa a **Lei de Kirchhoff dos Nós (LKC)**. A regra é: A soma das correntes que entram = A soma das correntes que saem.
 
 **A Receita de Bolo Definitiva:**
+![Exemplo de Análise Nodal](/c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/_base_dados_ia/imagens_geradas/nodal_ex.png)
+
 1. **Escolha o Chão (Referência):** Olhe para o circuito e escolha o nó de baixo (ou o nó que conecta mais componentes) para ser o seu Terra ($0 \, V$).
 2. **Batize os outros Nós:** Dê nomes para as tensões dos outros nós principais (Ex: $V_1, V_2$). **O seu objetivo inteiro é descobrir o valor numérico de $V_1$ e $V_2$!**
 3. **Assuma que todo mundo foge:** Em cada nó, assuma que as correntes sempre estão SAINDO dele.
@@ -27,6 +29,8 @@ Crie um "Supernó" englobando $V_1$ e $V_2$ numa bolha só, e escreva a LKC para
 Enquanto a Nodal usa os nós (LKC), as Malhas usam as "janelas" do circuito e a **Lei de Kirchhoff das Malhas (LKT)**: A soma das tensões numa malha fechada é zero.
 
 **A Receita de Bolo Definitiva:**
+![Exemplo de Análise de Malhas](/c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/_base_dados_ia/imagens_geradas/malhas_ex.png)
+
 1. **Desenhe os furacões:** Em cada "janela" livre do circuito, desenhe uma corrente rodando no sentido horário (Ex: $i_1, i_2$). **O seu objetivo inteiro é descobrir o valor dessas correntes.**
 2. **Ande na Malha:** Comece num canto inferior e dê a volta no sentido horário, somando as quedas de tensão.
    - Ao passar por uma Bateria/Fonte: Pegue o sinal da placa que você bater primeiro. (Ex: Bateu no traço menor/negativo primeiro? Escreva $-12V$).
