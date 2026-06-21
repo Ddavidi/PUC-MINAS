@@ -17,7 +17,7 @@ Este arquivo serve como um índice e registro de tudo o que estamos estudando so
   - `pdfs_extras/`: Slides, listas ou material complementar da professora.
   - `exercicios_propostos/`: Local para PDFs e exercícios passados em aula.
   - `atividades/`: Arquivos individuais `.md` com a resolução bem detalhada de cada problema do livro.
-  - `imagens/`: (Opcional) Imagens dos circuitos renderizadas do PDF.
+  - `_base_dados_ia/`: Pasta (oculta/irrelevante para o usuário) contendo extrações brutas de texto em `.txt` e dezenas de páginas renderizadas em `.png` para leitura visual da IA.
 
 ## 🎯 Progresso Atual
 ### Capítulo 9 (Senoides e Fasores)
