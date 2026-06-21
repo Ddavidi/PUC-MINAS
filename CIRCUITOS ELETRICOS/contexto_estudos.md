@@ -24,6 +24,8 @@ Este arquivo serve como um índice e registro de tudo o que estamos estudando so
 ### Resgate da Base (Capítulos 1 a 4)
 - [x] Criação da estrutura de pastas e extração completa de dezenas de páginas.
 - [x] Elaboração do **[Resgate da Base Teórica](file:///c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/resgate_da_base.md)** focado em Nodal, Malhas e Thevenin (com imagens geradas via Python).
+- [x] Resolução de um **[Exemplo Clássico de Análise Nodal](file:///c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/capitulo_03/atividades/exemplo_resolvido_nodal.md)**.
+- [x] Criação de um **[Exercício Proposto de Análise Nodal](file:///c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/capitulo_03/atividades/exercicio_proposto_nodal.md)** para o usuário.
 - [x] Resolução de um **[Exemplo Clássico de Thevenin](file:///c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/capitulo_04/atividades/exemplo_resolvido_thevenin.md)**.
 - [x] Criação de um **[Exercício Proposto de Thevenin](file:///c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/capitulo_04/atividades/exercicio_proposto_thevenin.md)** para o usuário.
 
