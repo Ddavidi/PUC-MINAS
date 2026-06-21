@@ -20,6 +20,11 @@ Este arquivo serve como um índice e registro de tudo o que estamos estudando so
   - `_base_dados_ia/`: Pasta (oculta/irrelevante para o usuário) contendo extrações brutas de texto em `.txt` e dezenas de páginas renderizadas em `.png` para leitura visual da IA.
 
 ## 🎯 Progresso Atual
+### Capítulo 6 (Capacitores e Indutores)
+- [x] Extração de PDFs
+- [x] Resumo Teórico / Dicas de Resolução (`conceitos_importantes.md` e `resumo_basico_cap6.md`)
+- [x] Resolução de Exercícios do Livro (6.13, 6.17, 6.46, 6.51)
+
 ### Capítulo 9 (Senoides e Fasores)
 1. Extração do PDF (texto e imagens) concluída.
 2. Resumo da teoria criado (`capitulo_09/conceitos_importantes.md`).
