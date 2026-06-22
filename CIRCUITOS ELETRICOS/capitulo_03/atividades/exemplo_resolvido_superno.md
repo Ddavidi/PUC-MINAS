@@ -34,24 +34,24 @@ $$ 2V_1 + V_2 = 24 \quad \text{--- (Equação 1 - Do Supernó)} $$
 ### 3. A Equação Interna (A Restrição)
 A Equação 1 tem duas incógnitas ($V_1$ e $V_2$). Precisamos de uma segunda equação. De onde ela vem? **De dentro da bolha!**
 
-Olhe para a fonte de tensão que está presa lá dentro. A placa positiva dela (o traço maior) está virada para a esquerda (conectada no $V_1$). A negativa está no $V_2$. O valor dela é $6V$.
-Isso significa simplesmente que o potencial de $V_1$ é 6 volts maior que o de $V_2$:
-$$ V_1 - V_2 = 6 \implies V_1 = V_2 + 6 \quad \text{--- (Equação 2 - Da Fonte)} $$
+Olhe para a fonte de tensão que está presa lá dentro. Como você percebeu perfeitamente, a placa positiva dela (o traço maior) está virada para a **direita** (conectada no $V_2$). A negativa está no $V_1$. O valor dela é $6V$.
+Isso significa que o potencial de $V_2$ é 6 volts maior que o de $V_1$:
+$$ V_2 - V_1 = 6 \implies V_2 = V_1 + 6 \quad \text{--- (Equação 2 - Da Fonte)} $$
 
-*(Dica: Se o traço maior estivesse encostado no $V_2$, seria $V_2 - V_1 = 6$)*.
+*(Dica: Se o traço maior estivesse encostado no $V_1$, aí sim seria $V_1 - V_2 = 6$)*.
 
 ### 4. Resolvendo o Sistema
-Agora é só substituir a Equação 2 dentro da Equação 1:
-$$ 2 \cdot (V_2 + 6) + V_2 = 24 $$
-$$ 2V_2 + 12 + V_2 = 24 $$
-$$ 3V_2 = 12 \implies V_2 = 4 \, V $$
+Agora é só substituir a Equação 2 dentro da Equação 1 ($2V_1 + V_2 = 24$):
+$$ 2V_1 + (V_1 + 6) = 24 $$
+$$ 3V_1 + 6 = 24 $$
+$$ 3V_1 = 18 \implies V_1 = 6 \, V $$
 
-Sabendo que $V_2 = 4 \, V$, voltamos na Equação 2:
-$$ V_1 = 4 + 6 \implies V_1 = 10 \, V $$
+Sabendo que $V_1 = 6 \, V$, voltamos na Equação 2 para achar o $V_2$:
+$$ V_2 = 6 + 6 \implies V_2 = 12 \, V $$
 
 ---
 > **✅ Resposta Final:** 
-> - A tensão no nó da esquerda é **$V_1 = 10 \, V$**.
-> - A tensão no nó da direita é **$V_2 = 4 \, V$**.
+> - A tensão no nó da esquerda é **$V_1 = 6 \, V$**.
+> - A tensão no nó da direita é **$V_2 = 12 \, V$**.
 > 
 > *Viu só? O Supernó não é um bicho de sete cabeças, ele na verdade deixa a montagem do sistema até mais fácil!*
