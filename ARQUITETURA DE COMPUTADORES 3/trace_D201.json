@@ -1,0 +1,1153 @@
+{
+  "format": "raven-pipeline-trace-v1",
+  "cycles": [
+    {
+      "cycle": 1,
+      "committed_pc": null,
+      "committed_class": null,
+      "fetch_pc": "0x00000004",
+      "halted": false,
+      "faulted": false,
+      "stages": [
+        {"stage": "IF", "pc": "0x00000000", "disasm": "lui  t0, 0x1", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "ID", "pc": null, "disasm": "", "bubble": true, "speculative": false, "hazard": null, "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "EX", "pc": null, "disasm": "", "bubble": true, "speculative": false, "hazard": null, "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "MEM", "pc": null, "disasm": "", "bubble": true, "speculative": false, "hazard": null, "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "WB", "pc": null, "disasm": "", "bubble": true, "speculative": false, "hazard": null, "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0}
+      ],
+      "hazards": [
+
+      ]
+    },
+    {
+      "cycle": 2,
+      "committed_pc": null,
+      "committed_class": null,
+      "fetch_pc": "0x00000008",
+      "halted": false,
+      "faulted": false,
+      "stages": [
+        {"stage": "IF", "pc": "0x00000004", "disasm": "addi t0, t0, 0", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "ID", "pc": "0x00000000", "disasm": "lui  t0, 0x1", "bubble": false, "speculative": false, "hazard": "WAW", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "EX", "pc": null, "disasm": "", "bubble": true, "speculative": false, "hazard": null, "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "MEM", "pc": null, "disasm": "", "bubble": true, "speculative": false, "hazard": null, "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "WB", "pc": null, "disasm": "", "bubble": true, "speculative": false, "hazard": null, "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0}
+      ],
+      "hazards": [
+        {"kind": "WAW", "from": "ID", "to": "IF", "detail": "lui = t0"}
+      ]
+    },
+    {
+      "cycle": 3,
+      "committed_pc": null,
+      "committed_class": null,
+      "fetch_pc": "0x0000000C",
+      "halted": false,
+      "faulted": false,
+      "stages": [
+        {"stage": "IF", "pc": "0x00000008", "disasm": "addi t5, zero, 5", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "ID", "pc": "0x00000004", "disasm": "addi t0, t0, 0", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "EX", "pc": "0x00000000", "disasm": "lui  t0, 0x1", "bubble": false, "speculative": false, "hazard": "WAW", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "MEM", "pc": null, "disasm": "", "bubble": true, "speculative": false, "hazard": null, "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "WB", "pc": null, "disasm": "", "bubble": true, "speculative": false, "hazard": null, "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0}
+      ],
+      "hazards": [
+        {"kind": "WAW", "from": "EX", "to": "ID", "detail": "lui = t0"},
+        {"kind": "WAW", "from": "EX", "to": "EX", "detail": "lui = t0"}
+      ]
+    },
+    {
+      "cycle": 4,
+      "committed_pc": null,
+      "committed_class": null,
+      "fetch_pc": "0x00000010",
+      "halted": false,
+      "faulted": false,
+      "stages": [
+        {"stage": "IF", "pc": "0x0000000C", "disasm": "lw   t1, 0(t0)", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "ID", "pc": "0x00000008", "disasm": "addi t5, zero, 5", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "EX", "pc": "0x00000004", "disasm": "addi t0, t0, 0", "bubble": false, "speculative": false, "hazard": "WAW", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "MEM", "pc": "0x00000000", "disasm": "lui  t0, 0x1", "bubble": false, "speculative": false, "hazard": "WAW", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "WB", "pc": null, "disasm": "", "bubble": true, "speculative": false, "hazard": null, "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0}
+      ],
+      "hazards": [
+        {"kind": "FWD", "from": "MEM", "to": "EX", "detail": "MEM:lui -> EX:addi (t0, EX->EX)"},
+        {"kind": "WAW", "from": "MEM", "to": "EX", "detail": "lui = t0"},
+        {"kind": "WAW", "from": "EX", "to": "EX", "detail": "addi = t0"},
+        {"kind": "WAW", "from": "EX", "to": "MEM", "detail": "addi = t0"}
+      ]
+    },
+    {
+      "cycle": 5,
+      "committed_pc": null,
+      "committed_class": null,
+      "fetch_pc": "0x00000014",
+      "halted": false,
+      "faulted": false,
+      "stages": [
+        {"stage": "IF", "pc": "0x00000010", "disasm": "add  t2, t1, t1", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "ID", "pc": "0x0000000C", "disasm": "lw   t1, 0(t0)", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "EX", "pc": "0x00000008", "disasm": "addi t5, zero, 5", "bubble": false, "speculative": false, "hazard": "WAW", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "MEM", "pc": "0x00000004", "disasm": "addi t0, t0, 0", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "WB", "pc": "0x00000000", "disasm": "lui  t0, 0x1", "bubble": false, "speculative": false, "hazard": "WAW", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0}
+      ],
+      "hazards": [
+        {"kind": "FWD", "from": "WB", "to": "ID", "detail": "WB:lui -> ID:lw (t0, WB->ID)"},
+        {"kind": "WAW", "from": "EX", "to": "EX", "detail": "addi = t5"},
+        {"kind": "WAW", "from": "WB", "to": "MEM", "detail": "lui = t0"}
+      ]
+    },
+    {
+      "cycle": 6,
+      "committed_pc": "0x00000000",
+      "committed_class": "ALU",
+      "fetch_pc": "0x00000018",
+      "halted": false,
+      "faulted": false,
+      "stages": [
+        {"stage": "IF", "pc": "0x00000014", "disasm": "sw   t2, 0(t0)", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "ID", "pc": "0x00000010", "disasm": "add  t2, t1, t1", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "EX", "pc": "0x0000000C", "disasm": "lw   t1, 0(t0)", "bubble": false, "speculative": false, "hazard": "WAW", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "MEM", "pc": "0x00000008", "disasm": "addi t5, zero, 5", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "WB", "pc": "0x00000004", "disasm": "addi t0, t0, 0", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0}
+      ],
+      "hazards": [
+        {"kind": "FWD", "from": "WB", "to": "EX", "detail": "WB:addi -> EX:lw (t0, MEM->EX)"},
+        {"kind": "WAW", "from": "EX", "to": "EX", "detail": "lw = t1"}
+      ]
+    },
+    {
+      "cycle": 7,
+      "committed_pc": "0x00000004",
+      "committed_class": "ALU",
+      "fetch_pc": "0x00000018",
+      "halted": false,
+      "faulted": false,
+      "stages": [
+        {"stage": "IF", "pc": "0x00000014", "disasm": "sw   t2, 0(t0)", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "ID", "pc": "0x00000010", "disasm": "add  t2, t1, t1", "bubble": false, "speculative": false, "hazard": "LOAD", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "EX", "pc": "0x00000000", "disasm": "", "bubble": true, "speculative": false, "hazard": "LOAD", "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "MEM", "pc": "0x0000000C", "disasm": "lw   t1, 0(t0)", "bubble": false, "speculative": false, "hazard": "WAW", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "WB", "pc": "0x00000008", "disasm": "addi t5, zero, 5", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0}
+      ],
+      "hazards": [
+        {"kind": "LOAD", "from": "EX", "to": "ID", "detail": "lw -> add"}
+      ]
+    },
+    {
+      "cycle": 8,
+      "committed_pc": "0x00000008",
+      "committed_class": "ALU",
+      "fetch_pc": "0x0000001C",
+      "halted": false,
+      "faulted": false,
+      "stages": [
+        {"stage": "IF", "pc": "0x00000018", "disasm": "addi t0, t0, 4", "bubble": false, "speculative": false, "hazard": "WAR", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "ID", "pc": "0x00000014", "disasm": "sw   t2, 0(t0)", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "EX", "pc": "0x00000010", "disasm": "add  t2, t1, t1", "bubble": false, "speculative": false, "hazard": "WAW", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "MEM", "pc": "0x00000000", "disasm": "", "bubble": true, "speculative": false, "hazard": "LOAD", "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "WB", "pc": "0x0000000C", "disasm": "lw   t1, 0(t0)", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0}
+      ],
+      "hazards": [
+        {"kind": "FWD", "from": "WB", "to": "EX", "detail": "WB:lw -> EX:add (t1, MEM->EX)"},
+        {"kind": "WAW", "from": "EX", "to": "EX", "detail": "add = t2"},
+        {"kind": "WAR", "from": "IF", "to": "ID", "detail": "addi -> sw"},
+        {"kind": "WAR", "from": "IF", "to": "WB", "detail": "addi -> lw"}
+      ]
+    },
+    {
+      "cycle": 9,
+      "committed_pc": "0x0000000C",
+      "committed_class": "Load",
+      "fetch_pc": "0x0000001C",
+      "halted": false,
+      "faulted": false,
+      "stages": [
+        {"stage": "IF", "pc": "0x00000018", "disasm": "addi t0, t0, 4", "bubble": false, "speculative": false, "hazard": "WAR", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "ID", "pc": "0x00000014", "disasm": "sw   t2, 0(t0)", "bubble": false, "speculative": false, "hazard": "RAW", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "EX", "pc": "0x00000000", "disasm": "", "bubble": true, "speculative": false, "hazard": "RAW", "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "MEM", "pc": "0x00000010", "disasm": "add  t2, t1, t1", "bubble": false, "speculative": false, "hazard": "WAW", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "WB", "pc": "0x00000000", "disasm": "", "bubble": true, "speculative": false, "hazard": "LOAD", "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0}
+      ],
+      "hazards": [
+        {"kind": "RAW", "from": "EX", "to": "ID", "detail": "add -> sw"},
+        {"kind": "WAR", "from": "IF", "to": "ID", "detail": "addi -> sw"}
+      ]
+    },
+    {
+      "cycle": 10,
+      "committed_pc": null,
+      "committed_class": null,
+      "fetch_pc": "0x0000001C",
+      "halted": false,
+      "faulted": false,
+      "stages": [
+        {"stage": "IF", "pc": "0x00000018", "disasm": "addi t0, t0, 4", "bubble": false, "speculative": false, "hazard": "WAR", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "ID", "pc": "0x00000014", "disasm": "sw   t2, 0(t0)", "bubble": false, "speculative": false, "hazard": "RAW", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "EX", "pc": "0x00000000", "disasm": "", "bubble": true, "speculative": false, "hazard": "RAW", "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "MEM", "pc": "0x00000000", "disasm": "", "bubble": true, "speculative": false, "hazard": "RAW", "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "WB", "pc": "0x00000010", "disasm": "add  t2, t1, t1", "bubble": false, "speculative": false, "hazard": "WAW", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0}
+      ],
+      "hazards": [
+        {"kind": "RAW", "from": "MEM", "to": "ID", "detail": "add -> sw"},
+        {"kind": "WAR", "from": "IF", "to": "ID", "detail": "addi -> sw"}
+      ]
+    },
+    {
+      "cycle": 11,
+      "committed_pc": "0x00000010",
+      "committed_class": "ALU",
+      "fetch_pc": "0x00000020",
+      "halted": false,
+      "faulted": false,
+      "stages": [
+        {"stage": "IF", "pc": "0x0000001C", "disasm": "addi t5, t5, -1", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "ID", "pc": "0x00000018", "disasm": "addi t0, t0, 4", "bubble": false, "speculative": false, "hazard": "WAR", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "EX", "pc": "0x00000014", "disasm": "sw   t2, 0(t0)", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "MEM", "pc": "0x00000000", "disasm": "", "bubble": true, "speculative": false, "hazard": "RAW", "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "WB", "pc": "0x00000000", "disasm": "", "bubble": true, "speculative": false, "hazard": "RAW", "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0}
+      ],
+      "hazards": [
+        {"kind": "WAR", "from": "ID", "to": "EX", "detail": "addi -> sw"}
+      ]
+    },
+    {
+      "cycle": 12,
+      "committed_pc": null,
+      "committed_class": null,
+      "fetch_pc": "0x00000024",
+      "halted": false,
+      "faulted": false,
+      "stages": [
+        {"stage": "IF", "pc": "0x00000020", "disasm": "bne  t5, zero, -20", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "ID", "pc": "0x0000001C", "disasm": "addi t5, t5, -1", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "EX", "pc": "0x00000018", "disasm": "addi t0, t0, 4", "bubble": false, "speculative": false, "hazard": "WAW", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "MEM", "pc": "0x00000014", "disasm": "sw   t2, 0(t0)", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "WB", "pc": "0x00000000", "disasm": "", "bubble": true, "speculative": false, "hazard": "RAW", "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0}
+      ],
+      "hazards": [
+        {"kind": "WAW", "from": "EX", "to": "EX", "detail": "addi = t0"},
+        {"kind": "WAR", "from": "EX", "to": "MEM", "detail": "addi -> sw"}
+      ]
+    },
+    {
+      "cycle": 13,
+      "committed_pc": null,
+      "committed_class": null,
+      "fetch_pc": "0x00000010",
+      "halted": false,
+      "faulted": false,
+      "stages": [
+        {"stage": "IF", "pc": "0x0000000C", "disasm": "lw   t1, 0(t0)", "bubble": false, "speculative": true, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "ID", "pc": "0x00000020", "disasm": "bne  t5, zero, -20", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "EX", "pc": "0x0000001C", "disasm": "addi t5, t5, -1", "bubble": false, "speculative": false, "hazard": "WAW", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "MEM", "pc": "0x00000018", "disasm": "addi t0, t0, 4", "bubble": false, "speculative": false, "hazard": "WAR", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "WB", "pc": "0x00000014", "disasm": "sw   t2, 0(t0)", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0}
+      ],
+      "hazards": [
+        {"kind": "WAW", "from": "EX", "to": "EX", "detail": "addi = t5"},
+        {"kind": "WAR", "from": "MEM", "to": "WB", "detail": "addi -> sw"}
+      ]
+    },
+    {
+      "cycle": 14,
+      "committed_pc": "0x00000014",
+      "committed_class": "Store",
+      "fetch_pc": "0x00000014",
+      "halted": false,
+      "faulted": false,
+      "stages": [
+        {"stage": "IF", "pc": "0x00000010", "disasm": "add  t2, t1, t1", "bubble": false, "speculative": true, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "ID", "pc": "0x0000000C", "disasm": "lw   t1, 0(t0)", "bubble": false, "speculative": true, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "EX", "pc": "0x00000020", "disasm": "bne  t5, zero, -20", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "MEM", "pc": "0x0000001C", "disasm": "addi t5, t5, -1", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "WB", "pc": "0x00000018", "disasm": "addi t0, t0, 4", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0}
+      ],
+      "hazards": [
+        {"kind": "FWD", "from": "WB", "to": "ID", "detail": "WB:addi -> ID:lw (t0, WB->ID)"},
+        {"kind": "FWD", "from": "MEM", "to": "EX", "detail": "MEM:addi -> EX:bne (t5, EX->EX)"}
+      ]
+    },
+    {
+      "cycle": 15,
+      "committed_pc": "0x00000018",
+      "committed_class": "ALU",
+      "fetch_pc": "0x00000018",
+      "halted": false,
+      "faulted": false,
+      "stages": [
+        {"stage": "IF", "pc": "0x00000014", "disasm": "sw   t2, 0(t0)", "bubble": false, "speculative": true, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "ID", "pc": "0x00000010", "disasm": "add  t2, t1, t1", "bubble": false, "speculative": true, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "EX", "pc": "0x0000000C", "disasm": "lw   t1, 0(t0)", "bubble": false, "speculative": true, "hazard": "WAW", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "MEM", "pc": "0x00000020", "disasm": "bne  t5, zero, -20", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "WB", "pc": "0x0000001C", "disasm": "addi t5, t5, -1", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0}
+      ],
+      "hazards": [
+        {"kind": "WAW", "from": "EX", "to": "EX", "detail": "lw = t1"}
+      ]
+    },
+    {
+      "cycle": 16,
+      "committed_pc": "0x0000001C",
+      "committed_class": "ALU",
+      "fetch_pc": "0x00000018",
+      "halted": false,
+      "faulted": false,
+      "stages": [
+        {"stage": "IF", "pc": "0x00000014", "disasm": "sw   t2, 0(t0)", "bubble": false, "speculative": true, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "ID", "pc": "0x00000010", "disasm": "add  t2, t1, t1", "bubble": false, "speculative": true, "hazard": "LOAD", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "EX", "pc": "0x00000000", "disasm": "", "bubble": true, "speculative": false, "hazard": "LOAD", "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "MEM", "pc": "0x0000000C", "disasm": "lw   t1, 0(t0)", "bubble": false, "speculative": true, "hazard": "WAW", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "WB", "pc": "0x00000020", "disasm": "bne  t5, zero, -20", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0}
+      ],
+      "hazards": [
+        {"kind": "LOAD", "from": "EX", "to": "ID", "detail": "lw -> add"}
+      ]
+    },
+    {
+      "cycle": 17,
+      "committed_pc": "0x00000020",
+      "committed_class": "Branch",
+      "fetch_pc": "0x0000001C",
+      "halted": false,
+      "faulted": false,
+      "stages": [
+        {"stage": "IF", "pc": "0x00000018", "disasm": "addi t0, t0, 4", "bubble": false, "speculative": false, "hazard": "WAR", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "ID", "pc": "0x00000014", "disasm": "sw   t2, 0(t0)", "bubble": false, "speculative": true, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "EX", "pc": "0x00000010", "disasm": "add  t2, t1, t1", "bubble": false, "speculative": true, "hazard": "WAW", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "MEM", "pc": "0x00000000", "disasm": "", "bubble": true, "speculative": false, "hazard": "LOAD", "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "WB", "pc": "0x0000000C", "disasm": "lw   t1, 0(t0)", "bubble": false, "speculative": true, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0}
+      ],
+      "hazards": [
+        {"kind": "FWD", "from": "WB", "to": "EX", "detail": "WB:lw -> EX:add (t1, MEM->EX)"},
+        {"kind": "WAW", "from": "EX", "to": "EX", "detail": "add = t2"},
+        {"kind": "WAR", "from": "IF", "to": "ID", "detail": "addi -> sw"},
+        {"kind": "WAR", "from": "IF", "to": "WB", "detail": "addi -> lw"}
+      ]
+    },
+    {
+      "cycle": 18,
+      "committed_pc": "0x0000000C",
+      "committed_class": "Load",
+      "fetch_pc": "0x0000001C",
+      "halted": false,
+      "faulted": false,
+      "stages": [
+        {"stage": "IF", "pc": "0x00000018", "disasm": "addi t0, t0, 4", "bubble": false, "speculative": false, "hazard": "WAR", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "ID", "pc": "0x00000014", "disasm": "sw   t2, 0(t0)", "bubble": false, "speculative": true, "hazard": "RAW", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "EX", "pc": "0x00000000", "disasm": "", "bubble": true, "speculative": false, "hazard": "RAW", "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "MEM", "pc": "0x00000010", "disasm": "add  t2, t1, t1", "bubble": false, "speculative": true, "hazard": "WAW", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "WB", "pc": "0x00000000", "disasm": "", "bubble": true, "speculative": false, "hazard": "LOAD", "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0}
+      ],
+      "hazards": [
+        {"kind": "RAW", "from": "EX", "to": "ID", "detail": "add -> sw"},
+        {"kind": "WAR", "from": "IF", "to": "ID", "detail": "addi -> sw"}
+      ]
+    },
+    {
+      "cycle": 19,
+      "committed_pc": null,
+      "committed_class": null,
+      "fetch_pc": "0x0000001C",
+      "halted": false,
+      "faulted": false,
+      "stages": [
+        {"stage": "IF", "pc": "0x00000018", "disasm": "addi t0, t0, 4", "bubble": false, "speculative": false, "hazard": "WAR", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "ID", "pc": "0x00000014", "disasm": "sw   t2, 0(t0)", "bubble": false, "speculative": true, "hazard": "RAW", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "EX", "pc": "0x00000000", "disasm": "", "bubble": true, "speculative": false, "hazard": "RAW", "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "MEM", "pc": "0x00000000", "disasm": "", "bubble": true, "speculative": false, "hazard": "RAW", "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "WB", "pc": "0x00000010", "disasm": "add  t2, t1, t1", "bubble": false, "speculative": true, "hazard": "WAW", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0}
+      ],
+      "hazards": [
+        {"kind": "RAW", "from": "MEM", "to": "ID", "detail": "add -> sw"},
+        {"kind": "WAR", "from": "IF", "to": "ID", "detail": "addi -> sw"}
+      ]
+    },
+    {
+      "cycle": 20,
+      "committed_pc": "0x00000010",
+      "committed_class": "ALU",
+      "fetch_pc": "0x00000020",
+      "halted": false,
+      "faulted": false,
+      "stages": [
+        {"stage": "IF", "pc": "0x0000001C", "disasm": "addi t5, t5, -1", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "ID", "pc": "0x00000018", "disasm": "addi t0, t0, 4", "bubble": false, "speculative": false, "hazard": "WAR", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "EX", "pc": "0x00000014", "disasm": "sw   t2, 0(t0)", "bubble": false, "speculative": true, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "MEM", "pc": "0x00000000", "disasm": "", "bubble": true, "speculative": false, "hazard": "RAW", "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "WB", "pc": "0x00000000", "disasm": "", "bubble": true, "speculative": false, "hazard": "RAW", "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0}
+      ],
+      "hazards": [
+        {"kind": "WAR", "from": "ID", "to": "EX", "detail": "addi -> sw"}
+      ]
+    },
+    {
+      "cycle": 21,
+      "committed_pc": null,
+      "committed_class": null,
+      "fetch_pc": "0x00000024",
+      "halted": false,
+      "faulted": false,
+      "stages": [
+        {"stage": "IF", "pc": "0x00000020", "disasm": "bne  t5, zero, -20", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "ID", "pc": "0x0000001C", "disasm": "addi t5, t5, -1", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "EX", "pc": "0x00000018", "disasm": "addi t0, t0, 4", "bubble": false, "speculative": false, "hazard": "WAW", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "MEM", "pc": "0x00000014", "disasm": "sw   t2, 0(t0)", "bubble": false, "speculative": true, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "WB", "pc": "0x00000000", "disasm": "", "bubble": true, "speculative": false, "hazard": "RAW", "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0}
+      ],
+      "hazards": [
+        {"kind": "WAW", "from": "EX", "to": "EX", "detail": "addi = t0"},
+        {"kind": "WAR", "from": "EX", "to": "MEM", "detail": "addi -> sw"}
+      ]
+    },
+    {
+      "cycle": 22,
+      "committed_pc": null,
+      "committed_class": null,
+      "fetch_pc": "0x00000010",
+      "halted": false,
+      "faulted": false,
+      "stages": [
+        {"stage": "IF", "pc": "0x0000000C", "disasm": "lw   t1, 0(t0)", "bubble": false, "speculative": true, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "ID", "pc": "0x00000020", "disasm": "bne  t5, zero, -20", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "EX", "pc": "0x0000001C", "disasm": "addi t5, t5, -1", "bubble": false, "speculative": false, "hazard": "WAW", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "MEM", "pc": "0x00000018", "disasm": "addi t0, t0, 4", "bubble": false, "speculative": false, "hazard": "WAR", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "WB", "pc": "0x00000014", "disasm": "sw   t2, 0(t0)", "bubble": false, "speculative": true, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0}
+      ],
+      "hazards": [
+        {"kind": "WAW", "from": "EX", "to": "EX", "detail": "addi = t5"},
+        {"kind": "WAR", "from": "MEM", "to": "WB", "detail": "addi -> sw"}
+      ]
+    },
+    {
+      "cycle": 23,
+      "committed_pc": "0x00000014",
+      "committed_class": "Store",
+      "fetch_pc": "0x00000014",
+      "halted": false,
+      "faulted": false,
+      "stages": [
+        {"stage": "IF", "pc": "0x00000010", "disasm": "add  t2, t1, t1", "bubble": false, "speculative": true, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "ID", "pc": "0x0000000C", "disasm": "lw   t1, 0(t0)", "bubble": false, "speculative": true, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "EX", "pc": "0x00000020", "disasm": "bne  t5, zero, -20", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "MEM", "pc": "0x0000001C", "disasm": "addi t5, t5, -1", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "WB", "pc": "0x00000018", "disasm": "addi t0, t0, 4", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0}
+      ],
+      "hazards": [
+        {"kind": "FWD", "from": "WB", "to": "ID", "detail": "WB:addi -> ID:lw (t0, WB->ID)"},
+        {"kind": "FWD", "from": "MEM", "to": "EX", "detail": "MEM:addi -> EX:bne (t5, EX->EX)"}
+      ]
+    },
+    {
+      "cycle": 24,
+      "committed_pc": "0x00000018",
+      "committed_class": "ALU",
+      "fetch_pc": "0x00000018",
+      "halted": false,
+      "faulted": false,
+      "stages": [
+        {"stage": "IF", "pc": "0x00000014", "disasm": "sw   t2, 0(t0)", "bubble": false, "speculative": true, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "ID", "pc": "0x00000010", "disasm": "add  t2, t1, t1", "bubble": false, "speculative": true, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "EX", "pc": "0x0000000C", "disasm": "lw   t1, 0(t0)", "bubble": false, "speculative": true, "hazard": "WAW", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "MEM", "pc": "0x00000020", "disasm": "bne  t5, zero, -20", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "WB", "pc": "0x0000001C", "disasm": "addi t5, t5, -1", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0}
+      ],
+      "hazards": [
+        {"kind": "WAW", "from": "EX", "to": "EX", "detail": "lw = t1"}
+      ]
+    },
+    {
+      "cycle": 25,
+      "committed_pc": "0x0000001C",
+      "committed_class": "ALU",
+      "fetch_pc": "0x00000018",
+      "halted": false,
+      "faulted": false,
+      "stages": [
+        {"stage": "IF", "pc": "0x00000014", "disasm": "sw   t2, 0(t0)", "bubble": false, "speculative": true, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "ID", "pc": "0x00000010", "disasm": "add  t2, t1, t1", "bubble": false, "speculative": true, "hazard": "LOAD", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "EX", "pc": "0x00000000", "disasm": "", "bubble": true, "speculative": false, "hazard": "LOAD", "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "MEM", "pc": "0x0000000C", "disasm": "lw   t1, 0(t0)", "bubble": false, "speculative": true, "hazard": "WAW", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "WB", "pc": "0x00000020", "disasm": "bne  t5, zero, -20", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0}
+      ],
+      "hazards": [
+        {"kind": "LOAD", "from": "EX", "to": "ID", "detail": "lw -> add"}
+      ]
+    },
+    {
+      "cycle": 26,
+      "committed_pc": "0x00000020",
+      "committed_class": "Branch",
+      "fetch_pc": "0x0000001C",
+      "halted": false,
+      "faulted": false,
+      "stages": [
+        {"stage": "IF", "pc": "0x00000018", "disasm": "addi t0, t0, 4", "bubble": false, "speculative": false, "hazard": "WAR", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "ID", "pc": "0x00000014", "disasm": "sw   t2, 0(t0)", "bubble": false, "speculative": true, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "EX", "pc": "0x00000010", "disasm": "add  t2, t1, t1", "bubble": false, "speculative": true, "hazard": "WAW", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "MEM", "pc": "0x00000000", "disasm": "", "bubble": true, "speculative": false, "hazard": "LOAD", "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "WB", "pc": "0x0000000C", "disasm": "lw   t1, 0(t0)", "bubble": false, "speculative": true, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0}
+      ],
+      "hazards": [
+        {"kind": "FWD", "from": "WB", "to": "EX", "detail": "WB:lw -> EX:add (t1, MEM->EX)"},
+        {"kind": "WAW", "from": "EX", "to": "EX", "detail": "add = t2"},
+        {"kind": "WAR", "from": "IF", "to": "ID", "detail": "addi -> sw"},
+        {"kind": "WAR", "from": "IF", "to": "WB", "detail": "addi -> lw"}
+      ]
+    },
+    {
+      "cycle": 27,
+      "committed_pc": "0x0000000C",
+      "committed_class": "Load",
+      "fetch_pc": "0x0000001C",
+      "halted": false,
+      "faulted": false,
+      "stages": [
+        {"stage": "IF", "pc": "0x00000018", "disasm": "addi t0, t0, 4", "bubble": false, "speculative": false, "hazard": "WAR", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "ID", "pc": "0x00000014", "disasm": "sw   t2, 0(t0)", "bubble": false, "speculative": true, "hazard": "RAW", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "EX", "pc": "0x00000000", "disasm": "", "bubble": true, "speculative": false, "hazard": "RAW", "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "MEM", "pc": "0x00000010", "disasm": "add  t2, t1, t1", "bubble": false, "speculative": true, "hazard": "WAW", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "WB", "pc": "0x00000000", "disasm": "", "bubble": true, "speculative": false, "hazard": "LOAD", "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0}
+      ],
+      "hazards": [
+        {"kind": "RAW", "from": "EX", "to": "ID", "detail": "add -> sw"},
+        {"kind": "WAR", "from": "IF", "to": "ID", "detail": "addi -> sw"}
+      ]
+    },
+    {
+      "cycle": 28,
+      "committed_pc": null,
+      "committed_class": null,
+      "fetch_pc": "0x0000001C",
+      "halted": false,
+      "faulted": false,
+      "stages": [
+        {"stage": "IF", "pc": "0x00000018", "disasm": "addi t0, t0, 4", "bubble": false, "speculative": false, "hazard": "WAR", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "ID", "pc": "0x00000014", "disasm": "sw   t2, 0(t0)", "bubble": false, "speculative": true, "hazard": "RAW", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "EX", "pc": "0x00000000", "disasm": "", "bubble": true, "speculative": false, "hazard": "RAW", "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "MEM", "pc": "0x00000000", "disasm": "", "bubble": true, "speculative": false, "hazard": "RAW", "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "WB", "pc": "0x00000010", "disasm": "add  t2, t1, t1", "bubble": false, "speculative": true, "hazard": "WAW", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0}
+      ],
+      "hazards": [
+        {"kind": "RAW", "from": "MEM", "to": "ID", "detail": "add -> sw"},
+        {"kind": "WAR", "from": "IF", "to": "ID", "detail": "addi -> sw"}
+      ]
+    },
+    {
+      "cycle": 29,
+      "committed_pc": "0x00000010",
+      "committed_class": "ALU",
+      "fetch_pc": "0x00000020",
+      "halted": false,
+      "faulted": false,
+      "stages": [
+        {"stage": "IF", "pc": "0x0000001C", "disasm": "addi t5, t5, -1", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "ID", "pc": "0x00000018", "disasm": "addi t0, t0, 4", "bubble": false, "speculative": false, "hazard": "WAR", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "EX", "pc": "0x00000014", "disasm": "sw   t2, 0(t0)", "bubble": false, "speculative": true, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "MEM", "pc": "0x00000000", "disasm": "", "bubble": true, "speculative": false, "hazard": "RAW", "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "WB", "pc": "0x00000000", "disasm": "", "bubble": true, "speculative": false, "hazard": "RAW", "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0}
+      ],
+      "hazards": [
+        {"kind": "WAR", "from": "ID", "to": "EX", "detail": "addi -> sw"}
+      ]
+    },
+    {
+      "cycle": 30,
+      "committed_pc": null,
+      "committed_class": null,
+      "fetch_pc": "0x00000024",
+      "halted": false,
+      "faulted": false,
+      "stages": [
+        {"stage": "IF", "pc": "0x00000020", "disasm": "bne  t5, zero, -20", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "ID", "pc": "0x0000001C", "disasm": "addi t5, t5, -1", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "EX", "pc": "0x00000018", "disasm": "addi t0, t0, 4", "bubble": false, "speculative": false, "hazard": "WAW", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "MEM", "pc": "0x00000014", "disasm": "sw   t2, 0(t0)", "bubble": false, "speculative": true, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "WB", "pc": "0x00000000", "disasm": "", "bubble": true, "speculative": false, "hazard": "RAW", "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0}
+      ],
+      "hazards": [
+        {"kind": "WAW", "from": "EX", "to": "EX", "detail": "addi = t0"},
+        {"kind": "WAR", "from": "EX", "to": "MEM", "detail": "addi -> sw"}
+      ]
+    },
+    {
+      "cycle": 31,
+      "committed_pc": null,
+      "committed_class": null,
+      "fetch_pc": "0x00000010",
+      "halted": false,
+      "faulted": false,
+      "stages": [
+        {"stage": "IF", "pc": "0x0000000C", "disasm": "lw   t1, 0(t0)", "bubble": false, "speculative": true, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "ID", "pc": "0x00000020", "disasm": "bne  t5, zero, -20", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "EX", "pc": "0x0000001C", "disasm": "addi t5, t5, -1", "bubble": false, "speculative": false, "hazard": "WAW", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "MEM", "pc": "0x00000018", "disasm": "addi t0, t0, 4", "bubble": false, "speculative": false, "hazard": "WAR", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "WB", "pc": "0x00000014", "disasm": "sw   t2, 0(t0)", "bubble": false, "speculative": true, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0}
+      ],
+      "hazards": [
+        {"kind": "WAW", "from": "EX", "to": "EX", "detail": "addi = t5"},
+        {"kind": "WAR", "from": "MEM", "to": "WB", "detail": "addi -> sw"}
+      ]
+    },
+    {
+      "cycle": 32,
+      "committed_pc": "0x00000014",
+      "committed_class": "Store",
+      "fetch_pc": "0x00000014",
+      "halted": false,
+      "faulted": false,
+      "stages": [
+        {"stage": "IF", "pc": "0x00000010", "disasm": "add  t2, t1, t1", "bubble": false, "speculative": true, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "ID", "pc": "0x0000000C", "disasm": "lw   t1, 0(t0)", "bubble": false, "speculative": true, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "EX", "pc": "0x00000020", "disasm": "bne  t5, zero, -20", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "MEM", "pc": "0x0000001C", "disasm": "addi t5, t5, -1", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "WB", "pc": "0x00000018", "disasm": "addi t0, t0, 4", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0}
+      ],
+      "hazards": [
+        {"kind": "FWD", "from": "WB", "to": "ID", "detail": "WB:addi -> ID:lw (t0, WB->ID)"},
+        {"kind": "FWD", "from": "MEM", "to": "EX", "detail": "MEM:addi -> EX:bne (t5, EX->EX)"}
+      ]
+    },
+    {
+      "cycle": 33,
+      "committed_pc": "0x00000018",
+      "committed_class": "ALU",
+      "fetch_pc": "0x00000018",
+      "halted": false,
+      "faulted": false,
+      "stages": [
+        {"stage": "IF", "pc": "0x00000014", "disasm": "sw   t2, 0(t0)", "bubble": false, "speculative": true, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "ID", "pc": "0x00000010", "disasm": "add  t2, t1, t1", "bubble": false, "speculative": true, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "EX", "pc": "0x0000000C", "disasm": "lw   t1, 0(t0)", "bubble": false, "speculative": true, "hazard": "WAW", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "MEM", "pc": "0x00000020", "disasm": "bne  t5, zero, -20", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "WB", "pc": "0x0000001C", "disasm": "addi t5, t5, -1", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0}
+      ],
+      "hazards": [
+        {"kind": "WAW", "from": "EX", "to": "EX", "detail": "lw = t1"}
+      ]
+    },
+    {
+      "cycle": 34,
+      "committed_pc": "0x0000001C",
+      "committed_class": "ALU",
+      "fetch_pc": "0x00000018",
+      "halted": false,
+      "faulted": false,
+      "stages": [
+        {"stage": "IF", "pc": "0x00000014", "disasm": "sw   t2, 0(t0)", "bubble": false, "speculative": true, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "ID", "pc": "0x00000010", "disasm": "add  t2, t1, t1", "bubble": false, "speculative": true, "hazard": "LOAD", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "EX", "pc": "0x00000000", "disasm": "", "bubble": true, "speculative": false, "hazard": "LOAD", "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "MEM", "pc": "0x0000000C", "disasm": "lw   t1, 0(t0)", "bubble": false, "speculative": true, "hazard": "WAW", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "WB", "pc": "0x00000020", "disasm": "bne  t5, zero, -20", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0}
+      ],
+      "hazards": [
+        {"kind": "LOAD", "from": "EX", "to": "ID", "detail": "lw -> add"}
+      ]
+    },
+    {
+      "cycle": 35,
+      "committed_pc": "0x00000020",
+      "committed_class": "Branch",
+      "fetch_pc": "0x0000001C",
+      "halted": false,
+      "faulted": false,
+      "stages": [
+        {"stage": "IF", "pc": "0x00000018", "disasm": "addi t0, t0, 4", "bubble": false, "speculative": false, "hazard": "WAR", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "ID", "pc": "0x00000014", "disasm": "sw   t2, 0(t0)", "bubble": false, "speculative": true, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "EX", "pc": "0x00000010", "disasm": "add  t2, t1, t1", "bubble": false, "speculative": true, "hazard": "WAW", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "MEM", "pc": "0x00000000", "disasm": "", "bubble": true, "speculative": false, "hazard": "LOAD", "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "WB", "pc": "0x0000000C", "disasm": "lw   t1, 0(t0)", "bubble": false, "speculative": true, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0}
+      ],
+      "hazards": [
+        {"kind": "FWD", "from": "WB", "to": "EX", "detail": "WB:lw -> EX:add (t1, MEM->EX)"},
+        {"kind": "WAW", "from": "EX", "to": "EX", "detail": "add = t2"},
+        {"kind": "WAR", "from": "IF", "to": "ID", "detail": "addi -> sw"},
+        {"kind": "WAR", "from": "IF", "to": "WB", "detail": "addi -> lw"}
+      ]
+    },
+    {
+      "cycle": 36,
+      "committed_pc": "0x0000000C",
+      "committed_class": "Load",
+      "fetch_pc": "0x0000001C",
+      "halted": false,
+      "faulted": false,
+      "stages": [
+        {"stage": "IF", "pc": "0x00000018", "disasm": "addi t0, t0, 4", "bubble": false, "speculative": false, "hazard": "WAR", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "ID", "pc": "0x00000014", "disasm": "sw   t2, 0(t0)", "bubble": false, "speculative": true, "hazard": "RAW", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "EX", "pc": "0x00000000", "disasm": "", "bubble": true, "speculative": false, "hazard": "RAW", "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "MEM", "pc": "0x00000010", "disasm": "add  t2, t1, t1", "bubble": false, "speculative": true, "hazard": "WAW", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "WB", "pc": "0x00000000", "disasm": "", "bubble": true, "speculative": false, "hazard": "LOAD", "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0}
+      ],
+      "hazards": [
+        {"kind": "RAW", "from": "EX", "to": "ID", "detail": "add -> sw"},
+        {"kind": "WAR", "from": "IF", "to": "ID", "detail": "addi -> sw"}
+      ]
+    },
+    {
+      "cycle": 37,
+      "committed_pc": null,
+      "committed_class": null,
+      "fetch_pc": "0x0000001C",
+      "halted": false,
+      "faulted": false,
+      "stages": [
+        {"stage": "IF", "pc": "0x00000018", "disasm": "addi t0, t0, 4", "bubble": false, "speculative": false, "hazard": "WAR", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "ID", "pc": "0x00000014", "disasm": "sw   t2, 0(t0)", "bubble": false, "speculative": true, "hazard": "RAW", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "EX", "pc": "0x00000000", "disasm": "", "bubble": true, "speculative": false, "hazard": "RAW", "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "MEM", "pc": "0x00000000", "disasm": "", "bubble": true, "speculative": false, "hazard": "RAW", "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "WB", "pc": "0x00000010", "disasm": "add  t2, t1, t1", "bubble": false, "speculative": true, "hazard": "WAW", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0}
+      ],
+      "hazards": [
+        {"kind": "RAW", "from": "MEM", "to": "ID", "detail": "add -> sw"},
+        {"kind": "WAR", "from": "IF", "to": "ID", "detail": "addi -> sw"}
+      ]
+    },
+    {
+      "cycle": 38,
+      "committed_pc": "0x00000010",
+      "committed_class": "ALU",
+      "fetch_pc": "0x00000020",
+      "halted": false,
+      "faulted": false,
+      "stages": [
+        {"stage": "IF", "pc": "0x0000001C", "disasm": "addi t5, t5, -1", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "ID", "pc": "0x00000018", "disasm": "addi t0, t0, 4", "bubble": false, "speculative": false, "hazard": "WAR", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "EX", "pc": "0x00000014", "disasm": "sw   t2, 0(t0)", "bubble": false, "speculative": true, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "MEM", "pc": "0x00000000", "disasm": "", "bubble": true, "speculative": false, "hazard": "RAW", "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "WB", "pc": "0x00000000", "disasm": "", "bubble": true, "speculative": false, "hazard": "RAW", "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0}
+      ],
+      "hazards": [
+        {"kind": "WAR", "from": "ID", "to": "EX", "detail": "addi -> sw"}
+      ]
+    },
+    {
+      "cycle": 39,
+      "committed_pc": null,
+      "committed_class": null,
+      "fetch_pc": "0x00000024",
+      "halted": false,
+      "faulted": false,
+      "stages": [
+        {"stage": "IF", "pc": "0x00000020", "disasm": "bne  t5, zero, -20", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "ID", "pc": "0x0000001C", "disasm": "addi t5, t5, -1", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "EX", "pc": "0x00000018", "disasm": "addi t0, t0, 4", "bubble": false, "speculative": false, "hazard": "WAW", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "MEM", "pc": "0x00000014", "disasm": "sw   t2, 0(t0)", "bubble": false, "speculative": true, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "WB", "pc": "0x00000000", "disasm": "", "bubble": true, "speculative": false, "hazard": "RAW", "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0}
+      ],
+      "hazards": [
+        {"kind": "WAW", "from": "EX", "to": "EX", "detail": "addi = t0"},
+        {"kind": "WAR", "from": "EX", "to": "MEM", "detail": "addi -> sw"}
+      ]
+    },
+    {
+      "cycle": 40,
+      "committed_pc": null,
+      "committed_class": null,
+      "fetch_pc": "0x00000010",
+      "halted": false,
+      "faulted": false,
+      "stages": [
+        {"stage": "IF", "pc": "0x0000000C", "disasm": "lw   t1, 0(t0)", "bubble": false, "speculative": true, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "ID", "pc": "0x00000020", "disasm": "bne  t5, zero, -20", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "EX", "pc": "0x0000001C", "disasm": "addi t5, t5, -1", "bubble": false, "speculative": false, "hazard": "WAW", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "MEM", "pc": "0x00000018", "disasm": "addi t0, t0, 4", "bubble": false, "speculative": false, "hazard": "WAR", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "WB", "pc": "0x00000014", "disasm": "sw   t2, 0(t0)", "bubble": false, "speculative": true, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0}
+      ],
+      "hazards": [
+        {"kind": "WAW", "from": "EX", "to": "EX", "detail": "addi = t5"},
+        {"kind": "WAR", "from": "MEM", "to": "WB", "detail": "addi -> sw"}
+      ]
+    },
+    {
+      "cycle": 41,
+      "committed_pc": "0x00000014",
+      "committed_class": "Store",
+      "fetch_pc": "0x00000014",
+      "halted": false,
+      "faulted": false,
+      "stages": [
+        {"stage": "IF", "pc": "0x00000010", "disasm": "add  t2, t1, t1", "bubble": false, "speculative": true, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "ID", "pc": "0x0000000C", "disasm": "lw   t1, 0(t0)", "bubble": false, "speculative": true, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "EX", "pc": "0x00000020", "disasm": "bne  t5, zero, -20", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "MEM", "pc": "0x0000001C", "disasm": "addi t5, t5, -1", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "WB", "pc": "0x00000018", "disasm": "addi t0, t0, 4", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0}
+      ],
+      "hazards": [
+        {"kind": "FWD", "from": "WB", "to": "ID", "detail": "WB:addi -> ID:lw (t0, WB->ID)"},
+        {"kind": "FWD", "from": "MEM", "to": "EX", "detail": "MEM:addi -> EX:bne (t5, EX->EX)"}
+      ]
+    },
+    {
+      "cycle": 42,
+      "committed_pc": "0x00000018",
+      "committed_class": "ALU",
+      "fetch_pc": "0x00000018",
+      "halted": false,
+      "faulted": false,
+      "stages": [
+        {"stage": "IF", "pc": "0x00000014", "disasm": "sw   t2, 0(t0)", "bubble": false, "speculative": true, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "ID", "pc": "0x00000010", "disasm": "add  t2, t1, t1", "bubble": false, "speculative": true, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "EX", "pc": "0x0000000C", "disasm": "lw   t1, 0(t0)", "bubble": false, "speculative": true, "hazard": "WAW", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "MEM", "pc": "0x00000020", "disasm": "bne  t5, zero, -20", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "WB", "pc": "0x0000001C", "disasm": "addi t5, t5, -1", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0}
+      ],
+      "hazards": [
+        {"kind": "WAW", "from": "EX", "to": "EX", "detail": "lw = t1"}
+      ]
+    },
+    {
+      "cycle": 43,
+      "committed_pc": "0x0000001C",
+      "committed_class": "ALU",
+      "fetch_pc": "0x00000018",
+      "halted": false,
+      "faulted": false,
+      "stages": [
+        {"stage": "IF", "pc": "0x00000014", "disasm": "sw   t2, 0(t0)", "bubble": false, "speculative": true, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "ID", "pc": "0x00000010", "disasm": "add  t2, t1, t1", "bubble": false, "speculative": true, "hazard": "LOAD", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "EX", "pc": "0x00000000", "disasm": "", "bubble": true, "speculative": false, "hazard": "LOAD", "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "MEM", "pc": "0x0000000C", "disasm": "lw   t1, 0(t0)", "bubble": false, "speculative": true, "hazard": "WAW", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "WB", "pc": "0x00000020", "disasm": "bne  t5, zero, -20", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0}
+      ],
+      "hazards": [
+        {"kind": "LOAD", "from": "EX", "to": "ID", "detail": "lw -> add"}
+      ]
+    },
+    {
+      "cycle": 44,
+      "committed_pc": "0x00000020",
+      "committed_class": "Branch",
+      "fetch_pc": "0x0000001C",
+      "halted": false,
+      "faulted": false,
+      "stages": [
+        {"stage": "IF", "pc": "0x00000018", "disasm": "addi t0, t0, 4", "bubble": false, "speculative": false, "hazard": "WAR", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "ID", "pc": "0x00000014", "disasm": "sw   t2, 0(t0)", "bubble": false, "speculative": true, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "EX", "pc": "0x00000010", "disasm": "add  t2, t1, t1", "bubble": false, "speculative": true, "hazard": "WAW", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "MEM", "pc": "0x00000000", "disasm": "", "bubble": true, "speculative": false, "hazard": "LOAD", "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "WB", "pc": "0x0000000C", "disasm": "lw   t1, 0(t0)", "bubble": false, "speculative": true, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0}
+      ],
+      "hazards": [
+        {"kind": "FWD", "from": "WB", "to": "EX", "detail": "WB:lw -> EX:add (t1, MEM->EX)"},
+        {"kind": "WAW", "from": "EX", "to": "EX", "detail": "add = t2"},
+        {"kind": "WAR", "from": "IF", "to": "ID", "detail": "addi -> sw"},
+        {"kind": "WAR", "from": "IF", "to": "WB", "detail": "addi -> lw"}
+      ]
+    },
+    {
+      "cycle": 45,
+      "committed_pc": "0x0000000C",
+      "committed_class": "Load",
+      "fetch_pc": "0x0000001C",
+      "halted": false,
+      "faulted": false,
+      "stages": [
+        {"stage": "IF", "pc": "0x00000018", "disasm": "addi t0, t0, 4", "bubble": false, "speculative": false, "hazard": "WAR", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "ID", "pc": "0x00000014", "disasm": "sw   t2, 0(t0)", "bubble": false, "speculative": true, "hazard": "RAW", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "EX", "pc": "0x00000000", "disasm": "", "bubble": true, "speculative": false, "hazard": "RAW", "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "MEM", "pc": "0x00000010", "disasm": "add  t2, t1, t1", "bubble": false, "speculative": true, "hazard": "WAW", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "WB", "pc": "0x00000000", "disasm": "", "bubble": true, "speculative": false, "hazard": "LOAD", "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0}
+      ],
+      "hazards": [
+        {"kind": "RAW", "from": "EX", "to": "ID", "detail": "add -> sw"},
+        {"kind": "WAR", "from": "IF", "to": "ID", "detail": "addi -> sw"}
+      ]
+    },
+    {
+      "cycle": 46,
+      "committed_pc": null,
+      "committed_class": null,
+      "fetch_pc": "0x0000001C",
+      "halted": false,
+      "faulted": false,
+      "stages": [
+        {"stage": "IF", "pc": "0x00000018", "disasm": "addi t0, t0, 4", "bubble": false, "speculative": false, "hazard": "WAR", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "ID", "pc": "0x00000014", "disasm": "sw   t2, 0(t0)", "bubble": false, "speculative": true, "hazard": "RAW", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "EX", "pc": "0x00000000", "disasm": "", "bubble": true, "speculative": false, "hazard": "RAW", "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "MEM", "pc": "0x00000000", "disasm": "", "bubble": true, "speculative": false, "hazard": "RAW", "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "WB", "pc": "0x00000010", "disasm": "add  t2, t1, t1", "bubble": false, "speculative": true, "hazard": "WAW", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0}
+      ],
+      "hazards": [
+        {"kind": "RAW", "from": "MEM", "to": "ID", "detail": "add -> sw"},
+        {"kind": "WAR", "from": "IF", "to": "ID", "detail": "addi -> sw"}
+      ]
+    },
+    {
+      "cycle": 47,
+      "committed_pc": "0x00000010",
+      "committed_class": "ALU",
+      "fetch_pc": "0x00000020",
+      "halted": false,
+      "faulted": false,
+      "stages": [
+        {"stage": "IF", "pc": "0x0000001C", "disasm": "addi t5, t5, -1", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "ID", "pc": "0x00000018", "disasm": "addi t0, t0, 4", "bubble": false, "speculative": false, "hazard": "WAR", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "EX", "pc": "0x00000014", "disasm": "sw   t2, 0(t0)", "bubble": false, "speculative": true, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "MEM", "pc": "0x00000000", "disasm": "", "bubble": true, "speculative": false, "hazard": "RAW", "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "WB", "pc": "0x00000000", "disasm": "", "bubble": true, "speculative": false, "hazard": "RAW", "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0}
+      ],
+      "hazards": [
+        {"kind": "WAR", "from": "ID", "to": "EX", "detail": "addi -> sw"}
+      ]
+    },
+    {
+      "cycle": 48,
+      "committed_pc": null,
+      "committed_class": null,
+      "fetch_pc": "0x00000024",
+      "halted": false,
+      "faulted": false,
+      "stages": [
+        {"stage": "IF", "pc": "0x00000020", "disasm": "bne  t5, zero, -20", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "ID", "pc": "0x0000001C", "disasm": "addi t5, t5, -1", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "EX", "pc": "0x00000018", "disasm": "addi t0, t0, 4", "bubble": false, "speculative": false, "hazard": "WAW", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "MEM", "pc": "0x00000014", "disasm": "sw   t2, 0(t0)", "bubble": false, "speculative": true, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "WB", "pc": "0x00000000", "disasm": "", "bubble": true, "speculative": false, "hazard": "RAW", "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0}
+      ],
+      "hazards": [
+        {"kind": "WAW", "from": "EX", "to": "EX", "detail": "addi = t0"},
+        {"kind": "WAR", "from": "EX", "to": "MEM", "detail": "addi -> sw"}
+      ]
+    },
+    {
+      "cycle": 49,
+      "committed_pc": null,
+      "committed_class": null,
+      "fetch_pc": "0x00000010",
+      "halted": false,
+      "faulted": false,
+      "stages": [
+        {"stage": "IF", "pc": "0x0000000C", "disasm": "lw   t1, 0(t0)", "bubble": false, "speculative": true, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "ID", "pc": "0x00000020", "disasm": "bne  t5, zero, -20", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "EX", "pc": "0x0000001C", "disasm": "addi t5, t5, -1", "bubble": false, "speculative": false, "hazard": "WAW", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "MEM", "pc": "0x00000018", "disasm": "addi t0, t0, 4", "bubble": false, "speculative": false, "hazard": "WAR", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "WB", "pc": "0x00000014", "disasm": "sw   t2, 0(t0)", "bubble": false, "speculative": true, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0}
+      ],
+      "hazards": [
+        {"kind": "WAW", "from": "EX", "to": "EX", "detail": "addi = t5"},
+        {"kind": "WAR", "from": "MEM", "to": "WB", "detail": "addi -> sw"}
+      ]
+    },
+    {
+      "cycle": 50,
+      "committed_pc": "0x00000014",
+      "committed_class": "Store",
+      "fetch_pc": "0x00000024",
+      "halted": false,
+      "faulted": false,
+      "stages": [
+        {"stage": "IF", "pc": "0x00000010", "disasm": "add  t2, t1, t1", "bubble": true, "speculative": true, "hazard": "CTRL", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "ID", "pc": "0x0000000C", "disasm": "lw   t1, 0(t0)", "bubble": true, "speculative": true, "hazard": "CTRL", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "EX", "pc": "0x00000020", "disasm": "bne  t5, zero, -20", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "MEM", "pc": "0x0000001C", "disasm": "addi t5, t5, -1", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "WB", "pc": "0x00000018", "disasm": "addi t0, t0, 4", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0}
+      ],
+      "hazards": [
+        {"kind": "CTRL", "from": "EX", "to": "IF", "detail": "bne flush"},
+        {"kind": "CTRL", "from": "EX", "to": "ID", "detail": "bne flush"},
+        {"kind": "FWD", "from": "MEM", "to": "EX", "detail": "MEM:addi -> EX:bne (t5, EX->EX)"}
+      ]
+    },
+    {
+      "cycle": 51,
+      "committed_pc": "0x00000018",
+      "committed_class": "ALU",
+      "fetch_pc": "0x00000028",
+      "halted": false,
+      "faulted": false,
+      "stages": [
+        {"stage": "IF", "pc": "0x00000024", "disasm": "addi a0, zero, 0", "bubble": false, "speculative": true, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "ID", "pc": "0x00000010", "disasm": "add  t2, t1, t1", "bubble": true, "speculative": true, "hazard": "CTRL", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "EX", "pc": "0x0000000C", "disasm": "lw   t1, 0(t0)", "bubble": true, "speculative": true, "hazard": "CTRL", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "MEM", "pc": "0x00000020", "disasm": "bne  t5, zero, -20", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "WB", "pc": "0x0000001C", "disasm": "addi t5, t5, -1", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0}
+      ],
+      "hazards": [
+
+      ]
+    },
+    {
+      "cycle": 52,
+      "committed_pc": "0x0000001C",
+      "committed_class": "ALU",
+      "fetch_pc": "0x0000002C",
+      "halted": false,
+      "faulted": false,
+      "stages": [
+        {"stage": "IF", "pc": "0x00000028", "disasm": "addi a7, zero, 93", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "ID", "pc": "0x00000024", "disasm": "addi a0, zero, 0", "bubble": false, "speculative": true, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "EX", "pc": "0x00000010", "disasm": "add  t2, t1, t1", "bubble": true, "speculative": true, "hazard": "CTRL", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "MEM", "pc": "0x0000000C", "disasm": "lw   t1, 0(t0)", "bubble": true, "speculative": true, "hazard": "CTRL", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "WB", "pc": "0x00000020", "disasm": "bne  t5, zero, -20", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0}
+      ],
+      "hazards": [
+
+      ]
+    },
+    {
+      "cycle": 53,
+      "committed_pc": "0x00000020",
+      "committed_class": "Branch",
+      "fetch_pc": "0x00000030",
+      "halted": false,
+      "faulted": false,
+      "stages": [
+        {"stage": "IF", "pc": "0x0000002C", "disasm": "ecall", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "ID", "pc": "0x00000028", "disasm": "addi a7, zero, 93", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "EX", "pc": "0x00000024", "disasm": "addi a0, zero, 0", "bubble": false, "speculative": true, "hazard": "WAW", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "MEM", "pc": "0x00000010", "disasm": "add  t2, t1, t1", "bubble": true, "speculative": true, "hazard": "CTRL", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "WB", "pc": "0x0000000C", "disasm": "lw   t1, 0(t0)", "bubble": true, "speculative": true, "hazard": "CTRL", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0}
+      ],
+      "hazards": [
+        {"kind": "WAW", "from": "EX", "to": "EX", "detail": "addi = a0"}
+      ]
+    },
+    {
+      "cycle": 54,
+      "committed_pc": null,
+      "committed_class": null,
+      "fetch_pc": "0x00000030",
+      "halted": false,
+      "faulted": false,
+      "stages": [
+        {"stage": "IF", "pc": null, "disasm": "", "bubble": true, "speculative": false, "hazard": null, "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "ID", "pc": "0x0000002C", "disasm": "ecall", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "EX", "pc": "0x00000028", "disasm": "addi a7, zero, 93", "bubble": false, "speculative": false, "hazard": "WAW", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "MEM", "pc": "0x00000024", "disasm": "addi a0, zero, 0", "bubble": false, "speculative": true, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "WB", "pc": "0x00000010", "disasm": "add  t2, t1, t1", "bubble": true, "speculative": true, "hazard": "CTRL", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0}
+      ],
+      "hazards": [
+        {"kind": "WAW", "from": "EX", "to": "EX", "detail": "addi = a7"}
+      ]
+    },
+    {
+      "cycle": 55,
+      "committed_pc": null,
+      "committed_class": null,
+      "fetch_pc": "0x00000030",
+      "halted": false,
+      "faulted": false,
+      "stages": [
+        {"stage": "IF", "pc": null, "disasm": "", "bubble": true, "speculative": false, "hazard": null, "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "ID", "pc": "0x0000002C", "disasm": "ecall", "bubble": false, "speculative": false, "hazard": "RAW", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "EX", "pc": "0x00000000", "disasm": "", "bubble": true, "speculative": false, "hazard": "RAW", "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "MEM", "pc": "0x00000028", "disasm": "addi a7, zero, 93", "bubble": false, "speculative": false, "hazard": "WAW", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "WB", "pc": "0x00000024", "disasm": "addi a0, zero, 0", "bubble": false, "speculative": true, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0}
+      ],
+      "hazards": [
+        {"kind": "RAW", "from": "MEM", "to": "ID", "detail": "addi -> ecall"},
+        {"kind": "FWD", "from": "WB", "to": "ID", "detail": "WB:addi -> ID:ecall (a0, WB->ID)"}
+      ]
+    },
+    {
+      "cycle": 56,
+      "committed_pc": "0x00000024",
+      "committed_class": "ALU",
+      "fetch_pc": "0x00000030",
+      "halted": false,
+      "faulted": false,
+      "stages": [
+        {"stage": "IF", "pc": null, "disasm": "", "bubble": true, "speculative": false, "hazard": null, "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "ID", "pc": "0x0000002C", "disasm": "ecall", "bubble": false, "speculative": false, "hazard": "RAW", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "EX", "pc": "0x00000000", "disasm": "", "bubble": true, "speculative": false, "hazard": "RAW", "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "MEM", "pc": "0x00000000", "disasm": "", "bubble": true, "speculative": false, "hazard": "RAW", "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "WB", "pc": "0x00000028", "disasm": "addi a7, zero, 93", "bubble": false, "speculative": false, "hazard": "WAW", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0}
+      ],
+      "hazards": [
+        {"kind": "RAW", "from": "WB", "to": "ID", "detail": "addi -> ecall"},
+        {"kind": "FWD", "from": "WB", "to": "ID", "detail": "WB:addi -> ID:ecall (a7, WB->ID)"}
+      ]
+    },
+    {
+      "cycle": 57,
+      "committed_pc": "0x00000028",
+      "committed_class": "ALU",
+      "fetch_pc": "0x00000030",
+      "halted": false,
+      "faulted": false,
+      "stages": [
+        {"stage": "IF", "pc": null, "disasm": "", "bubble": true, "speculative": false, "hazard": null, "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "ID", "pc": "0x0000002C", "disasm": "ecall", "bubble": false, "speculative": false, "hazard": "RAW", "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "EX", "pc": "0x00000000", "disasm": "", "bubble": true, "speculative": false, "hazard": "RAW", "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "MEM", "pc": "0x00000000", "disasm": "", "bubble": true, "speculative": false, "hazard": "RAW", "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "WB", "pc": "0x00000000", "disasm": "", "bubble": true, "speculative": false, "hazard": "RAW", "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0}
+      ],
+      "hazards": [
+        {"kind": "RAW", "from": "WB", "to": "ID", "detail": "addi -> ecall"}
+      ]
+    },
+    {
+      "cycle": 58,
+      "committed_pc": null,
+      "committed_class": null,
+      "fetch_pc": "0x00000030",
+      "halted": false,
+      "faulted": false,
+      "stages": [
+        {"stage": "IF", "pc": null, "disasm": "", "bubble": true, "speculative": false, "hazard": null, "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "ID", "pc": null, "disasm": "", "bubble": true, "speculative": false, "hazard": null, "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "EX", "pc": "0x0000002C", "disasm": "ecall", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "MEM", "pc": "0x00000000", "disasm": "", "bubble": true, "speculative": false, "hazard": "RAW", "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "WB", "pc": "0x00000000", "disasm": "", "bubble": true, "speculative": false, "hazard": "RAW", "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0}
+      ],
+      "hazards": [
+
+      ]
+    },
+    {
+      "cycle": 59,
+      "committed_pc": null,
+      "committed_class": null,
+      "fetch_pc": "0x00000030",
+      "halted": false,
+      "faulted": false,
+      "stages": [
+        {"stage": "IF", "pc": null, "disasm": "", "bubble": true, "speculative": false, "hazard": null, "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "ID", "pc": null, "disasm": "", "bubble": true, "speculative": false, "hazard": null, "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "EX", "pc": null, "disasm": "", "bubble": true, "speculative": false, "hazard": null, "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "MEM", "pc": "0x0000002C", "disasm": "ecall", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "WB", "pc": "0x00000000", "disasm": "", "bubble": true, "speculative": false, "hazard": "RAW", "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0}
+      ],
+      "hazards": [
+
+      ]
+    },
+    {
+      "cycle": 60,
+      "committed_pc": null,
+      "committed_class": null,
+      "fetch_pc": "0x00000030",
+      "halted": false,
+      "faulted": false,
+      "stages": [
+        {"stage": "IF", "pc": null, "disasm": "", "bubble": true, "speculative": false, "hazard": null, "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "ID", "pc": null, "disasm": "", "bubble": true, "speculative": false, "hazard": null, "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "EX", "pc": null, "disasm": "", "bubble": true, "speculative": false, "hazard": null, "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "MEM", "pc": null, "disasm": "", "bubble": true, "speculative": false, "hazard": null, "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "WB", "pc": "0x0000002C", "disasm": "ecall", "bubble": false, "speculative": false, "hazard": null, "fu_cycles_left": 1, "if_stall_cycles": 0, "mem_stall_cycles": 0}
+      ],
+      "hazards": [
+
+      ]
+    },
+    {
+      "cycle": 61,
+      "committed_pc": "0x0000002C",
+      "committed_class": "System",
+      "fetch_pc": "0x00000030",
+      "halted": true,
+      "faulted": false,
+      "stages": [
+        {"stage": "IF", "pc": null, "disasm": "", "bubble": true, "speculative": false, "hazard": null, "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "ID", "pc": null, "disasm": "", "bubble": true, "speculative": false, "hazard": null, "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "EX", "pc": null, "disasm": "", "bubble": true, "speculative": false, "hazard": null, "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "MEM", "pc": null, "disasm": "", "bubble": true, "speculative": false, "hazard": null, "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0},
+        {"stage": "WB", "pc": null, "disasm": "", "bubble": true, "speculative": false, "hazard": null, "fu_cycles_left": 0, "if_stall_cycles": 0, "mem_stall_cycles": 0}
+      ],
+      "hazards": [
+
+      ]
+    }
+  ]
+}
