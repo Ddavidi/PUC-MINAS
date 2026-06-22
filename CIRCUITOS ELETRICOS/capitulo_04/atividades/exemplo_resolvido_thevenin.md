@@ -55,3 +55,7 @@ $$ V_C = 30 \, V $$
 ---
 ### O Circuito Equivalente Final
 Todo aquele circuito monstruoso original pode ser substituído por uma simples fonte de **$30V$** em série com um resistor de **$4 \, \Omega$**. É esse "combo" simplificado que você usará quando formos calcular as descargas de capacitores no Capítulo 7!
+
+**Esquema do Circuito Equivalente de Thevenin:**
+
+![Circuito Equivalente Final](../../_base_dados_ia/imagens_geradas/thevenin_final.png)
