@@ -62,7 +62,8 @@ $$ v(t) = 18 e^{-\frac{t}{6}} \text{ V} $$
 Veja como a Receita de Bolo mudaria:
 1. **Passo 1 ($v(0)$):** Para $t < 0$ a chave estava aberta. A fonte de 24V não estava conectada em nada. O capacitor estava só com o resistor de $12 \, \Omega$, totalmente descarregado. Logo, $v(0) = 0V$.
 2. **Passo 2 ($v(\infty)$):** Para $t \to \infty$ a chave fechou. O capacitor está conectado na fonte, ele vira um **Circuito Aberto** (fio quebrado). É exatamente a mesma conta do nosso "Passo 1" original lá em cima: Usamos o divisor de tensão e achamos $v(\infty) = 18V$. Ele carregou!
-3. **Passo 3 ($\tau$):** Agora que a chave está fechada, para calcular o Thevenin visto pelo capacitor nós precisamos **zerar a fonte de 24V** (ela vira um fio liso). Quando ela vira um fio, o resistor de $4 \, \Omega$ fica em **paralelo** com o resistor de $12 \, \Omega$ em relação aos terminais do capacitor!
+3. **Passo 3 ($\tau$):** Aqui está o grande pulo do gato! A regra é **SEMPRE** olhar a partir dos buracos do capacitor para achar o $R_{eq}$, isso nunca muda. A diferença é que agora, para $t > 0$, a chave está **fechada**. Ou seja, o resistor de $4 \, \Omega$ e a fonte de 24V fazem parte do circuito (no exemplo original, eles tinham sido "amputados" pela chave aberta, lembra?).
+   Para calcular o Thevenin visto pelo capacitor nós precisamos **zerar a fonte de 24V** (ela vira um fio liso). Quando ela vira um fio, o resistor de $4 \, \Omega$ fica com um pé no teto e o outro no chão, assim como o resistor de $12 \, \Omega$. Portanto, eles estão em **paralelo** em relação aos terminais do capacitor!
 
 ![Achando o Req com a chave fechada](../../_base_dados_ia/imagens_geradas/cap7_exemplo_rc_extra_req.png)
 
