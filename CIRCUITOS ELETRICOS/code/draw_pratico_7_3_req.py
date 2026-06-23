@@ -10,17 +10,6 @@ with schemdraw.Drawing(file=os.path.join(img_dir, "cap7_pratico_7_3_req.png"), s
     d.config(unit=4, fontsize=14)
     
     # Ramo da Fonte de Teste (no lugar do Indutor)
-    d.push()
-    d += elm.SourceV().down().label('1V', loc='bot').label(('+', '$v_o$', '-'), loc='top', color='red').reverse()
-    # Let's draw it from bottom to top to get + on top.
-    d.pop()
-    
-    d.push()
-    d += elm.SourceV().up().label('1V\nTeste', loc='bot')
-    bot_left = d.here # Wait, up() ends at top
-    d.pop()
-    
-    # Let's just draw it properly:
     start = d.here
     d += elm.SourceV().up().label('1V\nTeste', loc='left').label(('+', '$v_o$', '-'), loc='top', color='red')
     top_left = d.here
@@ -32,7 +21,7 @@ with schemdraw.Drawing(file=os.path.join(img_dir, "cap7_pratico_7_3_req.png"), s
     # Ramo do meio
     d.push()
     d += elm.Resistor().down().length(2).label('2Ω', loc='bot')
-    d += elm.SourceControlledV().down().length(2).label(('+', '2$v_x$', '-'), loc='top', color='blue')
+    d += elm.SourceControlledV().down().length(2).label(('+', '2$v_x$', '-'), loc='top', color='blue').reverse()
     bot_mid = d.here
     d.pop()
     

@@ -22,16 +22,7 @@ with schemdraw.Drawing(file=os.path.join(img_dir, "cap7_pratico_7_3.png"), show=
     # Ramo do meio
     d.push()
     d += elm.Resistor().down().length(2).label('2Ω', loc='bot')
-    d += elm.SourceControlledV().down().length(2).label('2$v_x$', loc='bot').reverse() # + on top
-    # wait, standard SourceControlledV has + on top if drawn up. 
-    # Let's verify: if down(), + is usually on the bottom. Let's just draw it down() and see.
-    # Actually, we can use label(('+', '2$v_x$', '-')) to be sure, or just draw it up() from the bottom.
-    d.pop()
-    
-    # Let's redraw middle branch to be safe
-    d.push()
-    d += elm.Resistor().down().length(2).label('2Ω', loc='bot')
-    d += elm.SourceControlledV().down().length(2).label(('+', '2$v_x$', '-'), loc='top', color='blue')
+    d += elm.SourceControlledV().down().length(2).label(('+', '2$v_x$', '-'), loc='top', color='blue').reverse()
     bot_mid = d.here
     d.pop()
     
