@@ -32,12 +32,10 @@ with schemdraw.Drawing(file=os.path.join(img_dir, "cap7_pratico_7_1_req.png"), s
     top_right = d.here
     
     # Ramo direito (Buracos do Capacitor para olhar o Req)
-    d.push()
     d += elm.Dot().label('Terminal Sup.', loc='top')
     d += elm.Gap().down().label('Req visto\npelo Cap.', color='blue')
     d += elm.Dot().label('Terminal Inf.', loc='bot')
     bot_right = d.here
-    d.pop()
     
     # Fechando o circuito embaixo
     d += elm.Line().left().tox(bot_mid)
