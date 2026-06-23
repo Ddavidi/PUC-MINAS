@@ -12,6 +12,9 @@ Temos que olhar o circuito no instante **antes** da chave abrir ($t < 0$).
 Como a chave estava fechada há muito tempo, o circuito atingiu o *Regime Permanente*.
 - **Regra:** O Capacitor se comporta como um **Circuito Aberto** (fio quebrado).
 - A fonte de 24V está empurrando corrente pelo resistor de $4 \, \Omega$ e pelo resistor de $12 \, \Omega$. O capacitor é apenas um buraco onde não entra corrente, mas ele está em **paralelo** com o resistor de $12 \, \Omega$.
+
+![Passo 1: t < 0](../../_base_dados_ia/imagens_geradas/cap7_exemplo_rc_t_menor_0.png)
+
 - Logo, a tensão no capacitor $v(0)$ é igual à tensão no resistor de $12 \, \Omega$.
 - Usando um simples Divisor de Tensão:
   $$ v(0) = 24 \cdot \left( \frac{12}{4 + 12} \right) = 24 \cdot \left( \frac{12}{16} \right) = 24 \cdot 0.75 = 18V $$
@@ -27,7 +30,11 @@ Agora olhamos para o circuito **muito tempo depois** da chave abrir ($t \to \inf
 ## Passo 3: Encontrar a Constante de Tempo ($\tau$)
 Olhe para o circuito **depois que a chave mudou ($t > 0$)**.
 - O circuito do lado direito da chave é apenas o Capacitor de $0.5F$ em paralelo com o resistor de $12 \, \Omega$.
+- Arrancamos o capacitor do circuito para ver a Resistência Equivalente (Thevenin) pelos buracos que ficaram.
 - O Thevenin "visto" pelo capacitor é simplesmente o resistor de $12 \, \Omega$. Logo, $R_{eq} = 12 \, \Omega$.
+
+![Passo 3: Achando o Req](../../_base_dados_ia/imagens_geradas/cap7_exemplo_rc_req.png)
+
 - Fórmula do RC: 
   $$ \tau = R_{eq} \cdot C = 12 \cdot 0.5 = 6 \text{ segundos} $$
 
@@ -40,3 +47,20 @@ $$ v(t) = 0 + [18 - 0] \cdot e^{-\frac{t}{6}} $$
 $$ v(t) = 18 e^{-\frac{t}{6}} \text{ V} $$
 
 **Resposta Final:** $v(t) = 18 e^{-t/6} \, V$ para $t > 0$.
+
+---
+
+## 🤯 Dúvida do Aluno: E se a chave FECHASSE em $t=0$?
+*Se o enunciado dissesse que a chave estava ABERTA antes, e FECHOU no $t=0$, toda a nossa lógica seria invertida! Isso se tornaria um problema de **Resposta ao Degrau**.*
+
+Veja como a Receita de Bolo mudaria:
+1. **Passo 1 ($v(0)$):** Para $t < 0$ a chave estava aberta. A fonte de 24V não estava conectada em nada. O capacitor estava só com o resistor de $12 \, \Omega$, totalmente descarregado. Logo, $v(0) = 0V$.
+2. **Passo 2 ($v(\infty)$):** Para $t \to \infty$ a chave fechou. O capacitor está conectado na fonte, ele vira um **Circuito Aberto** (fio quebrado). É exatamente a mesma conta do nosso "Passo 1" original lá em cima: Usamos o divisor de tensão e achamos $v(\infty) = 18V$. Ele carregou!
+3. **Passo 3 ($\tau$):** Agora que a chave está fechada, para calcular o Thevenin visto pelo capacitor nós precisamos **zerar a fonte de 24V** (ela vira um fio liso). Quando ela vira um fio, o resistor de $4 \, \Omega$ fica em **paralelo** com o resistor de $12 \, \Omega$ em relação aos terminais do capacitor!
+
+![Achando o Req com a chave fechada](../../_base_dados_ia/imagens_geradas/cap7_exemplo_rc_extra_req.png)
+
+  $$ R_{eq} = \frac{4 \cdot 12}{4 + 12} = \frac{48}{16} = 3 \, \Omega $$
+  $$ \tau = R_{eq} \cdot C = 3 \cdot 0.5 = 1.5 \text{ segundos} $$
+4. **Passo 4 (Equação Final):** Jogando tudo na Equação Mágica:
+  $$ v(t) = 18 + [0 - 18] \cdot e^{-\frac{t}{1.5}} \implies v(t) = 18 \cdot (1 - e^{-t/1.5}) \text{ V} $$
