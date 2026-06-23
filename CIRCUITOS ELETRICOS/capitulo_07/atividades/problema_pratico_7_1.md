@@ -78,6 +78,19 @@ $$ I_{real} = \frac{60 e^{-0.25t}}{12} = 5 e^{-0.25t} \text{ A} $$
 Como $i_o$ está contra a corrente real:
 $$ i_o = -5 e^{-0.25t} \text{ A} $$
 
+### 🌟 Bônus: Correntes nos ramos paralelos ($12 \, \Omega$ e $6 \, \Omega$)
+Como vimos, a corrente total real sai do capacitor e passa pelo resistor de $8 \, \Omega$ com valor de $5 e^{-0.25t} A$. Ao chegar na bifurcação, ela se divide. Como podemos achar quanto de corrente desceu em cada um dos ramos?
+
+Temos dois caminhos fáceis: **Divisor de Corrente** ou **Lei de Ohm**. Vamos pela Lei de Ohm, já que nós acabamos de calcular a tensão em cima dessa bifurcação inteira (que é o $v_x$).
+
+**Corrente no resistor de $6 \, \Omega$:**
+$$ i_6 = \frac{v_x}{6} = \frac{20 e^{-0.25t}}{6} = \frac{10}{3} e^{-0.25t} \approx 3.33 e^{-0.25t} \text{ A} $$
+
+**Corrente no resistor de $12 \, \Omega$:**
+$$ i_{12} = \frac{v_x}{12} = \frac{20 e^{-0.25t}}{12} = \frac{5}{3} e^{-0.25t} \approx 1.67 e^{-0.25t} \text{ A} $$
+
+**A prova real:** Se você somar $\frac{10}{3} + \frac{5}{3}$, o resultado é $\frac{15}{3} = 5A$. Ou seja, a soma das correntes divididas é perfeitamente igual à corrente total que vinha do capacitor ($I_{real}$), provando que nossa Lei de Kirchhoff das Correntes está corretíssima!
+
 ### 🎯 Respostas Finais
 - $v_C(t) = 60 e^{-0.25t} \text{ V}$
 - $v_x(t) = 20 e^{-0.25t} \text{ V}$
