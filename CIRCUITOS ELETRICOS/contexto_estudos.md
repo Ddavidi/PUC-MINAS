@@ -57,9 +57,12 @@ Este arquivo serve como um índice e registro de tudo o que estamos estudando so
 - [x] Resolução do exercício: 11.46 (com detalhamento das fórmulas).
 
 ## 📝 Próximos Passos Sugeridos
-- Iniciar os estudos definitivos para a Prova (Capítulos 6, 7, 9 e 11).
-- O Thevenin e a Análise Nodal (LKC) trabalhados hoje serão a base fundamental para resolver os problemas de Fasores (Capítulo 9).
-- Começar a revisão pelo material da pasta `capitulo_09/` assim que a sessão for retomada amanhã.
+- **Formato da Prova (4 Questões):**
+  - 1 questão de **Resposta ao Degrau**.
+  - 1 questão de **Resposta Natural**.
+  - 2 questões de **Fasores** (envolvendo Impedância e Potência).
+- O foco total para garantir uma nota excelente deve ser nos **Exercícios Propostos dos Capítulos 7, 9 e 11**.
+- **Novo Roteiro:** Iniciar a revisão focada atacando primeiro os Capítulos 6 e 7 (Circuitos de Primeira Ordem, que cobrem Resposta ao Degrau e Natural) e, só depois, avançar para o Capítulo 9 (Fasores).
 
 > *Instrução para a IA em chats futuros: Leia este arquivo para entender a organização do repositório, onde salvar novos arquivos e recuperar o contexto do aluno.*
 > **REGRA NOVA:** Sempre que resolver um exercício, coloque a página em que ele se encontra no PDF do livro diretamente no arquivo Markdown gerado (no formato: `*(Página X do PDF)*`).
