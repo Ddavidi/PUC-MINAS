@@ -9,28 +9,36 @@ os.makedirs(img_dir, exist_ok=True)
 # Passo de Req
 with schemdraw.Drawing(file=os.path.join(img_dir, "cap7_pratico_7_1_req.png"), show=False) as d:
     d.config(unit=3)
-    d += elm.Line().right().length(1)
-    node1 = d.here
-    d.push()
-    d += elm.Resistor().down().label('12Ω')
-    bot1 = d.here
-    d.pop()
-    d += elm.Line().right().length(2)
-    node1_b = d.here
-    d.push()
-    d += elm.Resistor().down().label('6Ω')
-    bot2 = d.here
-    d.pop()
-    d += elm.Resistor().right().label('8Ω')
-    node2 = d.here
     
+    # Ramo esquerdo (12 ohm)
     d.push()
-    d += elm.Dot().label('Terminal Sup.', loc='left')
+    d += elm.Resistor().down().label('12Ω', loc='left')
+    bot_left = d.here
+    d.pop()
+    
+    # Fio superior ate o meio
+    d += elm.Line().right().length(2.5)
+    top_mid = d.here
+    
+    # Ramo do meio (6 ohm)
+    d.push()
+    d += elm.Resistor().down().label('6Ω', loc='left')
+    bot_mid = d.here
+    d.pop()
+    
+    # Fio com a seta da corrente (em branco) + Resistor de 8 ohm
+    d += elm.Line().right().length(1.5)
+    d += elm.Resistor().right().label('8Ω', loc='top')
+    top_right = d.here
+    
+    # Ramo direito (Buracos do Capacitor para olhar o Req)
+    d.push()
+    d += elm.Dot().label('Terminal Sup.', loc='right')
     d += elm.Gap().down().label('Req visto\npelo Cap.', color='blue')
-    d += elm.Dot().label('Terminal Inf.', loc='left')
-    bot3 = d.here
+    d += elm.Dot().label('Terminal Inf.', loc='right')
+    bot_right = d.here
     d.pop()
     
-    d += elm.Line().left().tox(bot2)
-    d += elm.Line().left().tox(bot1)
-    d += elm.Line().left().to((0,-3))
+    # Fechando o circuito embaixo
+    d += elm.Line().left().tox(bot_mid)
+    d += elm.Line().left().tox(bot_left)
