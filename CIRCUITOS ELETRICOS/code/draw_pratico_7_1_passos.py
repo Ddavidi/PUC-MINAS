@@ -8,34 +8,34 @@ os.makedirs(img_dir, exist_ok=True)
 
 # Passo de Req
 with schemdraw.Drawing(file=os.path.join(img_dir, "cap7_pratico_7_1_req.png"), show=False) as d:
-    d.config(unit=3)
+    d.config(unit=4, fontsize=14)
     
     # Ramo esquerdo (12 ohm)
     d.push()
-    d += elm.Resistor().down().label('12Ω', loc='left')
+    d += elm.Resistor().down().label('12Ω', loc='bot')
     bot_left = d.here
     d.pop()
     
     # Fio superior ate o meio
-    d += elm.Line().right().length(2.5)
+    d += elm.Line().right().length(3)
     top_mid = d.here
     
     # Ramo do meio (6 ohm)
     d.push()
-    d += elm.Resistor().down().label('6Ω', loc='left')
+    d += elm.Resistor().down().label('6Ω', loc='bot')
     bot_mid = d.here
     d.pop()
     
-    # Fio com a seta da corrente (em branco) + Resistor de 8 ohm
+    # Fio vazio + Resistor de 8 ohm
     d += elm.Line().right().length(1.5)
     d += elm.Resistor().right().label('8Ω', loc='top')
     top_right = d.here
     
     # Ramo direito (Buracos do Capacitor para olhar o Req)
     d.push()
-    d += elm.Dot().label('Terminal Sup.', loc='right')
+    d += elm.Dot().label('Terminal Sup.', loc='top')
     d += elm.Gap().down().label('Req visto\npelo Cap.', color='blue')
-    d += elm.Dot().label('Terminal Inf.', loc='right')
+    d += elm.Dot().label('Terminal Inf.', loc='bot')
     bot_right = d.here
     d.pop()
     
