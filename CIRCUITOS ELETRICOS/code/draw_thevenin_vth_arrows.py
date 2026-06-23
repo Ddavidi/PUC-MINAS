@@ -7,10 +7,9 @@ img_dir = os.path.join(base_dir, "_base_dados_ia", "imagens_geradas")
 os.makedirs(img_dir, exist_ok=True)
 
 with schemdraw.Drawing(file=os.path.join(img_dir, "thevenin_vth_arrows.png"), show=False) as d:
-    # Aumentando o tamanho dos elementos para separar os textos
     d.config(unit=4)
     
-    d += elm.SourceV().up().label('32V', loc='left')
+    d += elm.SourceV().up().label('32V')
     
     d += elm.Line().right().length(1)
     d += elm.Resistor().right().label('4Ω', loc='bot').label('← I', loc='top', color='red')
@@ -19,7 +18,7 @@ with schemdraw.Drawing(file=os.path.join(img_dir, "thevenin_vth_arrows.png"), sh
     
     d.push()
     d += elm.Line().down().length(0.8)
-    d += elm.Resistor().down().label('12Ω', loc='left').label('I ↓', loc='right', color='red')
+    d += elm.Resistor().down().label('12Ω', loc='bot').label('I ↓', loc='top', color='red')
     d += elm.Line().down().length(0.8)
     bot_mid1 = d.here
     d += elm.Ground()
@@ -29,7 +28,7 @@ with schemdraw.Drawing(file=os.path.join(img_dir, "thevenin_vth_arrows.png"), sh
     
     d.push()
     d += elm.Line().down().length(0.8)
-    d += elm.SourceI().down().reverse().label('2A', loc='left').label('↑ 2A (Entrando)', loc='right', color='blue')
+    d += elm.SourceI().down().reverse().label('2A', loc='bot').label('↑ 2A (Entrando)', loc='top', color='blue')
     bot_mid2 = d.here
     d.pop()
     
