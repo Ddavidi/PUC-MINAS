@@ -15,10 +15,16 @@ Como a chave estava fechada há muito tempo, o circuito atingiu o *Regime Perman
 
 ![Passo 1: t < 0](../../_base_dados_ia/imagens_geradas/cap7_exemplo_rc_t_menor_0.png)
 
-- Logo, a tensão no capacitor $v(0)$ é igual à tensão no resistor de $12 \, \Omega$.
-- Usando um simples Divisor de Tensão:
-  $$ v(0) = 24 \cdot \left( \frac{12}{4 + 12} \right) = 24 \cdot \left( \frac{12}{16} \right) = 24 \cdot 0.75 = 18V $$
-- Como a tensão no capacitor não dá "saltos" instantâneos, **$v(0) = 18V$**.
+- Logo, a tensão no capacitor $v(0)$ é exatamente igual à tensão no resistor de $12 \, \Omega$.
+- **Mas de onde veio aquele "Divisor de Tensão"?**
+  Vamos fazer pela lógica passo a passo usando a velha e boa Lei de Ohm ($V = R \cdot I$) para você nunca mais precisar decorar fórmula:
+  1. No desenho acima, a corrente sai da fonte de 24V, passa inteira pelo resistor de $4 \, \Omega$, e depois passa inteira pelo resistor de $12 \, \Omega$ (ela não entra no buraco do capacitor). Portanto, esses dois resistores estão em **série**.
+  2. A Resistência Total dessa "rua" é: $R_{total} = 4 + 12 = 16 \, \Omega$.
+  3. Qual é a corrente ($I$) rodando nesse circuito? $I = \frac{V_{fonte}}{R_{total}} \implies I = \frac{24}{16} = 1,5 \, A$.
+  4. Sabendo que desce $1,5 \, A$ pelo resistor de $12 \, \Omega$, qual é a tensão só nele? $V = R \cdot I \implies V = 12 \cdot 1,5 = 18V$.
+- A fórmula do **Divisor de Tensão** nada mais é do que fazer esses 4 passos em uma linha só! Ele pega a Tensão da Fonte ($24V$) e multiplica pela "fração" da resistência que você quer descobrir dividida pela resistência total:
+  $$ v(0) = V_{fonte} \cdot \left( \frac{R_{alvo}}{R_{total}} \right) = 24 \cdot \left( \frac{12}{4 + 12} \right) = 24 \cdot 0.75 = 18V $$
+- Como a tensão no capacitor não dá "saltos" instantâneos, cravamos que **$v(0) = 18V$**.
 
 ## Passo 2: Encontrar o Fim $v(\infty)$
 Agora olhamos para o circuito **muito tempo depois** da chave abrir ($t \to \infty$).
