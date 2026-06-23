@@ -50,10 +50,14 @@ Qual a tensão nesse Nó do meio?
 Ora, a fonte de teste do lado esquerdo injetou 1V, e o resistor de 1 ohm "gastou" uma tensão $v_x$. Então o que chega no nó é $1 - v_x$. Como já descobrimos que $v_x = i_o$, a tensão do nó é:
 $$ V_{no} = 1 - i_o $$
 
-Agora, calculamos as duas correntes que saem usando a Lei de Ohm (Corrente = Tensão do Nó / Resistência):
-- Corrente no ramo do meio (temos que subtrair a fonte de tensão que está atrapalhando o caminho):
-  $$ i_{meio} = \frac{V_{no} - 2v_x}{2} = \frac{(1 - i_o) - 2(i_o)}{2} = \frac{1 - 3i_o}{2} $$
-- Corrente no ramo da direita:
+Agora, calculamos as duas correntes que saem usando a Lei de Ohm (Corrente = Tensão / Resistência):
+- **Corrente no ramo do meio:** 
+  Imagine que o nó superior ($V_{no}$) é uma "força" tentando empurrar a corrente para BAIXO em direção ao terra.
+  Porém, no meio do caminho existe uma fonte de tensão. Observe a polaridade dela: o sinal de $+$ está para CIMA. Isso significa que essa fonte está tentando empurrar a corrente para CIMA, ou seja, ela está "brigando" contra o fluxo natural que queremos calcular!
+  Como a fonte está se opondo ao movimento, a força resultante que realmente consegue empurrar a corrente para baixo é a tensão do nó *menos* a tensão da fonte que está atrapalhando.
+  $$ i_{meio} = \frac{\text{Tensão a favor} - \text{Tensão contra}}{\text{Resistência}} = \frac{V_{no} - 2v_x}{2} = \frac{(1 - i_o) - 2(i_o)}{2} = \frac{1 - 3i_o}{2} $$
+- **Corrente no ramo da direita:**
+  Nesse caminho não há nenhuma fonte atrapalhando, a corrente flui livremente do nó para o terra.
   $$ i_{direita} = \frac{V_{no}}{6} = \frac{1 - i_o}{6} $$
 
 Juntando tudo na KCL:
