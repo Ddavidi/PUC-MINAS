@@ -43,7 +43,10 @@ Este arquivo serve como um índice e registro de tudo o que estamos estudando so
 - [x] Resolução de Exercícios do Livro (6.13, 6.17, 6.46, 6.51)
 
 ### Capítulo 7 (Circuitos de Primeira Ordem)
+- [x] Extração de PDFs e resumos criados (`conceitos_importantes.md` e `resumo_basico_cap7.md`).
 - [x] Resolução profunda dos exercícios com diagramas equivalentes: 7.15, 7.17, 7.18, 7.23 e 7.54.
+- [x] Resolução do **[Exemplo Clássico RC - Resposta Natural](file:///c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/capitulo_07/atividades/exemplo_resolvido_rc.md)**.
+- [x] Criação de um **[Exercício Proposto RL - Resposta ao Degrau](file:///c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/capitulo_07/atividades/exercicio_proposto_rl.md)** para o usuário.
 
 ### Capítulo 9 (Senoides e Fasores)
 1. Extração do PDF (texto e imagens) concluída.
