@@ -60,4 +60,5 @@ $$ \tau = \frac{L}{R_{eq}} = \frac{4}{5} = 0,8 \text{ segundos} $$
 Juntando nossos ingredientes: $i(0) = 0$, $i(\infty) = 2$, e $\tau = 0.8$.
 $$ i(t) = 2 + [0 - 2] \cdot e^{-\frac{t}{0.8}} $$
 Como $1 / 0.8 = 1.25$:
-$$ i(t) = 2 - 2 e^{-1.25t} \text{ A} $$ para $t > 0$.
+$$ i(t) = 2 - 2 e^{-1.25t} \text{ A} $$
+*Para $t > 0$.*
