@@ -23,7 +23,7 @@ with schemdraw.Drawing(file=os.path.join(img_dir, "thevenin_vth_arrows.png"), sh
     d.push()
     d += elm.Line().down().length(1.5).label('I ↓', loc='bot', color='red')
     d += elm.Resistor().down().length(3).label('12Ω')
-    bot_mid = d.here
+    bot_mid1 = d.here
     d += elm.Line().left().tox(source.start)
     d += elm.Ground()
     d.pop()
@@ -35,7 +35,8 @@ with schemdraw.Drawing(file=os.path.join(img_dir, "thevenin_vth_arrows.png"), sh
     d.push()
     d += elm.Line().down().length(1.5).label('↑ 2A\n(Entrando)', loc='bot', color='blue')
     d += elm.SourceI().down().reverse().length(3).label('2A')
-    d += elm.Line().left().tox(bot_mid)
+    bot_mid2 = d.here
+    d += elm.Line().left().tox(bot_mid1)
     d.pop()
     
     # Right branch
@@ -45,8 +46,11 @@ with schemdraw.Drawing(file=os.path.join(img_dir, "thevenin_vth_arrows.png"), sh
     
     # Terminals
     d += elm.Dot().label('Terminal A (+Vth)', loc='right')
-    d += elm.Line().down().toy(bot_mid).color('white')
+    d += elm.Line().down().toy(bot_mid2).color('white')
     d += elm.Dot().label('Terminal B (-Vth)', loc='right')
     
-    # Bottom wire
-    d += elm.Line().left().tox(bot_mid)
+    # Bottom wire from Terminal B
+    d += elm.Line().left().tox(bot_mid2)
+    
+    # FINAL FIX: Conectar a base da fonte 32V até a linha do terra lá embaixo
+    d += elm.Line().down().at(source.start).toy(bot_mid1)
