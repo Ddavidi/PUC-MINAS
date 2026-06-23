@@ -35,13 +35,19 @@ A regra é: ligue as fontes de volta, deixe os terminais A e B **abertos** (no v
 Como o terminal A está no vazio, **nenhuma corrente passa pelo resistor de $1 \, \Omega$**. Logo, a queda de tensão nele é zero. Isso significa que a tensão no terminal A é exatamente igual à tensão no Nó C ($V_{th} = V_A = V_C$).
 
 Vamos desenhar a nossa missão usando a Análise Nodal no Nó C:
-![Circuito para Vth](../../_base_dados_ia/imagens_geradas/thevenin_vth.png)
+Vamos desenhar a nossa missão usando a Análise Nodal no Nó C (com setas para facilitar a visualização das correntes):
+![Circuito para Vth Detalhado](../../_base_dados_ia/imagens_geradas/thevenin_vth_arrows.png)
 
 **Resolvendo (Aplicando LKC no Nó C):**
-1. Corrente saindo para a esquerda (passando pelo de $4 \, \Omega$): $\frac{V_C - 32}{4}$
-2. Corrente saindo para baixo (passando pelo de $12 \, \Omega$): $\frac{V_C - 0}{12}$
-3. A fonte de $2A$ está **entrando** no nó C. Como na nossa receita todas as correntes "fogem", colocamos ela negativa (ou no lado direito da igualdade).
+A regra de ouro da LKC (Análise Nodal) é: **Somar todas as correntes que estão fugindo do Nó C e igualar a zero.** 
+Vamos analisar as 4 "ruas" que saem do Nó C:
 
+1. **Rua da Esquerda (passando pelo de $4 \, \Omega$):** A corrente tenta fugir para a esquerda e dá de cara com a fonte de $32V$. A força da corrente fugindo é a diferença de tensão sobre a resistência: $\frac{V_C - 32}{4}$.
+2. **Rua de Baixo (passando pelo de $12 \, \Omega$):** A corrente tenta fugir descendo para o Terra ($0V$). Fica simplesmente: $\frac{V_C - 0}{12}$ ou $\frac{V_C}{12}$.
+3. **Rua de Baixo (Fonte de $2A$):** A fonte tem uma seta empurrando $2A$ **para dentro** do Nó C (entrando). Como nossa regra é somar quem está **fugindo**, se ela entra com força $2A$, dizemos que ela foge com força **$-2$**.
+4. **Rua da Direita (Para o terminal A):** Como o terminal A está aberto (sem encostar em nada), não tem como a corrente passar por lá. Corrente **Zero**.
+
+Somando todo mundo que foge e igualando a zero:
 $$ \frac{V_C - 32}{4} + \frac{V_C}{12} - 2 = 0 $$
 
 *Para facilitar a matemática, vamos multiplicar tudo por 12:*
