@@ -50,17 +50,11 @@ Qual a tensão nesse Nó do meio?
 Ora, a fonte de teste do lado esquerdo injetou 1V, e o resistor de 1 ohm "gastou" uma tensão $v_x$. Então o que chega no nó é $1 - v_x$. Como já descobrimos que $v_x = i_o$, a tensão do nó é:
 $$ V_{no} = 1 - i_o $$
 
-Agora, calculamos as duas correntes que saem usando a Lei de Ohm e a Lei de Kirchhoff das Malhas (LKT):
-- **Corrente no ramo do meio ($i_{meio}$):** 
-  Para descobrir a corrente descendo pelo ramo do meio, usamos o princípio da Diferença de Potencial. A tensão total do nó superior até o terra (0V) é $V_{no}$. Essa tensão se divide entre o resistor e a fonte dependente.
-  Pela LKT, descendo o ramo: $V_{no} = V_{resistor} + V_{fonte}$
-  Substituindo a Lei de Ohm no resistor ($V = 2 \cdot i_{meio}$) e a tensão da fonte ($2v_x$):
-  $V_{no} = (2 \cdot i_{meio}) + 2v_x$
-  Isolando o $i_{meio}$:
-  $$ 2 \cdot i_{meio} = V_{no} - 2v_x \implies i_{meio} = \frac{V_{no} - 2v_x}{2} = \frac{(1 - i_o) - 2(i_o)}{2} = \frac{1 - 3i_o}{2} $$
-- **Corrente no ramo da direita ($i_{direita}$):**
-  Como só há o resistor no caminho direto para o terra (0V):
-  $$ i_{direita} = \frac{V_{no} - 0}{6} = \frac{1 - i_o}{6} $$
+Agora, calculamos as duas correntes que saem usando a Lei de Ohm (Corrente = Tensão do Nó / Resistência):
+- Corrente no ramo do meio (temos que subtrair a fonte de tensão que está atrapalhando o caminho):
+  $$ i_{meio} = \frac{V_{no} - 2v_x}{2} = \frac{(1 - i_o) - 2(i_o)}{2} = \frac{1 - 3i_o}{2} $$
+- Corrente no ramo da direita:
+  $$ i_{direita} = \frac{V_{no}}{6} = \frac{1 - i_o}{6} $$
 
 Juntando tudo na KCL:
 $$ i_o = \frac{1 - 3i_o}{2} + \frac{1 - i_o}{6} $$
