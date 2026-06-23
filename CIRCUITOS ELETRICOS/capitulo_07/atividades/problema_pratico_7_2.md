@@ -20,7 +20,16 @@ Isso significa que esses dois resistores da direita estão em paralelo!
 $$ R_p = \frac{12 \cdot 4}{12 + 4} = \frac{48}{16} = 3 \, \Omega $$
 
 O nosso circuito virou uma série simples: Fonte de 24V $\rightarrow$ Resistor de $6 \, \Omega$ $\rightarrow$ Bloco de $3 \, \Omega$.
-A tensão $v(0)$ do capacitor é exatamente a mesma tensão que cai sobre o bloco paralelo de $3 \, \Omega$. Vamos usar um **Divisor de Tensão**:
+A tensão $v(0)$ do capacitor é exatamente a mesma tensão que cai sobre o bloco paralelo de $3 \, \Omega$. Podemos calcular isso de duas formas:
+
+**Método 1: Usando a Lei de Ohm (Passo a Passo)**
+1. Achamos a corrente total da malha:
+$$ I = \frac{V_{fonte}}{R_{total}} = \frac{24}{6 + 3} = \frac{24}{9} \text{ A} $$
+2. Multiplicamos essa corrente pela resistência do bloco alvo ($3 \, \Omega$):
+$$ v(0) = R_{bloco} \cdot I = 3 \cdot \left( \frac{24}{9} \right) = \frac{72}{9} = 8 \text{ V} $$
+
+**Método 2: Usando o Divisor de Tensão (Direto)**
+A fórmula condensa os dois passos acima em uma única tacada:
 $$ v(0) = V_{fonte} \cdot \left( \frac{R_{alvo}}{R_{total}} \right) $$
 $$ v(0) = 24 \cdot \left( \frac{3}{6 + 3} \right) = 24 \cdot \left( \frac{3}{9} \right) = 24 \cdot \frac{1}{3} = 8 \text{ V} $$
 
