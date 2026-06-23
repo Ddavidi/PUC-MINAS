@@ -15,6 +15,13 @@ Onde:
 - $x(\infty)$: É o valor **final** da tensão/corrente (muito tempo depois da chave mudar).
 - $\tau$ (Tau): É a **Constante de Tempo** do circuito, que diz o quão rápido a curva exponencial sobe ou desce.
 
+### 🛑 O que significa "Regime Permanente" (Steady State)?
+Você vai ler muito essa expressão. Regime Permanente significa simplesmente que **"as coisas pararam de mudar"**. 
+Na vida real, a fase de transição (a curva exponencial) dura muito pouco tempo (cerca de $5 \times \tau$). Se um circuito fica do mesmo jeito por muito tempo, a curva acaba e ele entra em Regime Permanente.
+- Se uma chave fica **fechada** ligando uma fonte ao capacitor por muito tempo, ele atinge o Regime Permanente (fica totalmente carregado e vira um fio aberto).
+- Se a chave fica **aberta** isolando o capacitor por muito tempo, ele TAMBÉM atinge o Regime Permanente (fica totalmente descarregado e vira um fio aberto com 0V).
+Ou seja, "Regime Permanente" não quer dizer que a chave está ligada ou desligada, quer dizer apenas que a chave **está na mesma posição há tempo suficiente para o circuito se estabilizar**.
+
 ---
 
 ## 🎂 A Grande "Receita de Bolo" do Capítulo 7
