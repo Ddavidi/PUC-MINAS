@@ -8,26 +8,31 @@ os.makedirs(img_dir, exist_ok=True)
 with schemdraw.Drawing(file=os.path.join(img_dir, "problema_7_15_a.png"), show=False) as d:
     d.config(unit=3.0, fontsize=14)
     
-    # Ground wire
-    d += elm.Line().right().length(4)
-    bot_right = d.here
-    bot_left = (bot_right[0]-4, bot_right[1])
+    # We will draw it from top to bottom to make it cleaner
     
-    # Left vertical
-    d += elm.Resistor().up().at(bot_left).label('2 Ω', loc='left')
-    top_left = d.here
+    # Top wire with 10 ohm
+    d += elm.Line().right().length(1)
+    top_node_L = d.here
+    d += elm.Resistor().right().label('10 Ω', loc='top').length(3)
+    top_node_R = d.here
+    d += elm.Line().right().length(1)
     
-    # Right vertical (Inductor)
-    d += elm.Inductor2().up().at(bot_right).label('5 H', loc='right').toy(top_left[1])
-    top_right = d.here
+    # Middle wire with 40 ohm
+    d += elm.Line().down().at(top_node_L).length(2)
+    mid_node_L = d.here
+    d += elm.Resistor().right().at(mid_node_L).label('40 Ω', loc='bottom').tox(top_node_R[0])
+    mid_node_R = d.here
+    d += elm.Line().up().at(mid_node_R).toy(top_node_R[1])
     
-    # Middle horizontal path
-    d += elm.Resistor().right().at(top_left).label('40 Ω', loc='bottom').tox(top_right[0])
+    # Left vertical with 2 ohm
+    d += elm.Resistor().down().at(mid_node_L).label('2 Ω', loc='left').length(3)
+    bot_node_L = d.here
     
-    # Top horizontal path
-    d += elm.Line().up().at(top_left).length(1.2)
-    top_path_left = d.here
-    d += elm.Resistor().right().at(top_path_left).label('10 Ω', loc='top').tox(top_right[0])
-    d += elm.Line().down().toy(top_right[1])
+    # Right vertical with 5 H inductor
+    d += elm.Inductor2().down().at(mid_node_R).label('5 H', loc='right').toy(bot_node_L[1])
+    bot_node_R = d.here
+    
+    # Bottom wire
+    d += elm.Line().left().at(bot_node_R).tox(bot_node_L[0])
 
 print("Gerado problema_7_15_a.png")
