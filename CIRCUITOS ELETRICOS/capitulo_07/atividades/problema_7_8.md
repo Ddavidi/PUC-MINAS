@@ -46,7 +46,27 @@ $$C = \frac{0,25}{50} = 0,005 \, \text{F} = \mathbf{5 \, \text{mF}}$$
 ---
 
 ### Parte (c): Calcular a energia inicial no capacitor
-A energia $w(t)$ armazenada em um capacitor é calculada pela fórmula clássica de energia capacitiva. 
-Como o problema pede a energia **inicial**, queremos saber o $w(0)$.
+Sem problemas! A fórmula para a energia de um capacitor é super parecida com a da energia cinética da física clássica ($mv^2/2$). No mundo da elétrica, a "massa" é a capacitância e a "velocidade" é a tensão:
+$$w(t) = \frac{1}{2} C \cdot v(t)^2$$
 
-Você lembra qual é a fórmula da energia do capacitor? Calcule o valor dela e me mande aqui!
+Queremos a energia no instante $t=0$, então usamos o $v(0)$:
+$$w(0) = \frac{1}{2} \cdot (5 \times 10^{-3}) \cdot (10)^2$$
+$$w(0) = \frac{1}{2} \cdot (0,005) \cdot 100 = \frac{0,5}{2} = \mathbf{0,25 \, \text{J}}$$
+
+O capacitor começou com um quarto de Joule de energia armazenada.
+
+---
+
+### Parte (d): Obter o tempo para dissipar 50% da energia
+Essa é a grande missão final deste problema! O livro quer saber exatamente em qual **instante de tempo $t$** a energia do capacitor vai cair para a **metade** do que ele tinha no começo.
+
+Se no começo ele tinha $0,25\text{J}$, metade disso é $0,125\text{J}$.
+
+Sabemos que a energia em qualquer instante é dada pela fórmula:
+$$w(t) = \frac{1}{2} C \cdot v(t)^2$$
+
+E você já conhece a equação monstruosa do $v(t)$:
+$$v(t) = 10 e^{-4t}$$
+
+Tente juntar essas peças! Substitua $w(t)$ por $0,125$ e troque o $v(t)$ pela equação dele para descobrir em que momento $t$ isso vai acontecer! (Se precisar aplicar um Logaritmo Natural `ln` no final, vai fundo!). 
+Me mande o seu raciocínio!
