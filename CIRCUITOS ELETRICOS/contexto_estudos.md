@@ -50,6 +50,7 @@ Este arquivo serve como um índice e registro de tudo o que estamos estudando so
 - [x] Resolução do **[Problema Prático 7.1](file:///c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/capitulo_07/atividades/problema_pratico_7_1.md)**, introduzindo o uso do Divisor de Tensão e análise de setas contrárias de corrente.
 - [x] Resolução do **[Problema Prático 7.2](file:///c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/capitulo_07/atividades/problema_pratico_7_2.md)**, introduzindo chaves que "amputam" partes do circuito e cálculo de Energia.
 - [x] Resolução do **[Problema Prático 7.3](file:///c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/capitulo_07/atividades/problema_pratico_7_3.md)**, lidando com **Fontes Dependentes** e a técnica da Fonte de Teste para achar o $R_{eq}$.
+- [x] Resolução do **[Problema Prático 7.4](file:///c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/capitulo_07/atividades/problema_pratico_7_4.md)**, analisando a topologia confusa de pontes e o comportamento de curto-circuito em CC.
 
 ### Capítulo 9 (Senoides e Fasores)
 1. Extração do PDF (texto e imagens) concluída.
