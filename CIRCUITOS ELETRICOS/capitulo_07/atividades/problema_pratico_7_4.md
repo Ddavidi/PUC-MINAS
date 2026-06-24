@@ -20,10 +20,17 @@ Veja o que acontece com o circuito desenhado com o curto-circuito no lugar do in
 
 ![Circuito t < 0](../../_base_dados_ia/imagens_geradas/cap7_pratico_7_4_t0.png)
 
-O indutor virou um fio liso que conecta o nó do meio diretamente ao terra (fio de baixo). O resistor de $5 \, \Omega$ está espremido exatamente entre esses mesmos dois pontos (o nó do meio e o terra). 
-Como a corrente sempre escolhe o caminho de "zero esforço", **toda** a corrente vai passar pelo curto-circuito do indutor, e **zero** corrente vai passar pelo $5 \, \Omega$. Por isso, ele está efetivamente "morto" (curto-circuitado) e sai da jogada!
+O indutor virou um fio liso que conecta o nó do meio diretamente ao terra (fio de baixo). O resistor de $5 \, \Omega$ está espremido exatamente entre esses mesmos dois pontos (o nó do meio e o terra). Ou seja, o Indutor e o Resistor de $5 \, \Omega$ estão em **paralelo**.
 
-Isso nos deixa apenas com os resistores de $12 \, \Omega$ e $8 \, \Omega$ no lado direito. Ambos estão conectados do fio superior ao fio de baixo, então estão em paralelo:
+![Explicação do Curto-Circuito](../../_base_dados_ia/imagens_geradas/cap7_pratico_7_4_curto.png)
+
+> [!TIP]
+> **Por que o 5 ohms morre?**
+> A corrente elétrica é preguiçosa e sempre busca o caminho mais fácil. Quando a água (corrente) chega no nó central, ela vê duas opções: descer pelo indutor (que agora tem **0 ohms**, resistência zero, caminho livre) ou virar à direita pelo resistor (que tem 5 ohms de dificuldade). 
+> Quando existe um caminho com resistência **absolutamente zero** (um fio liso), **100% da corrente** desce por ele. O resistor de 5 ohms recebe $0\%$ de corrente, ficando "curto-circuitado" e efetivamente fora do circuito matemático nesse instante.
+> *E se no lugar do indutor houvesse um resistor de $2 \, \Omega$?* Neste caso, nenhum caminho teria zero resistência. A corrente **se dividiria**, enviando mais água para o caminho de $2 \, \Omega$ e menos água para o de $5 \, \Omega$. A anulação completa só ocorre por causa do $0 \, \Omega$!
+
+Com o resistor de $5 \, \Omega$ anulado, sobram apenas os resistores de $12 \, \Omega$ e $8 \, \Omega$ no lado direito. Ambos estão conectados do fio superior ao fio de baixo, então estão em paralelo:
 $$ R_{paralelo} = \frac{12 \cdot 8}{12 + 8} = \frac{96}{20} = 4.8 \, \Omega $$
 
 No lado esquerdo, temos a fonte de 15 A em paralelo com o resistor de $24 \, \Omega$. Toda a corrente do circuito se divide entre o resistor de $24 \, \Omega$ e o bloco direito de $4.8 \, \Omega$.

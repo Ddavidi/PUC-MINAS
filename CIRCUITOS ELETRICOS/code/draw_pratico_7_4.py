@@ -104,3 +104,21 @@ with schemdraw.Drawing(file=os.path.join(img_dir, "cap7_pratico_7_4_req.png"), s
     d += elm.Resistor().right().at(node_B).tox(node_C).label('5Ω', loc='bot')
     
     d += elm.Line().left().at(bot_right).tox(bot_mid)
+
+# 4. CIRCUITO DIDATICO (Curto-circuito anulando o 5 ohm)
+with schemdraw.Drawing(file=os.path.join(img_dir, "cap7_pratico_7_4_curto.png"), show=False) as d:
+    d.config(unit=3.5, fontsize=14)
+    
+    d += elm.Line().down().length(1).label('Corrente Total\nchegando do 12Ω', loc='bot')
+    node_B = d.here
+    
+    d += elm.Line().down().length(3).color('blue').label('Fio Liso (Indutor)\n0Ω de Resistência\n100% da Corrente', loc='left', color='blue')
+    bot_mid = d.here
+    
+    d += elm.Resistor().right().at(node_B).length(4).color('gray').label('Resistor 5Ω\nCaminho com obstáculo\n0% da Corrente', loc='top', color='gray')
+    node_C = d.here
+    
+    d += elm.Line().down().length(3).color('gray')
+    bot_right = d.here
+    
+    d += elm.Line().left().at(bot_right).tox(bot_mid)
