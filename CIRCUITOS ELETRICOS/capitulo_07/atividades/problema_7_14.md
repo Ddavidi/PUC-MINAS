@@ -1,26 +1,16 @@
-# Problema 7.23
+# Problema 7.14
 
 > **Objetivo:** Resolver o problema passo a passo.
 > **Instrução:** Leia o enunciado abaixo e tente resolver usando a metodologia.
 
 **Enunciado:**
-7.23 	Considere o circuito da Figura 7.103. Dado que vo(0) = 10 
-V, determine vo e vx para t 7 0.
-3 :
-1 :
-2 :
-vo
-+
-
-vx
-  H
-1
-3
-+
-
-Figura 7.103    Esquema para o Problema 7.23.
- 
- Seção 7.4  Funções de singularidade
+7.14 	Calcule a constante de tempo do circuito na Figura 7.94.
+5 mH
+30 k:
+40 k:
+20 k:
+10 k:
+Figura 7.94    Esquema para o Problema 7.14.
 *(As imagens dos circuitos originais serão geradas no formato padrão via código assim que iniciarmos a resolução!)*
 
 ---

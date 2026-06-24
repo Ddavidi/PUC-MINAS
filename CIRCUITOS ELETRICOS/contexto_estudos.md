@@ -51,15 +51,27 @@ Este arquivo serve como um índice e registro de tudo o que estamos estudando so
 - [x] Resolução do **[Problema Prático 7.2](file:///c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/capitulo_07/atividades/problema_pratico_7_2.md)**, introduzindo chaves que "amputam" partes do circuito e cálculo de Energia.
 - [x] Resolução do **[Problema Prático 7.3](file:///c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/capitulo_07/atividades/problema_pratico_7_3.md)**, lidando com **Fontes Dependentes** e a técnica da Fonte de Teste para achar o $R_{eq}$.
 - [x] Resolução do **[Problema Prático 7.4](file:///c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/capitulo_07/atividades/problema_pratico_7_4.md)**, analisando a topologia confusa de pontes e o comportamento de curto-circuito em CC.
-- [x] Exercício Interativo: **[Questão de Revisão 7.2](file:///c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/capitulo_07/atividades/questao_revisao_7_2.md)** (Questões para Revisão do capítulo).
-- [x] Exercício Interativo: **[Questão de Revisão 7.3](file:///c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/capitulo_07/atividades/questao_revisao_7_3.md)**
-- [ ] Exercício Interativo: **[Questão de Revisão 7.4](file:///c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/capitulo_07/atividades/questao_revisao_7_4.md)**
-- [ ] Exercício Interativo: **[Questão de Revisão 7.5](file:///c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/capitulo_07/atividades/questao_revisao_7_5.md)**
-- [ ] Exercício Interativo: **[Questão de Revisão 7.6](file:///c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/capitulo_07/atividades/questao_revisao_7_6.md)**
-- [x] Exercício Interativo: **[Questão de Revisão 7.7](file:///c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/capitulo_07/atividades/questao_revisao_7_7.md)**
-- [x] Exercício Interativo: **[Questão de Revisão 7.8](file:///c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/capitulo_07/atividades/questao_revisao_7_8.md)**
-- [ ] Exercício Interativo: **[Questão de Revisão 7.9](file:///c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/capitulo_07/atividades/questao_revisao_7_9.md)**
-- [ ] Exercício Interativo: **[Questão de Revisão 7.10](file:///c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/capitulo_07/atividades/questao_revisao_7_10.md)**
+- [ ] Exercício Interativo: **[Problema Prático 7.10](file:///c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/capitulo_07/atividades/problema_pratico_7_10.md)**
+- [ ] Exercício Interativo: **[Problema Prático 7.12](file:///c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/capitulo_07/atividades/problema_pratico_7_12.md)**
+- [ ] Exercício Interativo: **[Problema 7.2](file:///c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/capitulo_07/atividades/problema_7_2.md)**
+- [ ] Exercício Interativo: **[Problema 7.3](file:///c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/capitulo_07/atividades/problema_7_3.md)**
+- [ ] Exercício Interativo: **[Problema 7.4](file:///c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/capitulo_07/atividades/problema_7_4.md)**
+- [ ] Exercício Interativo: **[Problema 7.6](file:///c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/capitulo_07/atividades/problema_7_6.md)**
+- [ ] Exercício Interativo: **[Problema 7.8](file:///c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/capitulo_07/atividades/problema_7_8.md)**
+- [ ] Exercício Interativo: **[Problema 7.9](file:///c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/capitulo_07/atividades/problema_7_9.md)**
+- [ ] Exercício Interativo: **[Problema 7.11](file:///c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/capitulo_07/atividades/problema_7_11.md)**
+- [ ] Exercício Interativo: **[Problema 7.14](file:///c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/capitulo_07/atividades/problema_7_14.md)**
+- [ ] Exercício Interativo: **[Problema 7.15](file:///c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/capitulo_07/atividades/problema_7_15.md)**
+- [ ] Exercício Interativo: **[Problema 7.17](file:///c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/capitulo_07/atividades/problema_7_17.md)**
+- [ ] Exercício Interativo: **[Problema 7.18](file:///c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/capitulo_07/atividades/problema_7_18.md)**
+- [ ] Exercício Interativo: **[Problema 7.23](file:///c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/capitulo_07/atividades/problema_7_23.md)**
+- [ ] Exercício Interativo: **[Problema 7.39](file:///c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/capitulo_07/atividades/problema_7_39.md)**
+- [ ] Exercício Interativo: **[Problema 7.40](file:///c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/capitulo_07/atividades/problema_7_40.md)**
+- [ ] Exercício Interativo: **[Problema 7.41](file:///c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/capitulo_07/atividades/problema_7_41.md)**
+- [ ] Exercício Interativo: **[Problema 7.53](file:///c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/capitulo_07/atividades/problema_7_53.md)**
+- [ ] Exercício Interativo: **[Problema 7.54](file:///c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/capitulo_07/atividades/problema_7_54.md)**
+- [ ] Exercício Interativo: **[Problema 7.59](file:///c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/capitulo_07/atividades/problema_7_59.md)**
+- [ ] Exercício Interativo: **[Problema 7.60](file:///c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/capitulo_07/atividades/problema_7_60.md)**
 
 ### Metodologia de Ensino
 1. Foco em abstração e interpretação semântica de circuitos antes da matemática bruta.

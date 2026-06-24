@@ -1,26 +1,35 @@
-# Problema 7.23
+# Problema 7.41
 
 > **Objetivo:** Resolver o problema passo a passo.
 > **Instrução:** Leia o enunciado abaixo e tente resolver usando a metodologia.
 
 **Enunciado:**
-7.23 	Considere o circuito da Figura 7.103. Dado que vo(0) = 10 
-V, determine vo e vx para t 7 0.
-3 :
-1 :
-2 :
+7.41	 Usando a Figura 7.108, elabore um problema para ajudar 
+outros estudantes a entenderem melhor a resposta de um 
+circuito RC.
+C
++
+
 vo
+R1
+R2
+v
+t = 0
++
+Figura 7.108    Esquema para o Problema 7.41.
+7.42 	(a)	 Se a chave na Figura 7.109 tiver sido aberta há um 
+bom tempo e for fechada em t = 0, determine vo(t).
+(b)	 Suponha que a chave se encontre fechada há um longo período e seja aberta em t = 0. Determine vo(t).
+3 F
 +
 
-vx
-  H
-1
-3
-+
-
-Figura 7.103    Esquema para o Problema 7.23.
- 
- Seção 7.4  Funções de singularidade
+vo
+2 :
+4 :
+12 V
++
+t = 0
+Figura 7.109    Esquema para o Problema 7.42.
 *(As imagens dos circuitos originais serão geradas no formato padrão via código assim que iniciarmos a resolução!)*
 
 ---

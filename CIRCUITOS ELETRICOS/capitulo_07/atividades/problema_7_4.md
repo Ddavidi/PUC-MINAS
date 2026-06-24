@@ -1,26 +1,23 @@
-# Problema 7.23
+# Problema 7.4
 
 > **Objetivo:** Resolver o problema passo a passo.
 > **Instrução:** Leia o enunciado abaixo e tente resolver usando a metodologia.
 
 **Enunciado:**
-7.23 	Considere o circuito da Figura 7.103. Dado que vo(0) = 10 
-V, determine vo e vx para t 7 0.
-3 :
-1 :
-2 :
-vo
+7.4 	 A chave da Figura 7.84 se encontra na posição A há um 
+bom tempo. Suponha que a chave mude instantaneamente 
+de A para B em t = 0. Determine v para t 7 0.
++
+2 k:
+5 k:
+40 V
+B
+A
+10 mF
+v
 +
 
-vx
-  H
-1
-3
-+
-
-Figura 7.103    Esquema para o Problema 7.23.
- 
- Seção 7.4  Funções de singularidade
+Figura 7.84    Esquema para o Problema 7.4.
 *(As imagens dos circuitos originais serão geradas no formato padrão via código assim que iniciarmos a resolução!)*
 
 ---

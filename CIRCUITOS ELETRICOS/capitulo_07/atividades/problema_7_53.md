@@ -1,26 +1,27 @@
-# Problema 7.23
+# Problema 7.53
 
 > **Objetivo:** Resolver o problema passo a passo.
 > **Instrução:** Leia o enunciado abaixo e tente resolver usando a metodologia.
 
 **Enunciado:**
-7.23 	Considere o circuito da Figura 7.103. Dado que vo(0) = 10 
-V, determine vo e vx para t 7 0.
-3 :
-1 :
+7.53 	Determine a corrente i(t) no indutor para t 6 0 e t 7 0 para 
+cada um dos circuitos da Figura 7.119.
+25 V
+4 H
+i
+(a)
++
+t = 0
 2 :
-vo
-+
-
-vx
-  H
-1
-3
-+
-
-Figura 7.103    Esquema para o Problema 7.23.
- 
- Seção 7.4  Funções de singularidade
+3 :
+4 :
+6 A
+2 :
+3 H
+i
+t = 0
+(b)
+Figura 7.119    Esquema para o Problema 7.53.
 *(As imagens dos circuitos originais serão geradas no formato padrão via código assim que iniciarmos a resolução!)*
 
 ---

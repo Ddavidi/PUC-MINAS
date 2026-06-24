@@ -1,26 +1,35 @@
-# Problema 7.23
+# Problema 7.39
 
 > **Objetivo:** Resolver o problema passo a passo.
 > **Instrução:** Leia o enunciado abaixo e tente resolver usando a metodologia.
 
 **Enunciado:**
-7.23 	Considere o circuito da Figura 7.103. Dado que vo(0) = 10 
-V, determine vo e vx para t 7 0.
-3 :
+7.39 	Calcule a tensão no capacitor para t 6 0 e t 7 0 para cada 
+um dos circuitos da Figura 7.106.
+#SAMBARILOVE
+270  Fundamentos de circuitos elétricos 
++
 1 :
-2 :
-vo
+4 :
+20 V
+12 V
 +
 
-vx
-  H
-1
-3
+t = 0
+v
+2 F
+(a)
+(b)
+3 :
+2 A
+4 :
 +
 
-Figura 7.103    Esquema para o Problema 7.23.
- 
- Seção 7.4  Funções de singularidade
++
+t = 0
+2 F
+v
+Figura 7.106    Esquema para o Problema 7.39.
 *(As imagens dos circuitos originais serão geradas no formato padrão via código assim que iniciarmos a resolução!)*
 
 ---

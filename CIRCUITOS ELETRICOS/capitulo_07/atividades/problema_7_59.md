@@ -1,26 +1,21 @@
-# Problema 7.23
+# Problema 7.59
 
 > **Objetivo:** Resolver o problema passo a passo.
 > **Instrução:** Leia o enunciado abaixo e tente resolver usando a metodologia.
 
 **Enunciado:**
-7.23 	Considere o circuito da Figura 7.103. Dado que vo(0) = 10 
-V, determine vo e vx para t 7 0.
+7.59 	Determine a resposta ao degrau vo(t) para vs = 18u(t) no 
+circuito da Figura 7.124.
 3 :
-1 :
-2 :
+6 :
+vs
+1,5 H
+4 :
++
++
+
 vo
-+
-
-vx
-  H
-1
-3
-+
-
-Figura 7.103    Esquema para o Problema 7.23.
- 
- Seção 7.4  Funções de singularidade
+Figura 7.124    Esquema para o Problema 7.59.
 *(As imagens dos circuitos originais serão geradas no formato padrão via código assim que iniciarmos a resolução!)*
 
 ---

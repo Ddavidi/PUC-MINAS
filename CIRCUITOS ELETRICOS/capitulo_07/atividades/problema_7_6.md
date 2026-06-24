@@ -1,26 +1,22 @@
-# Problema 7.23
+# Problema 7.6
 
 > **Objetivo:** Resolver o problema passo a passo.
 > **Instrução:** Leia o enunciado abaixo e tente resolver usando a metodologia.
 
 **Enunciado:**
-7.23 	Considere o circuito da Figura 7.103. Dado que vo(0) = 10 
-V, determine vo e vx para t 7 0.
-3 :
-1 :
-2 :
-vo
+7.6 	 A chave na Figura 7.86 foi fechada há um bom tempo e é 
+aberta em t = 0. Determine v(t) para t  0.
+40 V
 +
 
-vx
-  H
-1
-3
+2 k:
+10 k:
+40 mF
 +
-
-Figura 7.103    Esquema para o Problema 7.23.
- 
- Seção 7.4  Funções de singularidade
+–
+v(t)
+t = 0
+Figura 7.86    Esquema para o Problema 7.6.
 *(As imagens dos circuitos originais serão geradas no formato padrão via código assim que iniciarmos a resolução!)*
 
 ---
