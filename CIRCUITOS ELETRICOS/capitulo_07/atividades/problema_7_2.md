@@ -22,6 +22,9 @@ Determine a constante de tempo para o circuito RC abaixo.
 ### Passo 1: O cálculo de $v(0)$ (Opcional para treino)
 Mesmo que a questão não peça, calcular a tensão inicial é um excelente treino. Você percebeu perfeitamente que o capacitor em Corrente Contínua vira uma chave aberta, o que faz com que a corrente pelo resistor de $12 \, \Omega$ seja nula.
 
+**Circuito com o capacitor em aberto:**
+![Circuito Passo 1](../../_base_dados_ia/imagens_geradas/problema_7_2_v0.png)
+
 A tensão $v(0)$ no capacitor será exatamente a tensão no resistor de $80 \, \Omega$. Como os resistores de 120 e 80 estão em série com a fonte, usamos o **Divisor de Tensão** (lembre-se que é uma multiplicação):
 
 $$V_{80} = V_{total} \times \frac{R_{alvo}}{R_{total}}$$
@@ -36,6 +39,9 @@ Você chutou $200 \, \text{V}$ (lembre-se que Resistência é medida em Ohms ($\
 Para acharmos a resistência de Thévenin ($R_{eq}$) vista pelo capacitor:
 1. Retiramos o capacitor (vamos olhar pelos "buracos" que ele deixou na direita).
 2. "Desligamos" a fonte de $50\text{V}$ transformando-a em um **fio liso (curto-circuito)**.
+
+**Circuito olhando para o Req (Fonte zerada):**
+![Circuito Passo 2](../../_base_dados_ia/imagens_geradas/problema_7_2_req.png)
 
 Ao fechar um fio no lugar da fonte lá na esquerda, o resistor de $120 \, \Omega$ acaba ficando conectado aos mesmos dois pontos (nós) do resistor de $80 \, \Omega$. Ou seja, eles ficam em **PARALELO**! 
 
