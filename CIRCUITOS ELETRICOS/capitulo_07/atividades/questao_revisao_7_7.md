@@ -47,3 +47,25 @@ $$ I_{indutor} = 10 \times \frac{2}{5} $$
 $$ I_{indutor} = \mathbf{4 \, \text{A}} $$
 
 A alternativa correta é a **(c)**!
+
+---
+
+### 💡 Alternativa: Resolvendo com a Lei de Ohm
+Se você não gosta ou esquecer a fórmula do divisor de corrente, você pode usar a velha e confiável **Lei de Ohm ($V = R \cdot I$)**:
+
+**1. Achar a Resistência Equivalente:**
+Como os dois resistores estão em paralelo, a corrente da fonte "enxerga" um único grande resistor equivalente ($R_{eq}$):
+$$ R_{eq} = \frac{2 \cdot 3}{2 + 3} = \frac{6}{5} = \mathbf{1,2 \, \Omega} $$
+
+**2. Achar a Tensão Total no Nó:**
+A corrente total de $10\text{A}$ entra nesse bloco de $1,2 \, \Omega$. Qual é a voltagem que aparece lá em cima?
+$$ V_{total} = R_{eq} \cdot I_{total} $$
+$$ V_{total} = 1,2 \cdot 10 = \mathbf{12 \, \text{V}} $$
+Isso significa que a parte de cima inteira do circuito está sob uma pressão (tensão) de $12\text{V}$ em relação ao terra.
+
+**3. Achar a Corrente no Ramo do Indutor:**
+A tensão nos dois ramos em paralelo é exatamente a mesma ($12\text{V}$). Se sabemos que o resistor da direita tem $3 \, \Omega$ e está recebendo $12\text{V}$ de pressão, quanta corrente passa por ele?
+$$ I_{indutor} = \frac{V}{R} $$
+$$ I_{indutor} = \frac{12}{3} = \mathbf{4 \, \text{A}} $$
+
+Chegamos exatamente no mesmo resultado, de forma ainda mais conceitual!
