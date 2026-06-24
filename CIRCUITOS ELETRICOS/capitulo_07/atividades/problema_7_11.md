@@ -69,7 +69,16 @@ O circuito que sobrou vivo (em azul) ficou assim:
 
 A energia magnética acumulada no indutor (que gera aqueles $1,2\text{A}$) vai começar a girar nesse loop formado por ele e pelos dois resistores (4 e 8).
 
+> [!TIP]
+> **Olhando com as lentes de Thevenin**
+> Para achar a Resistência Equivalente ($R_{eq}$) que o indutor enxerga, nós usamos o Teorema de Thevenin: arrancamos o indutor do lugar (deixando os terminais A e B abertos) e "desligamos" as fontes independentes (fontes de tensão viram curtos-circuitos).
+>
+> Veja como fica a visão do circuito sob a ótica de Thevenin:
+> ![Visão de Thevenin](../../_base_dados_ia/imagens_geradas/problema_7_11_thevenin.png)
+>
+> Note que a fonte de tensão à esquerda foi curto-circuitada (em roxo). Mas como a chave abriu logo na frente dela, a corrente ali é zero e essa parte fica totalmente inativa. O que importa de verdade para os terminais A e B é o circuito fechado em azul!
+
 Sua missão final para aniquilarmos esse problema:
-1. Olhando para esse novo circuito azul, qual é o $R_{eq}$ visto pelo indutor? (Dica: o caminho fechado faz eles ficarem em série ou paralelo?)
+1. Olhando para os terminais A e B, os resistores de 4 e 8 estão ligados em série ou em paralelo? Qual é o valor do $R_{eq}$?
 2. Calcule a Constante de Tempo $\tau$ (Lembre-se que para indutores a fórmula é $\tau = L/R_{eq}$).
 3. Escreva a equação final de $i_o(t)$!
