@@ -6,37 +6,38 @@ img_dir = r"c:\Users\DD\Documents\DD\PUC MINAS\PUC-MINAS\CIRCUITOS ELETRICOS\_ba
 os.makedirs(img_dir, exist_ok=True)
 
 with schemdraw.Drawing(file=os.path.join(img_dir, "problema_7_17.png"), show=False) as d:
-    d.config(unit=4.0, fontsize=16)
+    d.config(unit=3.0, fontsize=16)
     
-    # Left branch
+    # Fio inferior
+    d += elm.Line().right().at((0,0)).length(6)
+    
+    # Ramo esquerdo (Fonte)
     d += elm.SourceV().up().at((0,0)).label('v(t)', loc='left')
     top_left = d.here
     
-    # Top branch
-    d += elm.Resistor().right().at(top_left).label('1 Ω', loc='top')
+    # Ramo superior (Resistor 1 ohm)
+    d += elm.Resistor().right().at(top_left).label('1 Ω', loc='top').length(3)
     top_mid = d.here
     
-    # Middle branch
-    d += elm.Resistor().down().at(top_mid).label('3 Ω', loc='bottom')
+    # Ramo do meio (Resistor 3 ohm + Indutor 1/4 H)
+    d += elm.Resistor().down().at(top_mid).label('3 Ω', loc='left').length(1.5)
     mid_node = d.here
-    d += elm.Inductor2().down().at(mid_node).label('1/4 H', loc='bottom')
-    bot_mid = d.here
+    d += elm.Inductor2().down().at(mid_node).label('1/4 H', loc='left').toy(0)
+    bot_mid = (top_mid[0], 0)
     
-    # Current label
-    d += elm.Label().at((top_mid[0] + 0.5, top_mid[1] - 1)).label('$i(t) \downarrow$', color='red')
+    # Seta de corrente
+    d += elm.Line(arrow='->').down().at((top_mid[0]+0.8, top_mid[1]-0.2)).length(1).color('red').label('$i(t)$', loc='right')
     
-    # Right branch (open terminals)
-    d += elm.Line().right().at(top_mid).length(2)
+    # Terminais abertos na direita
+    d += elm.Line().right().at(top_mid).length(3)
     top_right = d.here
-    d += elm.Dot(open=True).at(top_right)
+    d += elm.Dot(open=True)
     
-    d += elm.Line().right().at(bot_mid).length(2)
+    d += elm.Line().right().at(bot_mid).length(3)
     bot_right = d.here
-    d += elm.Dot(open=True).at(bot_right)
+    d += elm.Dot(open=True)
     
-    d += elm.Gap().down().at(top_right).label(['+', '$v_o(t)$', '-'])
-    
-    # Bottom branch
-    d += elm.Line().left().at(bot_mid).tox(0)
+    # Label do v_o(t)
+    d += elm.Gap().down().at(top_right).toy(0).label(['+', '$v_o(t)$', '-'])
 
 print("Gerado problema_7_17.png")
