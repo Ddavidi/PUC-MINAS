@@ -29,3 +29,30 @@ $$\tau = \frac{L}{R_{eq}} = \frac{5}{10} = \mathbf{0,5\text{s}}$$
 
 Como $0,5\text{s}$ é a mesma coisa que multiplicar por $1000$ para converter para mili:
 **Resposta Final:** $\tau = \mathbf{500\text{ms}}$
+
+---
+
+# Problema 7.15 (Letra b)
+
+**Enunciado:**
+Agora vamos para o segundo circuito da questão.
+
+![Circuito Problema 7.15b](../../_base_dados_ia/imagens_geradas/problema_7_15_b.png)
+
+## ✍️ Sua Vez!
+
+Primeira coisa: o gabarito que a gente "pescou" lá do final do livro na 5ª edição ($40\Omega$ e $250\text{ms}$) está **ERRADO** para os valores que vieram impressos no diagrama! O livro cometeu o clássico erro de dar a resposta para uma versão anterior do circuito (onde o resistor do meio valia $8\Omega$ ao invés de $48\Omega$). 
+
+Mas você também escorregou no seu Thevenin para chegar nos $72\Omega$! Vamos descobrir o porquê com a Visão de Thevenin:
+
+![Visão de Thevenin 7.15b](../../_base_dados_ia/imagens_geradas/problema_7_15_b_thevenin.png)
+
+Faça o "teste da formiguinha" saindo do Terminal A para tentar chegar no Terminal B (o terra lá embaixo):
+1. Saindo do terminal A, a corrente é obrigada a subir pelo resistor de $48\Omega$.
+2. Chegando lá no topo, ela encontra um nó triplo! Uma parte da corrente vai descer pelo resistor da esquerda ($40\Omega$) para chegar no Terminal B, e a outra parte vai descer pelo resistor da direita ($160\Omega$) para chegar no Terminal B.
+3. Se a corrente se dividiu para passar por eles e se encontrou no mesmo lugar no final, o que o 40 e o 160 são um do outro?
+4. E depois de resolver essa relação, qual a relação do resultado com o $48\Omega$ por onde a corrente passou inteira antes de se dividir?
+
+Se você reparar bem na sua conta anterior ($72\Omega$), você somou 40 com o paralelo. Você olhou pro lado esquerdo e esqueceu o resistor de 48 do meio!
+
+Calcule o **verdadeiro** $R_{eq}$ desse circuito (usando o $48\Omega$), jogue na fórmula $\tau = L / R_{eq}$ usando o seu indutor de $20\text{mH}$, e me mostre a resposta definitiva que prova que o livro está errado!
