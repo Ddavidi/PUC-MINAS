@@ -56,6 +56,24 @@ O capacitor está "carregadíssimo" com 40V.
 ### Passo 2: O Circuito em $t > 0$ (A Descarga)
 Agora a chave vira para a posição B. Você acertou em cheio numa coisa: **a fonte de 40V passa a ser ignorada**. 
 
-Mas você errou ao dizer que a tensão e a corrente serão zero! Lembre-se: o capacitor agora é uma "caixa d'água cheia" com 40V. Ao conectar na posição B, ele vai atuar como se fosse uma bateria temporária e vai **descarregar** sua energia em cima do resistor de $2\text{k}\Omega$! 
+A fonte e o resistor de 5k ficam literalmente com as "pernas" cortadas para a direita, saindo do jogo. Mas o capacitor (nossa "caixa d'água cheia") com $40\text{V}$ agora está fechado em um circuito exclusivo com o resistor de $2\text{k}\Omega$:
 
-*(Escreva no chat como fica o circuito olhando do capacitor agora em $t > 0$ e calcule o $\tau$!)*
+![Circuito em t > 0](../../_base_dados_ia/imagens_geradas/problema_7_4_t0.png)
+
+Daqui para a frente, é pura receita de bolo!
+
+**1. O $R_{eq}$:**
+Olhando pelos terminais do capacitor, a única coisa que sobrou viva no circuito azul é o resistor de $2\text{k}\Omega$.
+$$R_{eq} = \mathbf{2 \, \text{k}\Omega}$$
+
+**2. O $\tau$:**
+$$\tau = R_{eq} \times C$$
+$$\tau = (2 \times 10^3) \times (10 \times 10^{-6})$$
+$$\tau = 20 \times 10^{-3} = \mathbf{0,02 \, \text{s}}$$
+
+**3. A Equação Final:**
+Jogando na nossa fórmula mágica de descarga $v(t) = v(0)e^{-t/\tau}$:
+$$v(t) = 40 e^{-t / 0,02}$$
+
+Sabendo que $\frac{1}{0,02} = 50$, nossa resposta oficial (e perfeita) é:
+$$v(t) = \mathbf{40 e^{-50t} \, \text{V}, \quad t > 0}$$
