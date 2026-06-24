@@ -25,7 +25,7 @@ with schemdraw.Drawing(file=os.path.join(img_dir, "revisao_fig_7_80_infinito.png
     node_top_sw = d.here
     
     # Switch CLOSED (Short Circuit)
-    d += elm.Line().down().label('Chave Fechada\n(Curto-Circuito)', loc='bot', color='red').length(2.5).color('red')
+    d += elm.Line().down().label('Chave Fechada\n(Curto)', loc='bot', color='red').length(3.0).color('red')
     bot_sw = d.here
     
     # Top wire to Inductor
@@ -33,8 +33,8 @@ with schemdraw.Drawing(file=os.path.join(img_dir, "revisao_fig_7_80_infinito.png
     node_top_ind = d.here
     
     # Inductor (Wire) and Resistor in series (Bypassed)
-    d += elm.Line().down().label('Fio Liso\n(Ex-Indutor)', loc='bot').length(1.25).color('blue').style(ls=':')
-    d += elm.Resistor().down().label('3Ω\n↓ i(∞)', loc='bot').length(1.25).style(ls=':')
+    d += elm.Line().down().label('Fio Liso\n(Ex-Indutor)', loc='bot').length(1.5).color('blue').style(ls=':')
+    d += elm.Resistor().down().label('3Ω\n↓ i(∞)', loc='bot').length(1.5).style(ls=':')
     bot_ind = d.here
     
     # Bottom wires returning
