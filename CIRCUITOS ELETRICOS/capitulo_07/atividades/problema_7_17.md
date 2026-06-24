@@ -58,3 +58,14 @@ Ou seja: $v_o(t) = - v_{\text{resistor\_de\_1}}$
 Sabendo que a corrente que passa no resistor de 1 é a mesma $i(t)$... a conta sai de cabeça!
 
 Escolha a sua arma (Caminho 1 ou 2), faça a conta e me diga: Qual é a equação final de **$v_o(t)$**?
+
+---
+
+**Resolução Final (O Truque Ninja):**
+Usando o Caminho 2, sabemos que a malha da esquerda inteira fecha um ciclo. A tensão $v_o(t)$ medida nos terminais abertos é exatamente a mesma tensão que está em paralelo com todo o ramo do meio.
+Ao olhar para o circuito curto-circuitado, o ramo do meio está em **paralelo reverso** com o resistor de $1\Omega$ (já que o nó inferior liga ambos, e o nó superior liga ambos, mas a corrente "entra" no resistor e "desce" no ramo).
+Portanto:
+$$v_o(t) = - v_{\text{resistor 1}\Omega}$$
+$$v_o(t) = - (R \cdot i(t))$$
+$$v_o(t) = - (1 \cdot 6e^{-16t})$$
+$$v_o(t) = \mathbf{-6e^{-16t}\text{ V}}$$
