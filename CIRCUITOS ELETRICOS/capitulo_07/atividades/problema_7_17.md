@@ -26,9 +26,35 @@ Faça o "teste da formiguinha" saindo do Terminal A para tentar chegar no Termin
 2. Depois disso, ela chega no nó superior. O lado direito do circuito está totalmente aberto (não passa corrente). A única saída é ir para a esquerda!
 3. Ela passa pelo resistor de $1\Omega$ e desce pelo fio liso para finalmente chegar no Terminal B (terra).
 
-**Com base nessa viagem:**
-1. Qual é o valor da Resistência Equivalente ($R_{eq}$)?
-2. Qual é a constante de tempo $\tau = L / R_{eq}$? (Lembrando que o indutor vale $1/4\text{H}$)
-3. Monte a equação da corrente $i(t) = i(0)e^{-t/\tau}$.
+**1. Resistência Equivalente:**
+Como o lado direito está aberto, o resistor de $3\Omega$ está em série direta com o de $1\Omega$ (já que o curto-circuito na esquerda fecha o caminho entre eles).
+$$R_{eq} = 3 + 1 = \mathbf{4\Omega}$$
 
-Calcule esses 3 passos iniciais e me diga qual foi a equação de $i(t)$ que você encontrou! (Deixe o cálculo do $v_o(t)$ para a parte 2).
+**2. Constante de Tempo:**
+$$\tau = \frac{L}{R_{eq}} = \frac{1/4}{4} = \mathbf{\frac{1}{16}\text{s}}$$
+
+**3. Equação da Corrente:**
+$$i(t) = i(0)e^{-t/\tau} = \mathbf{6e^{-16t}\text{ A}}$$
+
+---
+
+## Parte 2: O xeque-mate ($v_o(t)$)
+
+A corrente $i(t)$ a gente já sabe que é $6e^{-16t}$ e que ela aponta para **baixo** no ramo do meio.
+Mas o problema quer saber o valor de **$v_o(t)$**, que é a tensão naqueles terminais abertos ali na direita.
+
+Como os terminais estão em paralelo com o ramo do meio, a tensão $v_o(t)$ é literalmente a tensão em cima da "dupla" (resistor de $3\Omega$ + indutor). Você tem **dois caminhos** para resolver isso. Escolha o que preferir:
+
+**Caminho 1 (A Força Bruta):**
+A tensão $v_o(t)$ é a soma da tensão no resistor de 3 mais a tensão no indutor.
+1. Calcule a tensão no resistor: $v_R = R \cdot i(t) = 3 \cdot i(t)$.
+2. Calcule a tensão no indutor: $v_L = L \cdot \frac{di}{dt}$ (você vai ter que derivar o $6e^{-16t}$).
+3. Some os dois: $v_o(t) = v_R + v_L$.
+
+**Caminho 2 (O Truque Ninja):**
+Olhe para o circuito fechado pela esquerda. A corrente $i(t)$ desce pelo meio, vira à esquerda no chão, sobe pelo curto-circuito, e vira à direita passando pelo resistor de $1\Omega$.
+Se você fizer uma Lei de Kirchhoff das Tensões (LKT) na malha da esquerda inteira, você descobre que a tensão no ramo do meio (que é o $v_o(t)$) é exatamente igual à tensão em cima do resistor de $1\Omega$, mas com o sinal trocado (porque a corrente entra pelo lado negativo de quem está do outro lado)!
+Ou seja: $v_o(t) = - v_{\text{resistor\_de\_1}}$
+Sabendo que a corrente que passa no resistor de 1 é a mesma $i(t)$... a conta sai de cabeça!
+
+Escolha a sua arma (Caminho 1 ou 2), faça a conta e me diga: Qual é a equação final de **$v_o(t)$**?
