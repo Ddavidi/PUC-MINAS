@@ -10,14 +10,9 @@ aberta em t = 0. Determine v(t) para t  0.
 +
 
 2 k:
-10 k:
-40 mF
-+
-–
-v(t)
-t = 0
-Figura 7.86    Esquema para o Problema 7.6.
-*(As imagens dos circuitos originais serão geradas no formato padrão via código assim que iniciarmos a resolução!)*
+A chave na figura abaixo foi fechada há um bom tempo e é aberta em $t = 0$. Determine $v(t)$ para $t \ge 0$.
+
+![Circuito Problema 7.6](../../_base_dados_ia/imagens_geradas/problema_7_6.png)
 
 ---
 
