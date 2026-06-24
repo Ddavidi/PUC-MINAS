@@ -45,7 +45,12 @@ Começando a simplificar de trás para a frente (da direita para a esquerda):
 ---
 
 ### Passo 2: Calcular $\tau$
-Sabendo que o $R_{eq} \approx 32,22\text{k}\Omega$ e $C = 100\text{pF}$.
+Com o $R_{eq}$ encontrado e sabendo que $C = 100\text{ pF}$:
 
-Tente calcular o $\tau$ agora (cuidado com as letras `k` que é $10^3$ e `p` que é $10^{-12}$)!
-*(Escreva sua nova resposta aqui ou no chat)*
+$$\tau = R_{eq} \times C$$
+$$\tau = 32,22 \times 10^3 \times 100 \times 10^{-12}$$
+$$\tau = 32,22 \times 10^{-7} \, \text{s}$$
+
+Ou, na notação científica padrão (andando a vírgula e diminuindo o expoente):
+$$\tau = \mathbf{3,222 \times 10^{-6} \, \text{s}}$$
+*(O que também pode ser escrito como $\mathbf{3,222 \, \mu\text{s}}$)*
