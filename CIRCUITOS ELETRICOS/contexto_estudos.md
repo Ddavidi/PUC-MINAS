@@ -56,7 +56,10 @@ Este arquivo serve como um índice e registro de tudo o que estamos estudando so
 - [ ] Exercício Interativo: **[Questão de Revisão 7.4](file:///c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/capitulo_07/atividades/questao_revisao_7_4.md)**
 - [ ] Exercício Interativo: **[Questão de Revisão 7.5](file:///c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/capitulo_07/atividades/questao_revisao_7_5.md)**
 - [ ] Exercício Interativo: **[Questão de Revisão 7.6](file:///c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/capitulo_07/atividades/questao_revisao_7_6.md)**
-- [ ] Exercício Interativo: **[Questão de Revisão 7.7](file:///c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/capitulo_07/atividades/questao_revisao_7_7.md)**
+- [x] Exercício Interativo: **[Questão de Revisão 7.7](file:///c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/capitulo_07/atividades/questao_revisao_7_7.md)**
+- [ ] Exercício Interativo: **[Questão de Revisão 7.8](file:///c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/capitulo_07/atividades/questao_revisao_7_8.md)**
+- [ ] Exercício Interativo: **[Questão de Revisão 7.9](file:///c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/capitulo_07/atividades/questao_revisao_7_9.md)**
+- [ ] Exercício Interativo: **[Questão de Revisão 7.10](file:///c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/capitulo_07/atividades/questao_revisao_7_10.md)**
 
 ### Metodologia de Ensino
 1. Foco em abstração e interpretação semântica de circuitos antes da matemática bruta.
