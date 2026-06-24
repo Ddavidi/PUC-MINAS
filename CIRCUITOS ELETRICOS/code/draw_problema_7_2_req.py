@@ -28,14 +28,14 @@ with schemdraw.Drawing(file=os.path.join(img_dir, "problema_7_2_req.png"), show=
     top_right = d.here
     
     # Open terminals for Capacitor
-    d += elm.Line().down().at(top_right).length(0.5)
+    d += elm.Line().down().at(top_right).length(0.75)
     top_term = d.here
     d += elm.Dot(open=True)
     
-    d += elm.Gap().down().label('R_eq', loc='right').length(2)
+    d += elm.Gap().down().label('R_eq', loc='right').length(1.5)
     
     d += elm.Dot(open=True)
-    d += elm.Line().up().length(0.5)
+    d += elm.Line().down().toy(bot_mid)
     bot_term = d.here
     
     # Connect bottom
@@ -43,6 +43,6 @@ with schemdraw.Drawing(file=os.path.join(img_dir, "problema_7_2_req.png"), show=
     
     # Arrow for Req looking in
     import schemdraw.util as util
-    d += elm.Arc2(arrow='<-').at((top_term[0]+1, top_term[1])).to((top_term[0], top_term[1]))
+    d += elm.Arc2(arrow='<-').at((top_term[0]+0.8, top_term[1]-0.75)).to((top_term[0]+0.1, top_term[1]-0.75))
 
 print("Gerado problema_7_2_req.png")

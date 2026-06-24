@@ -28,11 +28,12 @@ with schemdraw.Drawing(file=os.path.join(img_dir, "problema_7_2_v0.png"), show=F
     top_right = d.here
     
     # Open terminals for Capacitor
-    d += elm.Line().down().at(top_right).length(0.5)
+    # We want the total vertical drop to be from y=3 to y=0 (same as the 80 ohm resistor)
+    d += elm.Line().down().at(top_right).length(0.75)
     d += elm.Dot(open=True)
-    d += elm.Gap().down().label(('+', 'v(0)', '-'), loc='right').length(2)
+    d += elm.Gap().down().label(('+', 'v(0)', '-'), loc='right').length(1.5)
     d += elm.Dot(open=True)
-    d += elm.Line().up().length(0.5)
+    d += elm.Line().down().toy(bot_mid)
     
     bot_right = d.here
     
