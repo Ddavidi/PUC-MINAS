@@ -80,18 +80,16 @@ with schemdraw.Drawing(file=os.path.join(img_dir, "cap7_pratico_7_4_t0.png"), sh
     d += elm.Line().left().at(bot_right).tox(bot_src)
 
 # 3. CIRCUITO t > 0 (Achar Req)
-with schemdraw.Drawing(file=os.path.join(img_dir, "cap7_pratico_7_4_req.png"), show=False) as d:
+with schemdraw.Drawing(file=os.path.join(img_dir, "cap7_pratico_7_4_req_v2.png"), show=False) as d:
     d.config(unit=3.5, fontsize=14)
     
-    # Chave abriu, lado esquerdo some. Fica só a parte direita.
     # Começamos do Node A
     d += elm.Dot().label('A')
     node_A = d.here
     
     d += elm.Resistor().down().length(2).label('12Ω', loc='bot')
     node_B = d.here
-    d += elm.Gap().down().length(2).label('Req', loc='bot', color='blue')
-    bot_mid = d.here
+    d += elm.Dot(open=True).label('a', loc='left') # Terminal superior do indutor arrancado
     
     d += elm.Line().right().at(node_A).length(3)
     node_D = d.here
@@ -103,7 +101,12 @@ with schemdraw.Drawing(file=os.path.join(img_dir, "cap7_pratico_7_4_req.png"), s
     
     d += elm.Resistor().right().at(node_B).tox(node_C).label('5Ω', loc='bot')
     
-    d += elm.Line().left().at(bot_right).tox(bot_mid)
+    d += elm.Line().left().at(bot_right).tox(node_B)
+    bot_mid = d.here
+    d += elm.Dot(open=True).label('b', loc='left') # Terminal inferior do indutor arrancado
+    
+    # Seta indicando onde o Req é medido
+    d += elm.Gap().up().at(bot_mid).toy(node_B).label('Req', loc='bot', color='blue')
 
 # 4. CIRCUITO DIDATICO (Curto-circuito anulando o 5 ohm)
 with schemdraw.Drawing(file=os.path.join(img_dir, "cap7_pratico_7_4_curto_v2.png"), show=False) as d:

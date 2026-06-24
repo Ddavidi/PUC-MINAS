@@ -53,9 +53,9 @@ $$ i(\infty) = 0 \text{ A} $$
 ### Passo 3: Encontrar a Constante de Tempo ($\tau$)
 Com a chave aberta ($t > 0$), a fonte foi "amputada". O indutor agora precisa "enxergar" a Resistência Equivalente de Thevenin ($R_{eq}$) dos resistores que sobraram.
 
-Arrancamos o indutor e olhamos pelos seus terminais (buracos azuis na imagem abaixo):
+Arrancamos o indutor e olhamos pelos seus terminais (buracos abertos $a$ e $b$ na imagem abaixo):
 
-![Circuito para achar Req](../../_base_dados_ia/imagens_geradas/cap7_pratico_7_4_req.png)
+![Circuito para achar Req](../../_base_dados_ia/imagens_geradas/cap7_pratico_7_4_req_v2.png)
 
 A corrente sairia do buraco superior, não pode ir para a esquerda porque a chave está aberta, então é obrigada a subir pelo resistor de $12 \, \Omega$, seguir para a direita e descer pelo resistor de $8 \, \Omega$ para chegar no terra. Portanto, esses dois estão em **série**:
 $$ R_{serie} = 12 + 8 = 20 \, \Omega $$
