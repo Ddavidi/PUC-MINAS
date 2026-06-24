@@ -78,7 +78,15 @@ A energia magnética acumulada no indutor (que gera aqueles $1,2\text{A}$) vai c
 >
 > Note que a fonte de tensão à esquerda foi curto-circuitada (em roxo). Mas como a chave abriu logo na frente dela, a corrente ali é zero e essa parte fica totalmente inativa. O que importa de verdade para os terminais A e B é o circuito fechado em azul!
 
-Sua missão final para aniquilarmos esse problema:
-1. Olhando para os terminais A e B, os resistores de 4 e 8 estão ligados em série ou em paralelo? Qual é o valor do $R_{eq}$?
-2. Calcule a Constante de Tempo $\tau$ (Lembre-se que para indutores a fórmula é $\tau = L/R_{eq}$).
-3. Escreva a equação final de $i_o(t)$!
+**1. O $R_{eq}$:**
+Fazendo o "teste da formiguinha" a partir do ponto A até o ponto B pela visão de Thevenin, percebemos que o caminho é único. Os resistores estão, na verdade, em **SÉRIE**.
+$$R_{eq} = 4 + 8 = \mathbf{12 \, \Omega}$$
+
+**2. A Constante de Tempo $\tau$:**
+Como o indutor é de $4\text{H}$:
+$$\tau = \frac{L}{R_{eq}} = \frac{4}{12} = \mathbf{\frac{1}{3} \, \text{s}} \text{ (ou } \mathbf{0,333 \, \text{s}})$$
+
+**3. A Equação Final:**
+A fórmula da resposta natural de um circuito RL é $i(t) = i(0)e^{-t/\tau}$.
+Sabemos que o inverso de $1/3$ é $3$, e que a corrente inicial é $1,2\text{A}$:
+$$i_o(t) = \mathbf{1,2 e^{-3t} \, \text{A}, \quad t > 0}$$
