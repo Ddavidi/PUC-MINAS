@@ -52,7 +52,11 @@ Este arquivo serve como um índice e registro de tudo o que estamos estudando so
 - [x] Resolução do **[Problema Prático 7.3](file:///c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/capitulo_07/atividades/problema_pratico_7_3.md)**, lidando com **Fontes Dependentes** e a técnica da Fonte de Teste para achar o $R_{eq}$.
 - [x] Resolução do **[Problema Prático 7.4](file:///c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/capitulo_07/atividades/problema_pratico_7_4.md)**, analisando a topologia confusa de pontes e o comportamento de curto-circuito em CC.
 - [x] Exercício Interativo: **[Questão de Revisão 7.2](file:///c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/capitulo_07/atividades/questao_revisao_7_2.md)** (Questões para Revisão do capítulo).
-- [ ] Exercício Interativo: **[Questão de Revisão 7.3](file:///c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/capitulo_07/atividades/questao_revisao_7_3.md)**
+- [x] Exercício Interativo: **[Questão de Revisão 7.3](file:///c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/capitulo_07/atividades/questao_revisao_7_3.md)**
+- [ ] Exercício Interativo: **[Questão de Revisão 7.4](file:///c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/capitulo_07/atividades/questao_revisao_7_4.md)**
+- [ ] Exercício Interativo: **[Questão de Revisão 7.5](file:///c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/capitulo_07/atividades/questao_revisao_7_5.md)**
+- [ ] Exercício Interativo: **[Questão de Revisão 7.6](file:///c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/capitulo_07/atividades/questao_revisao_7_6.md)**
+- [ ] Exercício Interativo: **[Questão de Revisão 7.7](file:///c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/capitulo_07/atividades/questao_revisao_7_7.md)**
 
 ### Capítulo 9 (Senoides e Fasores)
 1. Extração do PDF (texto e imagens) concluída.
