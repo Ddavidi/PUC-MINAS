@@ -4,12 +4,6 @@
 > **Instrução:** Leia o enunciado abaixo e tente resolver usando a metodologia.
 
 **Enunciado:**
-7.6 	 A chave na Figura 7.86 foi fechada há um bom tempo e é 
-aberta em t = 0. Determine v(t) para t  0.
-40 V
-+
-
-2 k:
 A chave na figura abaixo foi fechada há um bom tempo e é aberta em $t = 0$. Determine $v(t)$ para $t \ge 0$.
 
 ![Circuito Problema 7.6](../../_base_dados_ia/imagens_geradas/problema_7_6.png)
@@ -43,4 +37,13 @@ $$v(0) = 40 \cdot \left(\frac{2}{12}\right) = 40 \cdot \left(\frac{1}{6}\right) 
 
 ### Passo 2: O Circuito em $t > 0$
 Agora a nossa chave finalmente **abre**. O que vai acontecer com o circuito?
-*(Tente deduzir o $R_{eq}$ e escreva no chat!)*
+
+A regra de ouro diz que para acharmos o $R_{eq}$ visto pelo capacitor, devemos desligar as fontes independentes (fontes de tensão virariam curto-circuito). **PORÉM**, repare no que a abertura da chave causou fisicamente:
+A chave cortou o fio! Isso significa que a fonte de 40V e o resistor de 10k foram completamente amputados do resto do circuito ativo. Não precisamos nem nos preocupar em transformá-la em curto, porque ela não faz mais parte da malha onde o capacitor está.
+
+Veja como fica a topologia em $t > 0$:
+![Circuito em t > 0](../../_base_dados_ia/imagens_geradas/problema_7_6_t0.png)
+
+O capacitor, que estava lotado de energia ($20/3\text{V}$), agora está isolado em um circuito fechado (azul) **apenas** com o resistor de $2\text{k}\Omega$. Ele começará a descarregar sua energia ali.
+
+Com base nesse desenho claríssimo, calcule para mim o $R_{eq}$, o $\tau$ e me diga qual é a equação $v(t)$ final da descarga!
