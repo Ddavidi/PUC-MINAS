@@ -46,4 +46,18 @@ Veja como fica a topologia em $t > 0$:
 
 O capacitor, que estava lotado de energia ($20/3\text{V}$), agora está isolado em um circuito fechado (azul) **apenas** com o resistor de $2\text{k}\Omega$. Ele começará a descarregar sua energia ali.
 
-Com base nesse desenho claríssimo, calcule para mim o $R_{eq}$, o $\tau$ e me diga qual é a equação $v(t)$ final da descarga!
+**1. O $R_{eq}$:**
+Olhando pelos terminais do capacitor, o único caminho fechado disponível é o resistor de $2\text{k}\Omega$.
+$$R_{eq} = \mathbf{2 \, \text{k}\Omega}$$
+
+**2. O $\tau$:**
+$$\tau = R_{eq} \times C$$
+$$\tau = (2 \times 10^3) \times (40 \times 10^{-6})$$
+$$\tau = 80 \times 10^{-3} = \mathbf{0,08 \, \text{s}}$$
+
+**3. A Equação Final:**
+Usando a equação de descarga do capacitor $v(t) = v(0)e^{-t/\tau}$:
+$$v(t) = \frac{20}{3} e^{-t / 0,08}$$
+
+Sabendo que $\frac{1}{0,08} = 12,5$, nossa resposta oficial é:
+$$v(t) = \mathbf{\frac{20}{3} e^{-12,5t} \, \text{V}, \quad t \ge 0}$$
