@@ -106,7 +106,7 @@ with schemdraw.Drawing(file=os.path.join(img_dir, "cap7_pratico_7_4_req.png"), s
     d += elm.Line().left().at(bot_right).tox(bot_mid)
 
 # 4. CIRCUITO DIDATICO (Curto-circuito anulando o 5 ohm)
-with schemdraw.Drawing(file=os.path.join(img_dir, "cap7_pratico_7_4_curto.png"), show=False) as d:
+with schemdraw.Drawing(file=os.path.join(img_dir, "cap7_pratico_7_4_curto_v2.png"), show=False) as d:
     d.config(unit=3.5, fontsize=14)
     
     d += elm.Line().down().length(3).label('Corrente\nTotal', loc='left')

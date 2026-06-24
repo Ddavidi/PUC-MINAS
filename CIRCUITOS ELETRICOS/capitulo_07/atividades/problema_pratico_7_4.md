@@ -22,7 +22,7 @@ Veja o que acontece com o circuito desenhado com o curto-circuito no lugar do in
 
 O indutor virou um fio liso que conecta o nó do meio diretamente ao terra (fio de baixo). O resistor de $5 \, \Omega$ está espremido exatamente entre esses mesmos dois pontos (o nó do meio e o terra). Ou seja, o Indutor e o Resistor de $5 \, \Omega$ estão em **paralelo**.
 
-![Explicação do Curto-Circuito](../../_base_dados_ia/imagens_geradas/cap7_pratico_7_4_curto.png)
+![Explicação do Curto-Circuito](../../_base_dados_ia/imagens_geradas/cap7_pratico_7_4_curto_v2.png)
 
 > [!TIP]
 > **Por que o 5 ohms morre?**
