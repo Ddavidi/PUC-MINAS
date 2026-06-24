@@ -27,14 +27,16 @@ No circuito da Figura 7.79 abaixo, a tensão final $v(\infty)$ é:
 
 **Aplicando a Receita, passo a passo:**
 
-**Passo 1: O estado da Chave**
+**Passo 1 e 2: O estado da Chave e do Capacitor**
 O enunciado indica que a chave "abre" em $t=0$. Então, no infinito, a chave está aberta. Isso corta o fio do lado direito! Nenhuma corrente pode passar pelo resistor de $2 \, \Omega$. Aquele pedaço inteiro do circuito vira um "braço morto".
+Transformamos o capacitor de $7\text{F}$ em um circuito aberto. 
 
-**Passo 2: Substituir o Capacitor**
-Transformamos o capacitor de $7\text{F}$ em um circuito aberto. O que sobrou vivo no circuito inteiro? Apenas a Fonte de $10\text{V}$ e o Resistor de $3 \, \Omega$ em série com o "buraco" do capacitor.
+Olhe como o circuito fica muito mais amigável após limparmos o que "morreu" e substituirmos o capacitor:
+
+![Circuito no Infinito](../../_base_dados_ia/imagens_geradas/revisao_fig_7_79_infinito.png)
 
 **Passo 3 e 4: Cálculo da Tensão**
-Como a corrente total no circuito é zero (o capacitor não deixa a corrente circular em CC, e a chave da direita está aberta), não há corrente atravessando o resistor de $3 \, \Omega$.
+Como a corrente total no circuito é zero (o buraco do capacitor não deixa a corrente circular, e a chave da direita está aberta), não há corrente atravessando o resistor de $3 \, \Omega$.
 Aplicando a Lei de Ohm nele: $V_{resistor} = R \cdot I \rightarrow V_{resistor} = 3 \cdot 0 = \mathbf{0 \, \text{V}}$.
 Se o resistor não "gasta" nenhuma voltagem, toda a força da Fonte de $10\text{V}$ chega intacta nos terminais do capacitor.
 
