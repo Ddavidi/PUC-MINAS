@@ -57,6 +57,18 @@ Derivando a equação da corrente e multiplicando por $-L$, você acha o resulta
 
 Tente fazer por um dos caminhos (ou os dois para tirar a prova real) e me diga: **Qual é o valor final de $v_o(t)$?**
 
+---
+
+**Resolução Final (Caminho da Derivada):**
+Usando o Caminho 2, sabemos que a tensão cai do 0V (fio de baixo) para o Nó A.
+Portanto:
+$$v_o(t) = - v_{\text{indutor}}$$
+$$v_o(t) = - \left( L \cdot \frac{di}{dt} \right)$$
+$$v_o(t) = -0,4 \cdot \frac{d}{dt} \left( 5e^{-3t} \right)$$
+$$v_o(t) = -0,4 \cdot \left( 5 \cdot (-3) e^{-3t} \right)$$
+$$v_o(t) = -0,4 \cdot \left( -15e^{-3t} \right)$$
+$$v_o(t) = \mathbf{6e^{-3t}\text{ V}}$$
+
 > [!TIP]
 > **Receita de Bolo: Análise de Circuitos de Primeira Ordem**
 > 1. **Análise em t < 0:** Identifique o estado da chave. Calcule $v(0)$ para capacitores ou $i(0)$ para indutores (eles se comportam como circuito aberto e curto-circuito, respectivamente, em CC).
