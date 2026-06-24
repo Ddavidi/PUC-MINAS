@@ -13,8 +13,11 @@ with schemdraw.Drawing(file=os.path.join(img_dir, "problema_7_17.png"), show=Fal
     
     # Ramo esquerdo (Fonte)
     d += elm.Line().up().at((0,0)).length(1.5)
-    d += elm.SourceV().up().label('v(t)', loc='left')
-    d += elm.Line().up().length(1.5)
+    source_bot = d.here
+    d += elm.SourceV().up().at(source_bot)
+    source_top = d.here
+    d += elm.Label().at((-0.8, (source_bot[1]+source_top[1])/2)).label('v(t)')
+    d += elm.Line().up().at(source_top).length(1.5)
     top_left = d.here
     
     # Ramo superior (Resistor 1 ohm)
@@ -24,7 +27,7 @@ with schemdraw.Drawing(file=os.path.join(img_dir, "problema_7_17.png"), show=Fal
     # Ramo do meio (Resistor 3 ohm + Indutor 1/4 H)
     d += elm.Resistor().down().at(top_mid).label('3 Ω', loc='left').length(3)
     mid_node = d.here
-    d += elm.Inductor2().down().at(mid_node).label('1/4 H', loc='left').length(3)
+    d += elm.Inductor2().down().at(mid_node).label('1/4 H', loc='left').toy(0)
     bot_mid = (top_mid[0], 0)
     
     # Seta de corrente
