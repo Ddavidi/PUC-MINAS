@@ -43,4 +43,33 @@ Para resolver, siga o roteiro:
 3. Descubra a $I_{total}$ saindo da fonte usando a Lei de Ohm ($I = V/R_{Total}$).
 4. Jogue a $I_{total}$ na fórmula do Divisor de Corrente acima para achar $i_o(0)$.
 
-Faça essa continha e me mande qual é a corrente inicial do indutor!
+**1. Resistência Total:**
+O paralelo de 4 e 8: $R_p = \frac{4 \times 8}{4 + 8} = \frac{32}{12} = \frac{8}{3} \, \Omega$
+A resistência total do circuito vista pela fonte é o 4 em série com esse paralelo:
+$R_{Total} = 4 + \frac{8}{3} = \frac{12 + 8}{3} = \frac{20}{3} \, \Omega$
+
+**2. Corrente Total:**
+Usando Ohm na fonte de 24V:
+$I_{total} = \frac{V}{R_{Total}} = \frac{24}{20/3} = 24 \times \frac{3}{20} = \frac{72}{20} = \mathbf{3,6 \, \text{A}}$
+
+**3. Divisor de Corrente para achar $i_o(0)$:**
+Como discutido, o vizinho (4) vai no numerador:
+$$i_o(0) = 3,6 \cdot \left(\frac{4}{4 + 8}\right) = 3,6 \cdot \left(\frac{1}{3}\right) = \mathbf{1,2 \, \text{A}} \text{ (ou } \mathbf{6/5 \, \text{A}})$$
+
+Pronto! A nossa corrente inicial do indutor é $\mathbf{1,2 \, \text{A}}$.
+
+---
+
+### Passo 2: O Circuito em $t > 0$ (Descarga do Indutor)
+No tempo zero, a chave **Abre**. E aí o lado esquerdo morre igual no problema anterior.
+A fonte de 24V e o resistor de 4 que estava colado nela são isolados da festa.
+
+O circuito que sobrou vivo (em azul) ficou assim:
+![Circuito em t > 0](../../_base_dados_ia/imagens_geradas/problema_7_11_t0.png)
+
+A energia magnética acumulada no indutor (que gera aqueles $1,2\text{A}$) vai começar a girar nesse loop formado por ele e pelos dois resistores (4 e 8).
+
+Sua missão final para aniquilarmos esse problema:
+1. Olhando para esse novo circuito azul, qual é o $R_{eq}$ visto pelo indutor? (Dica: o caminho fechado faz eles ficarem em série ou paralelo?)
+2. Calcule a Constante de Tempo $\tau$ (Lembre-se que para indutores a fórmula é $\tau = L/R_{eq}$).
+3. Escreva a equação final de $i_o(t)$!
