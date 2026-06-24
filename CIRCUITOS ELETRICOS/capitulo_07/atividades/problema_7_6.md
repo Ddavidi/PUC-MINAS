@@ -24,4 +24,23 @@ A chave na figura abaixo foi fechada há um bom tempo e é aberta em $t = 0$. De
 > 4. **Equação Final:** Use a fórmula da resposta $x(t) = x(\infty) + [x(0) - x(\infty)]e^{-t/\tau}$.
 
 ## ✍️ Sua Vez!
-*(Deixe sua resolução passo a passo aqui)*
+
+### Passo 1: O cálculo de $v(0)$ (Para $t < 0$)
+Antes do tempo zero, a chave estava **fechada**, agindo como um fio liso. 
+E o nosso capacitor, em regime de corrente contínua, age como um **circuito aberto** (uma parede que não deixa a corrente passar). 
+
+Veja como a topologia fica:
+![Circuito em t < 0](../../_base_dados_ia/imagens_geradas/problema_7_6_v0.png)
+
+Como o ramo da direita (o capacitor) está rompido, a corrente da fonte só consegue girar na malha da esquerda, descendo pelo resistor de 2k.
+Para descobrirmos a tensão no capacitor $v(0)$, notamos que ele está conectado diretamente em paralelo com o resistor de 2k (toca nos mesmos nós de cima e de baixo). 
+
+Logo, basta usarmos o **Divisor de Tensão** para descobrir a queda de tensão no resistor de 2k:
+$$v(0) = V_{2k} = 40 \cdot \left(\frac{2k}{10k + 2k}\right)$$
+$$v(0) = 40 \cdot \left(\frac{2}{12}\right) = 40 \cdot \left(\frac{1}{6}\right) = \mathbf{\frac{20}{3} \, \text{V}}$$
+
+---
+
+### Passo 2: O Circuito em $t > 0$
+Agora a nossa chave finalmente **abre**. O que vai acontecer com o circuito?
+*(Tente deduzir o $R_{eq}$ e escreva no chat!)*
