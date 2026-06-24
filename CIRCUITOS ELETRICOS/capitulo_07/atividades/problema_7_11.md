@@ -29,4 +29,18 @@ Como o Indutor é um fio liso contínuo unindo a parte de cima, os resistores de
 
 Nesta etapa o seu objetivo é: descobrir a **corrente total** que sai da fonte e aplicar o **Divisor de Corrente** para achar a corrente $i_o(0)$ (que passa no resistor de 8 e, consequentemente, é a mesma que passou pelo indutor).
 
+> [!NOTE]
+> **Fórmula do Divisor de Corrente**
+> Quando você tem dois resistores em paralelo ($R_A$ e $R_B$) dividindo uma corrente total $I_{total}$, a corrente que vai para um dos resistores é calculada multiplicando a Corrente Total pela fração que tem o **OUTRO** resistor no numerador:
+> $$I_x = I_{total} \cdot \left(\frac{R_{oposto}}{R_x + R_{oposto}}\right)$$
+>
+> Para este circuito (onde a corrente $i_o$ passa no resistor de $8\Omega$ e o oposto é o de $4\Omega$):
+> $$i_o(0) = I_{total} \cdot \left(\frac{4}{8 + 4}\right)$$
+
+Para resolver, siga o roteiro:
+1. Calcule o $R_{eq}$ do paralelo (entre 4 e 8).
+2. Some com o resistor de 4 que está em série para achar a $R_{Total}$.
+3. Descubra a $I_{total}$ saindo da fonte usando a Lei de Ohm ($I = V/R_{Total}$).
+4. Jogue a $I_{total}$ na fórmula do Divisor de Corrente acima para achar $i_o(0)$.
+
 Faça essa continha e me mande qual é a corrente inicial do indutor!
