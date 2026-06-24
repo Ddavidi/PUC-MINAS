@@ -38,5 +38,24 @@ Analisando a imagem:
 2. O capacitor é que está perfeitamente em série com o resistor de 5k! A corrente sai da fonte de 40V, passa pelo 5k, chega no capacitor aberto e para.
 3. Como o capacitor bloqueia a passagem (corrente = 0), a queda de tensão no resistor de 5k é nula ($V = R \cdot i = 5000 \cdot 0 = 0$).
 
-Olhando para esse diagrama claríssimo, quanto é que vale a tensão $v(0)$ nas pernas do capacitor?
-*(Escreva sua resposta aqui ou no chat)*
+Olhando para esse diagrama, você pode ter o instinto de pensar: *"Ah, se a corrente é zero, a tensão é zero!"*. Mas cuidado! 
+
+Pense no capacitor como uma **caixa d'água** e a fonte de 40V como uma **bomba**. Durante o tempo em que a chave ficou no A, a bomba encheu a caixa d'água. A corrente ficou zero justamente porque a caixa encheu até o topo e não cabe mais nada! 
+
+Em termos de circuito, usamos a Lei de Kirchhoff das Tensões (LKT):
+$$V_{fonte} = V_{Resistor} + V_{Capacitor}$$
+
+Como a corrente é zero, a queda de tensão no resistor de 5k é $0\text{V}$ (Lei de Ohm: $V = 5000 \cdot 0$). Portanto:
+$$40 = 0 + v(0)$$
+$$v(0) = \mathbf{40 \, \text{V}}$$
+
+O capacitor está "carregadíssimo" com 40V.
+
+---
+
+### Passo 2: O Circuito em $t > 0$ (A Descarga)
+Agora a chave vira para a posição B. Você acertou em cheio numa coisa: **a fonte de 40V passa a ser ignorada**. 
+
+Mas você errou ao dizer que a tensão e a corrente serão zero! Lembre-se: o capacitor agora é uma "caixa d'água cheia" com 40V. Ao conectar na posição B, ele vai atuar como se fosse uma bateria temporária e vai **descarregar** sua energia em cima do resistor de $2\text{k}\Omega$! 
+
+*(Escreva no chat como fica o circuito olhando do capacitor agora em $t > 0$ e calcule o $\tau$!)*
