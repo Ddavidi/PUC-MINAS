@@ -9,24 +9,39 @@ with schemdraw.Drawing(file=os.path.join(img_dir, "problema_7_18_thevenin.png"),
     d.config(unit=5.0, fontsize=16)
     
     # Fio inferior
-    d += elm.Line().right().at((0,0)).length(4).color('blue')
-    bot_mid = d.here
+    d += elm.Line().right().at((0,0)).length(6).color('blue')
+    bot_right = d.here
     
     # Ramo esquerdo (Curto)
     d += elm.Line().up().at((0,0)).length(6).color('blue').label('Curto\n$v(t)=0$', loc='left')
-    top_left = d.here
+    node_B_top = d.here
     
-    # Ramo superior
-    d += elm.Resistor().right().at(top_left).label('3 Ω', loc='top').length(4).color('blue')
-    top_mid = d.here
+    # Divisao do paralelo no topo
+    d += elm.Line().up().at(node_B_top).length(1).color('blue')
+    split_top_L = d.here
+    d += elm.Line().down().at(node_B_top).length(1).color('blue')
+    split_bot_L = d.here
     
-    # Ramo do meio
-    d += elm.Resistor().down().at(top_mid).label('2 Ω', loc='left').length(3).color('blue')
-    mid_node = d.here
+    # Resistor 2 ohms
+    d += elm.Resistor().right().at(split_top_L).label('2 Ω', loc='top').length(4).color('blue')
+    split_top_R = d.here
     
-    # Terminais de Thevenin
-    d += elm.Dot(open=True).at(mid_node).label('A', loc='top', color='green')
-    d += elm.Dot(open=True).at(bot_mid).label('B', loc='bottom', color='green')
-    d += elm.Label().at((mid_node[0] + 1.5, (mid_node[1] + bot_mid[1])/2)).label('Visão para\n$R_{eq}$', color='green')
+    # Buraco do Indutor (Terminais A e B)
+    split_bot_R = (split_bot_L[0]+4, split_bot_L[1])
+    d += elm.Dot(open=True).at(split_bot_L).label('A', loc='left', color='green')
+    d += elm.Dot(open=True).at(split_bot_R).label('B', loc='right', color='green')
+    d += elm.Label().at(((split_bot_L[0]+split_bot_R[0])/2, split_bot_L[1])).label('Visão para\n$R_{eq}$', color='green')
+    
+    # Unindo o paralelo
+    d += elm.Line().down().at(split_top_R).toy(node_B_top[1]).color('blue')
+    node_A = d.here
+    d += elm.Line().up().at(split_bot_R).toy(node_B_top[1]).color('blue')
+    
+    # Indo para a direita
+    d += elm.Line().right().at(node_A).length(2).color('blue')
+    top_right = d.here
+    
+    # Ramo do meio (Resistor 3 ohms)
+    d += elm.Resistor().down().at(top_right).label('3 Ω', loc='right').toy(0).color('blue')
 
 print("Gerado problema_7_18_thevenin.png")
