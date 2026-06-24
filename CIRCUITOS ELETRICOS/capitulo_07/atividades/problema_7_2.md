@@ -45,7 +45,21 @@ Para acharmos a resistência de Thévenin ($R_{eq}$) vista pelo capacitor:
 
 Ao fechar um fio no lugar da fonte lá na esquerda, o resistor de $120 \, \Omega$ acaba ficando conectado aos mesmos dois pontos (nós) do resistor de $80 \, \Omega$. Ou seja, eles ficam em **PARALELO**! 
 
-Sabendo disso, tente de novo: 
-1. Faça o paralelo entre 120 e 80.
-2. Como o resultado desse paralelo se junta com o resistor de 12 que está no caminho até o capacitor?
-*(Escreva sua nova resposta aqui ou no chat)*
+O resultado desse paralelo se junta em **série** com o resistor de $12 \, \Omega$:
+
+$$R_{eq} = (120 \parallel 80) + 12$$
+$$R_{eq} = \left(\frac{120 \times 80}{120 + 80}\right) + 12 = \left(\frac{9600}{200}\right) + 12$$
+$$R_{eq} = 48 + 12 = \mathbf{60 \, \Omega}$$
+
+---
+
+### Passo 3: Constante de Tempo $\tau$ (O objetivo da questão!)
+A questão pediu apenas a constante de tempo do circuito. Cuidado com as unidades ("mili" significa $10^{-3}$):
+
+$$\tau = R_{eq} \times C$$
+$$\tau = 60 \, \Omega \times 200\text{ mF}$$
+$$\tau = 60 \times 0,2\text{ F}$$
+$$\tau = \mathbf{12 \, \text{s}}$$
+
+> **Bônus (A Equação):** Se houvesse uma chave que desligasse a fonte em $t=0$, a tensão no capacitor seria a descarga natural:
+> $$v(t) = v(0)e^{-t/\tau} = \mathbf{20e^{-t/12} \, \text{V}}$$
