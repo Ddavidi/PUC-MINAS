@@ -8,18 +8,18 @@ os.makedirs(img_dir, exist_ok=True)
 with schemdraw.Drawing(file=os.path.join(img_dir, "problema_7_3_req2.png"), show=False) as d:
     d.config(unit=3.0, fontsize=14)
     
-    # Left open terminals
-    d += elm.Line().up().length(0.75)
+    # Start at top left (0, 3)
+    d += elm.Dot(open=True).at((0, 3))
+    top_term = d.here
+    
+    # Gap with label
+    d += elm.Gap().down().label('Req', loc='left').length(3)
+    
     d += elm.Dot(open=True)
-    d += elm.Gap().down().label('R_eq', loc='left').length(1.5)
-    d += elm.Dot(open=True)
-    d += elm.Line().down().length(0.75)
     bot_term = d.here
     
-    d += elm.Line().up().length(1.5)
-    
     # 10 k ohm resistor (top wire)
-    d += elm.Resistor().right().label('10 kΩ')
+    d += elm.Resistor().right().at(top_term).label('10 kΩ')
     top_mid = d.here
     
     # Parallel combo (40 || 50)
@@ -27,6 +27,6 @@ with schemdraw.Drawing(file=os.path.join(img_dir, "problema_7_3_req2.png"), show
     bot_mid = d.here
     
     # Bottom wire
-    d += elm.Line().left().tox(bot_term)
+    d += elm.Line().left().at(bot_mid).tox(bot_term)
 
 print("Gerado problema_7_3_req2.png")
