@@ -4,23 +4,30 @@
 > **Instrução:** Leia o enunciado abaixo e tente resolver usando a metodologia.
 
 **Enunciado:**
-7.14 	Calcule a constante de tempo do circuito na Figura 7.94.
-5 mH
-30 k:
-40 k:
-20 k:
-10 k:
-Figura 7.94    Esquema para o Problema 7.14.
-*(As imagens dos circuitos originais serão geradas no formato padrão via código assim que iniciarmos a resolução!)*
+Calcule a constante de tempo do circuito na figura abaixo.
+
+![Circuito Problema 7.14](../../_base_dados_ia/imagens_geradas/problema_7_14.png)
 
 ---
 
-> [!TIP]
-> **Receita de Bolo: Análise de Circuitos de Primeira Ordem**
-> 1. **Análise em t < 0:** Identifique o estado da chave. Calcule $v(0)$ para capacitores ou $i(0)$ para indutores (eles se comportam como circuito aberto e curto-circuito, respectivamente, em CC).
-> 2. **Análise em t > 0:** Redesenhe o circuito com a chave na nova posição. Encontre a resistência equivalente $R_{eq}$ vista pelo capacitor/indutor.
-> 3. **Constante de Tempo ($\tau$):** Calcule $\tau = R_{eq}C$ (para RC) ou $\tau = L/R_{eq}$ (para RL).
-> 4. **Equação Final:** Use a fórmula da resposta $x(t) = x(\infty) + [x(0) - x(\infty)]e^{-t/\tau}$.
-
 ## ✍️ Sua Vez!
-*(Deixe sua resolução passo a passo aqui)*
+
+Este problema é rápido e rasteiro! Ele não quer saber corrente, não quer saber tensão... Ele quer **apenas** a Constante de Tempo ($\tau$).
+
+Você já está careca de saber a fórmula:
+$$\tau = \frac{L}{R_{eq}}$$
+
+Para achar o $R_{eq}$, nós aplicamos o nosso querido Teorema de Thevenin: arrancamos o Indutor de $5\text{mH}$ e deixamos os terminais A e B escancarados para analisarmos a topologia.
+
+![Visão de Thevenin](../../_base_dados_ia/imagens_geradas/problema_7_14_thevenin.png)
+
+Olhe bem para esse desenho! A partir do terminal A (verde lá no topo), a corrente que tenta ir pro terminal B pode escolher dois caminhos:
+1. Ir para a esquerda (passando pelo 20k e depois pelo 40k).
+2. Ir para a direita (passando pelo 10k e depois pelo 30k).
+
+Neste caso, queime um pouquinho de neurônio:
+- No ramo esquerdo, os resistores de 20 e 40 estão em série ou em paralelo?
+- No ramo direito, os resistores de 10 e 30 estão em série ou paralelo?
+- E no final das contas, o "blocão" da esquerda fica em quê com o "blocão" da direita?
+
+Resolva essa resistência equivalente e calcule o nosso $\tau$ (dica: ele vai dar um número bem pequeno, na casa dos microsegundos, já que temos um mili-henry dividido por kilo-ohms!).
