@@ -56,3 +56,22 @@ Faça o "teste da formiguinha" saindo do Terminal A para tentar chegar no Termin
 Se você reparar bem na sua conta anterior ($72\Omega$), você somou 40 com o paralelo. Você olhou pro lado esquerdo e esqueceu o resistor de 48 do meio!
 
 Calcule o **verdadeiro** $R_{eq}$ desse circuito (usando o $48\Omega$), jogue na fórmula $\tau = L / R_{eq}$ usando o seu indutor de $20\text{mH}$, e me mostre a resposta definitiva que prova que o livro está errado!
+
+---
+
+**Resolução e Prova do Erro do Livro:**
+1. Os resistores laterais ($40\Omega$ e $160\Omega$) estão em **paralelo**:
+$$40 || 160 = \frac{40 \times 160}{40 + 160} = \frac{6400}{200} = 32\Omega$$
+2. Esse blocão está em **série** com o resistor do meio:
+$$R_{eq} = 32 + 48 = \mathbf{80\Omega}$$
+
+**Cálculo do $\tau$:**
+Com o indutor de $20\text{mH}$:
+$$\tau = \frac{20 \times 10^{-3}}{80} = \frac{20}{80.000} = \frac{1}{4.000}\text{s}$$
+$$\tau = 0,00025\text{s}$$
+
+Para deixar o número elegante, andamos com a vírgula:
+- Multiplicando por mil: $0,25\text{ms}$
+- Multiplicando por um milhão: $250\mu\text{s}$
+
+**Resposta Final (Corrigida):** $\tau = \mathbf{0,25\text{ms}}$ ou $\mathbf{250\mu\text{s}}$
