@@ -42,7 +42,16 @@ Olha só o efeito de abrir a chave ali no meio do fio de cima:
 
 A chave, ao abrir, **cortou fisicamente o fio**, isolando toda a parte esquerda do circuito (fonte de 6V e resistor de 2k). O capacitor virou a nossa "bateria" temporária cheia de energia (4V) e sobrou apenas ele e o resistor de 4k no circuito vivo (em azul).
 
-Olhando para essa nova topologia, responda:
-1. Qual o valor do $R_{eq}$ visto pelo capacitor?
-2. Quanto vale a constante de tempo $\tau$?
-3. Como fica a equação final de $v_o(t)$?
+**1. O $R_{eq}$:**
+Olhando pelos terminais do capacitor para dentro do circuito ativo, a única coisa que sobrou viva é o resistor de $4\text{k}\Omega$.
+$$R_{eq} = \mathbf{4 \, \text{k}\Omega}$$
+
+**2. A Constante de Tempo $\tau$:**
+$$\tau = R_{eq} \times C$$
+$$\tau = (4 \times 10^3) \times (3 \times 10^{-3})$$
+$$\tau = 12 \times 10^0 = \mathbf{12 \, \text{s}}$$
+
+**3. A Equação Final:**
+Com a nossa carga inicial de $4\text{V}$ ($v(0) = 4$) e a nossa constante mágica de descarga $\tau = 12$, basta jogar na fórmula natural:
+$$v_o(t) = v_o(0)e^{-t/\tau}$$
+$$v_o(t) = \mathbf{4 e^{-t / 12} \, \text{V}, \quad t > 0}$$
