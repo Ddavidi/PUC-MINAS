@@ -9,8 +9,11 @@ with schemdraw.Drawing(file=os.path.join(img_dir, "problema_7_2_v0.png"), show=F
     d.config(unit=3.0, fontsize=14)
     
     # 50V Source
-    d += elm.SourceV().up().label('50 V', loc='left')
+    d += elm.SourceV().up()
     top_left = d.here
+    
+    # Explicit 50V label to the left of the source
+    d += elm.Label().at((top_left[0]-0.8, top_left[1]-1.5)).label('50 V')
     
     # 120 ohm resistor
     d += elm.Resistor().right().label('120 Ω')
@@ -28,10 +31,13 @@ with schemdraw.Drawing(file=os.path.join(img_dir, "problema_7_2_v0.png"), show=F
     top_right = d.here
     
     # Open terminals for Capacitor
-    # We want the total vertical drop to be from y=3 to y=0 (same as the 80 ohm resistor)
-    d += elm.Line().down().at(top_right).length(0.75)
+    # Using shorter lines and bigger gap to avoid overlapping v(0)
+    d += elm.Line().down().at(top_right).length(0.3)
     d += elm.Dot(open=True)
-    d += elm.Gap().down().label(('+', 'v(0)', '-'), loc='right').length(1.5)
+    
+    # Gap with labels (padded with spaces to push it right)
+    d += elm.Gap().down().label(('+', 'v(0)  ', '-'), loc='right').length(2.4)
+    
     d += elm.Dot(open=True)
     d += elm.Line().down().toy(bot_mid)
     
