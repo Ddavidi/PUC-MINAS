@@ -58,6 +58,14 @@ Este arquivo serve como um índice e registro de tudo o que estamos estudando so
 - [ ] Exercício Interativo: **[Questão de Revisão 7.6](file:///c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/capitulo_07/atividades/questao_revisao_7_6.md)**
 - [ ] Exercício Interativo: **[Questão de Revisão 7.7](file:///c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/capitulo_07/atividades/questao_revisao_7_7.md)**
 
+### Metodologia de Ensino
+1. Foco em abstração e interpretação semântica de circuitos antes da matemática bruta.
+2. Modo Socrático: Fazer o aluno deduzir a resposta em vez de entregar de bandeja.
+3. Uso intensivo de analogias com hidráulica e mecânica (tensão = pressão, corrente = fluxo de água).
+4. Exploração exaustiva de cenários extremos (ex: comportamento assintótico de capacitores e indutores em CC).
+5. Criação de material complementar como imagens isoladas e markdowns passo-a-passo no GitHub.
+6. **Regra da Receita de Bolo:** TODO exercício resolvido (após a tentativa do usuário) deve **obrigatoriamente** conter uma seção destacada `> [!TIP] Receita de Bolo:` com o passo a passo lógico e generalista de como aquele tipo de problema é resolvido, servindo como modelo mental para o usuário.
+
 ### Capítulo 9 (Senoides e Fasores)
 1. Extração do PDF (texto e imagens) concluída.
 2. Resumo da teoria criado (`capitulo_09/conceitos_importantes.md`).

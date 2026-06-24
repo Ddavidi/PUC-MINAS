@@ -18,18 +18,26 @@ No circuito da Figura 7.79 abaixo, a tensão final $v(\infty)$ é:
 
 ## ✅ Solução Correta: Letra (a)
 
-A questão pede a tensão no capacitor "no infinito" ($t \to \infty$). 
+> [!TIP]
+> **Receita de Bolo: Como encontrar a Tensão Final $v(\infty)$ em Capacitores**
+> 1. **Identifique o estado da chave no infinito:** A chave abriu ou fechou em $t=0$? Defina como o circuito ficará para $t > 0$.
+> 2. **Substitua o Capacitor:** Após muito tempo ($\infty$) sob corrente contínua, o capacitor carrega totalmente e vira um **Circuito Aberto** (fio cortado). Faça um "buraco" no lugar dele.
+> 3. **Elimine "Braços Mortos":** Se algum fio foi cortado (pela chave ou pelo capacitor) e a corrente não tem por onde fluir, os resistores ali não terão queda de tensão.
+> 4. **Calcule a Tensão Restante:** Use a Lei de Ohm e a tensão da Fonte no caminho que sobrou para descobrir a voltagem nas pontas do "buraco" do capacitor.
 
-Nesse momento, a chave (switch) que estava fechada já se **abriu** (pois o enunciado diz que ela abre em $t=0$). 
+**Aplicando a Receita, passo a passo:**
 
-Se a chave do lado direito abriu, o fio foi cortado! Nenhuma corrente pode passar pelo resistor de $2 \, \Omega$ da direita. Aquele pedaço inteiro do circuito virou um "braço morto".
+**Passo 1: O estado da Chave**
+O enunciado indica que a chave "abre" em $t=0$. Então, no infinito, a chave está aberta. Isso corta o fio do lado direito! Nenhuma corrente pode passar pelo resistor de $2 \, \Omega$. Aquele pedaço inteiro do circuito vira um "braço morto".
 
-O que sobrou do circuito foi apenas a Fonte de $10\text{V}$, o Resistor de $3 \, \Omega$ e o Capacitor de $7\text{F}$. Tudo isso ligado em série.
-Como passou-se muito tempo ($t \to \infty$), o capacitor está completamente carregado e se comporta como um **Circuito Aberto** novamente.
+**Passo 2: Substituir o Capacitor**
+Transformamos o capacitor de $7\text{F}$ em um circuito aberto. O que sobrou vivo no circuito inteiro? Apenas a Fonte de $10\text{V}$ e o Resistor de $3 \, \Omega$ em série com o "buraco" do capacitor.
 
-Se a corrente total no circuito é zero (o capacitor não deixa passar nada e a chave da direita está aberta), então não há queda de tensão no resistor de $3 \, \Omega$ (Lei de Ohm: $V = R \cdot I \rightarrow V = 3 \cdot 0 = 0\text{V}$).
+**Passo 3 e 4: Cálculo da Tensão**
+Como a corrente total no circuito é zero (o capacitor não deixa a corrente circular em CC, e a chave da direita está aberta), não há corrente atravessando o resistor de $3 \, \Omega$.
+Aplicando a Lei de Ohm nele: $V_{resistor} = R \cdot I \rightarrow V_{resistor} = 3 \cdot 0 = \mathbf{0 \, \text{V}}$.
+Se o resistor não "gasta" nenhuma voltagem, toda a força da Fonte de $10\text{V}$ chega intacta nos terminais do capacitor.
 
-Sem perder voltagem nenhuma no caminho, toda a tensão da fonte de $10\text{V}$ é aplicada diretamente nos terminais do capacitor.
 Portanto:
 $$ v(\infty) = \mathbf{10 \, \text{V}} $$
 
