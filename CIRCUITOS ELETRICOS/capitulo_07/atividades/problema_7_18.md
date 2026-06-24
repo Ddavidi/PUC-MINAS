@@ -23,9 +23,39 @@ Ou seja, ao olhar a partir dos terminais A e B, **todos os componentes acabam fi
 ![Visão de Thevenin 7.18](../../_base_dados_ia/imagens_geradas/problema_7_18_thevenin.png)
 
 Com essa dica de ouro, calcule nosso combo de 3 passos para o indutor:
-1. Qual é a nova Resistência Equivalente ($R_{eq}$)? (Cuidado: o resistor de 2 e o resistor de 3 estão em...)
-2. Qual é o novo $\tau$? (Lembrando que o indutor é $0,4\text{H}$)
-3. Sabendo que o indutor começa com $i(0) = 5\text{A}$, qual a equação inicial de $i(t)$?
+**1. Resistência Equivalente:**
+Como o fio de curto conecta tudo ao mesmo ponto, o resistor de $2\Omega$ está em paralelo com o de $3\Omega$.
+$$R_{eq} = 2 || 3 = \frac{2 \times 3}{2 + 3} = \frac{6}{5} = \mathbf{1,2\Omega}$$
+
+**2. Constante de Tempo:**
+$$\tau = \frac{L}{R_{eq}} = \frac{0,4}{1,2} = \mathbf{\frac{1}{3}\text{s}}$$
+
+**3. Equação da Corrente:**
+Como $\tau = 1/3$, o inverso é $3$.
+$$i(t) = i(0)e^{-t/\tau} = \mathbf{5e^{-3t}\text{ A}}$$
+
+---
+
+## Parte 2: O Xeque-Mate ($v_o(t)$)
+
+Nós temos a corrente no indutor $i(t) = 5e^{-3t}$, e queremos a tensão $v_o(t)$, que é a tensão em cima do resistor de $3\Omega$.
+
+Note que o resistor de $3\Omega$, o resistor de $2\Omega$ e o indutor estão TODOS em paralelo entre si! Isso significa que **a tensão é a mesma para todo mundo**.
+A tensão $v_o(t)$ medida nos terminais é a mesma tensão em cima do nó superior (chamaremos de Nó A).
+
+Você pode usar o caminho que preferir para matar o problema:
+
+**Caminho 1 (Lei de Ohm / KCL):**
+Pela Lei de Kirchhoff das Correntes (LKC) no Nó A, a corrente que entra pelo indutor ($i(t)$) tem que ser igual à soma das correntes que saem descendo pelos resistores de 2 e 3. 
+Ou seja, $i(t) = \frac{v_o(t)}{2} + \frac{v_o(t)}{3}$.
+Basta isolar o $v_o(t)$!
+
+**Caminho 2 (Tensão do Indutor):**
+Sabemos que a tensão no indutor é $v = L \cdot \frac{di}{dt}$.
+Como a seta da corrente do indutor aponta para a direita (em direção ao Nó A), e o indutor está no chão (0V), a tensão "cai" do 0V para o $v_o(t)$. Ou seja, $0 - v_o(t) = L \cdot \frac{di}{dt}$.
+Derivando a equação da corrente e multiplicando por $-L$, você acha o resultado!
+
+Tente fazer por um dos caminhos (ou os dois para tirar a prova real) e me diga: **Qual é o valor final de $v_o(t)$?**
 
 > [!TIP]
 > **Receita de Bolo: Análise de Circuitos de Primeira Ordem**
