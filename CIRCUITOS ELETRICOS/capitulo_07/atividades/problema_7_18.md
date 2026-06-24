@@ -57,6 +57,21 @@ Derivando a equação da corrente e multiplicando por $-L$, você acha o resulta
 
 Tente fazer por um dos caminhos (ou os dois para tirar a prova real) e me diga: **Qual é o valor final de $v_o(t)$?**
 
+**Resolução Alternativa (Caminho 1 - Lei de Ohm / LKC):**
+Pela Lei de Kirchhoff das Correntes (LKC) no Nó A, toda a corrente que entra pelo indutor ($i(t)$) deve se dividir e descer pelos dois resistores.
+Como os resistores estão em paralelo com a tensão $v_o(t)$, a Lei de Ohm nos diz que a corrente no resistor de 2 é $v_o(t)/2$ e no resistor de 3 é $v_o(t)/3$.
+$$i(t) = i_{R2} + i_{R3}$$
+$$i(t) = \frac{v_o(t)}{2} + \frac{v_o(t)}{3}$$
+$$i(t) = v_o(t) \left( \frac{1}{2} + \frac{1}{3} \right)$$
+$$i(t) = v_o(t) \left( \frac{3}{6} + \frac{2}{6} \right)$$
+$$i(t) = v_o(t) \left( \frac{5}{6} \right)$$
+Isolando o $v_o(t)$:
+$$v_o(t) = i(t) \cdot \frac{6}{5}$$
+$$v_o(t) = 1,2 \cdot i(t)$$
+Substituindo $i(t) = 5e^{-3t}$:
+$$v_o(t) = 1,2 \cdot (5e^{-3t})$$
+$$v_o(t) = \mathbf{6e^{-3t}\text{ V}}$$
+
 ---
 
 **Resolução Final (Caminho da Derivada):**
