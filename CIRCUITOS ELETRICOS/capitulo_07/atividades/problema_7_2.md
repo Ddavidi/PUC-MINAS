@@ -4,8 +4,9 @@
 > **Instrução:** Leia o enunciado abaixo e tente resolver usando a metodologia.
 
 **Enunciado:**
-7.2  Circuito RC sem fonte
-*(As imagens dos circuitos originais serão geradas no formato padrão via código assim que iniciarmos a resolução!)*
+Determine a constante de tempo para o circuito RC abaixo.
+
+![Circuito Problema 7.2](../../_base_dados_ia/imagens_geradas/problema_7_2.png)
 
 ---
 

@@ -10,15 +10,9 @@ de A para B em t = 0. Determine v para t 7 0.
 +
 2 k:
 5 k:
-40 V
-B
-A
-10 mF
-v
-+
-
-Figura 7.84    Esquema para o Problema 7.4.
-*(As imagens dos circuitos originais serão geradas no formato padrão via código assim que iniciarmos a resolução!)*
+A chave do circuito abaixo se encontra na posição A há um bom tempo. Suponha que a chave mude instantaneamente de A para B em $t = 0$. Determine $v(t)$ para $t > 0$.
+
+![Circuito Problema 7.4](../../_base_dados_ia/imagens_geradas/problema_7_4.png)
 
 ---
 

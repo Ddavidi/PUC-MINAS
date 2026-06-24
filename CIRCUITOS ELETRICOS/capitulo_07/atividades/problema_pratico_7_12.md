@@ -4,8 +4,9 @@
 > **Instrução:** Leia o enunciado abaixo e tente resolver usando a metodologia.
 
 **Enunciado:**
-Enunciado não encontrado automaticamente para 7.12. Consulte o PDF.
-*(As imagens dos circuitos originais serão geradas no formato padrão via código assim que iniciarmos a resolução!)*
+A chave no circuito abaixo foi fechada por um longo tempo, sendo aberta em $t = 0$. Determine $i(t)$ para $t > 0$.
+
+![Circuito Problema Prático 7.12](../../_base_dados_ia/imagens_geradas/problema_pratico_7_12.png)
 
 ---
 

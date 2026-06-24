@@ -4,8 +4,9 @@
 > **Instrução:** Leia o enunciado abaixo e tente resolver usando a metodologia.
 
 **Enunciado:**
-Enunciado não encontrado automaticamente para 7.10. Consulte o PDF.
-*(As imagens dos circuitos originais serão geradas no formato padrão via código assim que iniciarmos a resolução!)*
+Determine $v(t)$ para $t > 0$ no circuito abaixo. Suponha que a chave esteja aberta há um longo período e que é fechada em $t = 0$. Calcule $v(t)$ em $t = 0,5$.
+
+![Circuito Problema Prático 7.10](../../_base_dados_ia/imagens_geradas/problema_pratico_7_10.png)
 
 ---
 

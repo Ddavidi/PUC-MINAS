@@ -4,15 +4,9 @@
 > **Instrução:** Leia o enunciado abaixo e tente resolver usando a metodologia.
 
 **Enunciado:**
-7.3	 Determine a constante de tempo para o circuito da Figura 
-7.83.
-40 k:
-30 k:
-10 k:
-20 k:
-100 pF
-Figura 7.83    Esquema para o Problema 7.3.
-*(As imagens dos circuitos originais serão geradas no formato padrão via código assim que iniciarmos a resolução!)*
+Determine a constante de tempo para o circuito da figura abaixo.
+
+![Circuito Problema 7.3](../../_base_dados_ia/imagens_geradas/problema_7_3.png)
 
 ---
 
