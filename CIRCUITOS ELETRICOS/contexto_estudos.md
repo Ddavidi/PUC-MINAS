@@ -65,6 +65,7 @@ Este arquivo serve como um índice e registro de tudo o que estamos estudando so
 4. Exploração exaustiva de cenários extremos (ex: comportamento assintótico de capacitores e indutores em CC).
 5. Criação de material complementar como imagens isoladas e markdowns passo-a-passo no GitHub.
 6. **Regra da Receita de Bolo:** TODO exercício resolvido (após a tentativa do usuário) deve **obrigatoriamente** conter uma seção destacada `> [!TIP] Receita de Bolo:` com o passo a passo lógico e generalista de como aquele tipo de problema é resolvido, servindo como modelo mental para o usuário.
+7. **Regra de Visualização de Passos:** SEMPRE que a resolução exigir uma modificação no circuito (ex: abrir/fechar uma chave, transformar capacitor em aberto, transformar indutor em curto, desativar fontes), a IA deve **obrigatoriamente desenhar e exibir a imagem desse circuito modificado** (circuito intermediário) no Markdown para facilitar a visualização espacial do aluno.
 
 ### Capítulo 9 (Senoides e Fasores)
 1. Extração do PDF (texto e imagens) concluída.

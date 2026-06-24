@@ -33,7 +33,10 @@ A chave diz "fecha em t=0". Como queremos saber o que acontece "imediatamente an
 **Passo 2 e 3: Substituir o Indutor e analisar o fluxo**
 Trocando o Indutor de $5 \, \text{H}$ por um fio liso (curto-circuito), o nosso circuito passa a ter apenas a Fonte de $10\text{A}$, e dois resistores em paralelo: o de $2 \, \Omega$ e o de $3 \, \Omega$. 
 
-A corrente de $10\text{A}$ sai da fonte e chega no nó de cima. Ela precisa se dividir entre o caminho da esquerda ($2 \, \Omega$) e o caminho da direita ($3 \, \Omega$). A corrente que queremos é a que desce pelo caminho da direita, pois é lá que está o indutor.
+Veja como o circuito simplificado (intermediário) fica muito mais claro para resolvermos:
+![Circuito t < 0](../../_base_dados_ia/imagens_geradas/revisao_fig_7_80_intermediario.png)
+
+A corrente de $10\text{A}$ sai da fonte e chega no nó de cima. Ela precisa se dividir entre o caminho da esquerda ($2 \, \Omega$) e o caminho da direita ($3 \, \Omega$, onde o indutor virou um fio liso em azul). A corrente que queremos é a que desce pelo caminho da direita, pois é lá que estava a bobina.
 
 **Passo 4: Cálculo da Corrente (Divisor de Corrente)**
 A fórmula do divisor de corrente para achar a corrente em um ramo é: "Resistência do OUTRO lado, dividida pela soma das resistências, vezes a corrente total".
