@@ -68,5 +68,21 @@ $$w(t) = \frac{1}{2} C \cdot v(t)^2$$
 E você já conhece a equação monstruosa do $v(t)$:
 $$v(t) = 10 e^{-4t}$$
 
-Tente juntar essas peças! Substitua $w(t)$ por $0,125$ e troque o $v(t)$ pela equação dele para descobrir em que momento $t$ isso vai acontecer! (Se precisar aplicar um Logaritmo Natural `ln` no final, vai fundo!). 
-Me mande o seu raciocínio!
+Temos que a energia desejada é $0,125 \, \text{J}$. Igualando com a equação de energia:
+$$0,125 = \frac{1}{2} \cdot C \cdot [v(t)]^2$$
+$$0,125 = \frac{1}{2} \cdot (5 \times 10^{-3}) \cdot (10 e^{-4t})^2$$
+
+Vamos resolver os expoentes:
+$$0,125 = (2,5 \times 10^{-3}) \cdot 100 e^{-8t}$$
+$$0,125 = 0,25 e^{-8t}$$
+
+Passando o $0,25$ para o outro lado dividindo:
+$$\frac{0,125}{0,25} = e^{-8t}$$
+$$0,5 = e^{-8t}$$
+
+Agora o pulo do gato matemático: para "descer" aquele $t$ do expoente, aplicamos o Logaritmo Natural ($\ln$) dos dois lados:
+$$\ln(0,5) = -8t$$
+$$-0,693 = -8t$$
+$$t = \frac{-0,693}{-8} = \mathbf{0,0866 \, \text{s}} \text{ ou } \mathbf{86,6 \, \text{ms}}$$
+
+Portanto, em apenas $86,6\text{ms}$ o capacitor já torrou a metade de sua energia inicial!
