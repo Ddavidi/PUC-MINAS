@@ -109,16 +109,17 @@ with schemdraw.Drawing(file=os.path.join(img_dir, "cap7_pratico_7_4_req.png"), s
 with schemdraw.Drawing(file=os.path.join(img_dir, "cap7_pratico_7_4_curto.png"), show=False) as d:
     d.config(unit=3.5, fontsize=14)
     
-    d += elm.Line().down().length(2).label('Corrente Total\nDescendo', loc='left')
+    d += elm.Line().down().length(3).label('Corrente\nTotal', loc='left')
     node_B = d.here
     
-    d += elm.Line().down().length(4).color('blue').label('Fio Liso (0Ω)\n100% da Água', loc='left', color='blue')
+    d += elm.Line().down().length(5).color('blue').label('Fio Liso (0Ω)\n100% da Corrente', loc='left', color='blue')
     bot_mid = d.here
     
-    d += elm.Resistor().right().at(node_B).length(5).color('gray').label('Resistor de 5Ω\nCaminho Difícil\n0% da Água', loc='bot', color='gray')
+    d += elm.Line().right().at(node_B).length(1.5).color('gray')
+    d += elm.Resistor().right().length(4).color('gray').label('5Ω (0% Corrente)', loc='top', color='gray')
     node_C = d.here
     
-    d += elm.Line().down().length(3).color('gray')
+    d += elm.Line().down().length(5).color('gray')
     bot_right = d.here
     
     d += elm.Line().left().at(bot_right).tox(bot_mid)
