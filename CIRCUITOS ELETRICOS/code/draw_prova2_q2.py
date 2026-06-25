@@ -9,39 +9,49 @@ os.makedirs(img_dir, exist_ok=True)
 # Q2 CIRCUITO t < 0: K1 FECHADA  (estado estacionario)
 # ============================================================
 with schemdraw.Drawing(file=os.path.join(img_dir, "prova2_q2_circuito_t_antes.png"), show=False) as d:
-    d.config(unit=5.0, fontsize=16)
+    d.config(unit=4.0, fontsize=15)
 
-    # Fio inferior
-    d += elm.Line().right().at((0,0)).length(12)
+    H = 6  # altura do circuito
 
-    # Fonte de corrente (lado esquerdo)
-    d += elm.SourceI().up().at((0,0)).label('$I_1$\n7,5 mA', loc='left').reverse()
-    top_left = d.here
+    # Fio inferior total
+    d += elm.Line().right().at((0,0)).length(16)
 
-    # R1 em paralelo (vertical, mesmo ponto)
-    d += elm.Line().right().at(top_left).length(1.0)
-    d += elm.Resistor().down().label('$R_1$\n80 kΩ', loc='left').toy(0)
+    # Fonte de corrente (extremo esquerdo, vertical)
+    d += elm.SourceI().up().at((0,0)).length(H).label('$I_1$\n7,5 mA', loc='left').reverse()
+    d += elm.Dot().at((0, H))
 
-    # Top wire going right
-    d += elm.Line().right().at(top_left).length(3)
-    d += elm.Resistor().right().label('$R_2$\n20 kΩ', loc='top').length(4)
-    node_k1 = d.here
+    # R1 (vertical, em paralelo com a fonte)
+    d += elm.Resistor().down().at((2, H)).length(H).label('$R_1$\n80 kΩ', loc='right')
+    d += elm.Line().left().at((2,H)).length(2)
+    d += elm.Line().right().at((2,0)).length(0)  # just to anchor
 
-    # K1 fechada (fio simples)
-    d += elm.Line().right().at(node_k1).length(2)
-    d += elm.Label().at((node_k1[0]+1, node_k1[1]+0.4)).label('K₁ FECHADA', color='blue')
-    node_after_k1 = (node_k1[0]+2, node_k1[1])
+    # Fio superior esquerdo
+    d += elm.Line().right().at((0, H)).length(2)
 
-    # C1 (vertical, direita)
-    d += elm.Capacitor().down().at(node_after_k1).label('$C_1$\n0,4 μF', loc='left').toy(0)
+    # R2 (horizontal)
+    d += elm.Resistor().right().at((2, H)).label('$R_2$\n20 kΩ', loc='top').length(5)
+    node_k1_L = d.here  # (7, H)
 
-    # R3 (vertical, extrema direita)
-    d += elm.Line().right().at(node_after_k1).length(2)
-    node_r3_top = d.here
-    d += elm.Resistor().down().at(node_r3_top).label('$R_3$\n50 kΩ', loc='right').toy(0)
+    # K1 fechada: fio simples de nó
+    d += elm.Line().right().at(node_k1_L).length(2)
+    d += elm.Label().at((node_k1_L[0]+1, H+0.5)).label('K₁ FECHADA', color='blue')
+    node_after = (node_k1_L[0]+2, H)  # (9, H)
 
-    # Tensao v
-    d += elm.Label().at((node_after_k1[0]-0.8, node_after_k1[1]-2)).label('+\n$v$\n−', color='darkgreen')
+    # C1 (vertical)
+    d += elm.Capacitor().down().at(node_after).length(H).label('$C_1$\n0,4 μF', loc='left')
+
+    # Fio superior para R3
+    d += elm.Line().right().at(node_after).length(4)
+    node_r3 = (node_after[0]+4, H)  # (13, H)
+
+    # R3 (vertical)
+    d += elm.Resistor().down().at(node_r3).length(H).label('$R_3$\n50 kΩ', loc='right')
+
+    # Fio superior fechando
+    d += elm.Line().right().at(node_r3).length(3)
+
+    # Sinal de tensão v no capacitor
+    d += elm.Gap().down().at((node_after[0]-0.6, H)).length(H).label(['+', '$v$', '−'], color='darkgreen')
 
 print("Gerado Q2 t<0")
 
@@ -49,23 +59,27 @@ print("Gerado Q2 t<0")
 # Q2 CIRCUITO t > 0: K1 ABERTA  (descarga RC)
 # ============================================================
 with schemdraw.Drawing(file=os.path.join(img_dir, "prova2_q2_circuito_t_depois.png"), show=False) as d:
-    d.config(unit=5.0, fontsize=16)
+    d.config(unit=4.0, fontsize=15)
+
+    H = 6  # altura
 
     # Fio inferior
-    d += elm.Line().right().at((0,0)).length(6)
+    d += elm.Line().right().at((0,0)).length(8)
 
-    # C1 (vertical, esquerda)
-    d += elm.Capacitor().up().at((0,0)).label('$C_1$\n$v(0)=200\\text{ V}$', loc='left')
-    top_c = d.here
+    # C1 (vertical, esquerda) com tensão inicial
+    d += elm.Capacitor().up().at((0,0)).length(H).label('$C_1$\n$v(0)=200$ V', loc='left')
+    d += elm.Dot().at((0,H))
 
     # Fio superior
-    d += elm.Line().right().at(top_c).length(6)
+    d += elm.Line().right().at((0,H)).length(8)
 
     # R3 (vertical, direita)
-    d += elm.Resistor().down().at((6,top_c[1])).label('$R_3$\n50 kΩ', loc='right').toy(0)
+    d += elm.Resistor().down().at((8,H)).length(H).label('$R_3$\n50 kΩ', loc='right')
 
-    # Tensao v_o
-    d += elm.Label().at((3.5, top_c[1]-2.5)).label('+\n$v_0(t)$\n−', color='darkgreen')
-    d += elm.Label().at((3, top_c[1]+0.6)).label('K₁ ABERTA — Circuito isolado', color='red')
+    # Sinal de tensão v_o
+    d += elm.Gap().down().at((4.5, H)).length(H).label(['+', '$v_0(t)$', '−'], color='darkgreen')
+
+    # Label K1 aberta
+    d += elm.Label().at((4, H+0.6)).label('K₁ ABERTA — descarga livre', color='red')
 
 print("Gerado Q2 t>0")
