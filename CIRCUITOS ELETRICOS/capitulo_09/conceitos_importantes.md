@@ -163,16 +163,22 @@ e^(jφ) = cos(φ) + j·sen(φ)
 
 ### Transformação senoide → fasor
 
-| Domínio do tempo | Domínio dos fasores |
-|-----------------|-------------------|
-| Vm·cos(ωt + φ) | Vm∠φ |
-| Vm·sen(ωt + φ) | Vm∠(φ − 90°) |
-| Im·cos(ωt + θ) | Im∠θ |
-| Im·sen(ωt + θ) | Im∠(θ − 90°) |
+| Domínio do tempo | Domínio dos fasores (Amplitude Máxima) | Domínio dos fasores (Valor Eficaz / RMS) |
+|-----------------|-------------------|----------------|
+| $V_m \cos(\omega t + \phi)$ | $V_m \angle \phi$ | $\frac{V_m}{\sqrt{2}} \angle \phi$ |
+| $V_m \sin(\omega t + \phi)$ | $V_m \angle (\phi - 90^\circ)$ | $\frac{V_m}{\sqrt{2}} \angle (\phi - 90^\circ)$ |
 
 > [!TIP]
 > **Regra prática**: para converter seno → cosseno, subtraia 90° do argumento:
 > `sen(ωt + φ) = cos(ωt + φ − 90°)`
+
+### ⚡ CUIDADO: Amplitude Máxima vs Valor Eficaz (RMS)
+Ao converter uma senoide para fasor, existem **duas formas** de representar a magnitude:
+1. **Pela Amplitude Máxima ($V_m$):** Usada na maioria dos exercícios básicos de Fasores (Capítulo 9). Exemplo: $120 \cos(\omega t) \to 120 \angle 0^\circ$.
+2. **Pelo Valor Eficaz ($V_{rms}$):** Usada intensamente no **Capítulo 11 (Potência)** e cobrada por alguns professores já no Capítulo 9. O Valor Eficaz é simplesmente a Amplitude Máxima dividida por $\sqrt{2}$ (para ondas senoidais).
+   - *Exemplo:* $311 \cos(\omega t - 30^\circ) \to \text{RMS:} \frac{311}{\sqrt{2}} \angle -30^\circ \approx 220 \angle -30^\circ \text{ V}$.
+   - *Por que usar RMS?* Porque é assim que a energia é medida no mundo real (a tomada da sua casa é 127V ou 220V RMS, não amplitude máxima).
+   - **Dica de Prova:** Se a questão pedir "Fasor Tensão Eficaz", lembre-se de dividir o $V_m$ por $\sqrt{2}$. Todas as leis de Ohm ($V=ZI$) e Leis de Kirchhoff funcionam perfeitamente com valores eficazes, desde que você use RMS em tudo!
 
 ### Propriedades dos fasores na derivação e integração
 

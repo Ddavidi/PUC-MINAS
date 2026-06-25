@@ -42,8 +42,63 @@ Como a calculadora não resolve a matriz complexa inteira de uma vez por você, 
 
 ## 3. Como usar Formato Polar ($A \angle \theta$)
 Em Fasores (Capítulos 9 e 11), os professores vão dar valores como $10 \angle 30^\circ$ V. 
-1. Dentro do aplicativo **`Complexo`**, para digitar o símbolo de ângulo ($\angle$), aperte **`SHIFT`** e depois a tecla **`ENG`** (ou a tecla de símbolo de ângulo que fica acima do número 7/8 dependendo da versão regional da sua CW).
+1. Para inserir o símbolo de ângulo ($\angle$) na notação de fase:
+   - Digite o valor da magnitude (ex: `10`).
+   - Pressione a tecla **`CATALOG`** (localizada logo abaixo do botão direcional redondo).
+   - Selecione **`Complexo`** (ou *Complex*) na lista.
+   - Escolha o símbolo **$\angle$**.
+   - Digite o valor do ângulo.
 2. Para transformar de Retangular ($3 + 4i$) para Polar ($5 \angle 53^\circ$):
    - Digite `3 + 4i` e aperte `EXE`.
    - Aperte a tecla **`FORMAT`** (ou **`TOOLS`**) e procure a conversão para **$r \angle \theta$**.
    - Aperte `EXE` e a mágica acontece.
+
+---
+
+## 4. O Cuidado com Graus (Degree) vs Radianos (Radian)
+No Capítulo 9, há uma grande confusão entre a Frequência Angular ($\omega$) que é medida em **rad/s**, e as Fases ($\theta$) que são dadas em **Graus ($^\circ$)**.
+
+Na hora de fazer contas no aplicativo **Complexo** (multiplicar, dividir e somar fasores):
+- Você **SEMPRE** deve manter a calculadora em **Graus (Degree)**. Os ângulos $30^\circ$, $-90^\circ$, etc. são todos em graus.
+- Se a sua calculadora estiver em Radiano e você digitar $10 \angle 30$, ela achará que são 30 Radianos e o resultado sairá completamente errado.
+
+**Como mudar a unidade na Casio fx-991LA CW:**
+1. Pressione o botão **`SETTINGS`** (o botão com o ícone de uma engrenagem/ferramenta).
+2. Selecione **`Config Calculadora`** (ou *Calc Settings*).
+3. Selecione **`Unidade Ângulo`** (ou *Angle Unit*).
+4. Vai aparecer uma lista. Selecione **`Grau`** (Degree) para trabalhar com fasores.
+5. Se você realmente precisar calcular um cosseno de radianos no aplicativo normal, volte aqui e mude para **`Radiano`** (Radian).
+6. Você saberá em qual modo está olhando na parte superior da tela (se tem um quadradinho com o **"D"** de Degree, ou o **"R"** de Radian).
+
+---
+
+## 5. Como tirar o resultado de Notação Científica ($\times 10^x$)
+Se a sua calculadora está dando resultados no formato $2,65 \times 10^3$ em vez de te mostrar $2650$, ou te dando $3,768 \times 10^{-4}$ em vez de $0,0003768$, é porque ela está configurada no modo de exibição "Norm 1" ou "Sci" (Científico).
+
+Para forçar a Casio a te mostrar os números decimais por extenso:
+1. Pressione **`SETTINGS`** (botão de engrenagem).
+2. Selecione **`Config Calculadora`**.
+3. Selecione **`Formato Número`** (ou *Number Format*).
+4. Escolha a opção **`Norm`** (Normal).
+5. Ela vai te perguntar se quer `Norm 1` ou `Norm 2`. **Escolha `Norm 2`**.
+
+> **Qual a diferença?** 
+> O `Norm 1` transforma qualquer número menor que $0,01$ ou muito grande em notação científica (com o $\times 10$). O `Norm 2` tenta te mostrar a resposta sempre em número decimal normal (ex: $0,0003768$) até que o número fique ridiculamente minúsculo (menor que 9 casas decimais). Isso facilita demais a leitura dos Fasores na prova!
+
+---
+
+## 6. Onde está o "j" na Calculadora e Como Usar?
+Na engenharia elétrica usamos a letra **"j"** para não confundir com o $i$ de corrente, mas as calculadoras usam o padrão da matemática, que é a letra **"i"**.
+
+Você **PODE E DEVE** fazer todas as contas com o $i$ na calculadora (exceção: o aplicativo `Equação` para matrizes de sistema nodal/malhas, que bloqueia números imaginários).
+
+**Como colocar o $i$ nas contas normais (Impedância, Soma, Multiplicação):**
+1. O aplicativo atual **deve** ser o `Complexo` (Home $\to$ Complexo).
+2. Para digitar o $i$, aperte o botão **`SHIFT`** e depois aperte o botão do número **`0`** (repare que tem um $i$ minúsculo pintado em amarelo em cima do zero).
+3. **Exemplo de cálculo de Impedância:**
+   Se você quer achar a impedância do indutor $Z_L = j \cdot 377 \cdot 0,3$:
+   - Digite na Casio: `i × 377 × 0.3` e aperte `EXE`. Ela te dará o resultado direto!
+4. **Exemplo de divisão complexa:**
+   Se você quiser calcular a expressão $\frac{-j}{377 \times 10^{-5}}$:
+   - Digite o sinal de fração. Em cima, digite `-i`. Embaixo, digite `377 × 10^-5`. Aperte `EXE`.
+   - Ela vai resolver perfeitamente para você! (se der notação científica, lembre-se do Norm 2).
