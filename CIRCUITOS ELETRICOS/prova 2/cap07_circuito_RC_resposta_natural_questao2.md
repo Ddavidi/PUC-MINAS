@@ -17,7 +17,7 @@
 
 Antes de fazer qualquer conta, vamos **entender o que acontece fisicamente**.
 
-![Circuito Original da Questão 2](../../_base_dados_ia/imagens_geradas/prova2_q2_original.png)
+![Circuito Original da Questão 2](../_base_dados_ia/imagens_geradas/prova2_q2_original.png)
 
 **O que temos?**
 - Uma **fonte de corrente** $I_1 = 7,5\text{ mA}$ no lado esquerdo.
@@ -43,7 +43,7 @@ A chave esteve fechada "por um longo tempo". Isso é a frase mágica que signifi
 
 Então, para analisar $t < 0$, **removemos o capacitor** do circuito e o substituímos por um espaço vazio (circuito aberto):
 
-![Circuito em t < 0 — Capacitor Aberto](../../_base_dados_ia/imagens_geradas/prova2_q2_t_menor_0.png)
+![Circuito em t < 0 — Capacitor Aberto](../_base_dados_ia/imagens_geradas/prova2_q2_t_menor_0.png)
 
 ### Passo a passo da análise nodal
 
@@ -101,7 +101,7 @@ Quando K₁ abre, o circuito **se parte em dois pedaços**:
 - **Lado esquerdo** (fonte + $R_1$ + $R_2$): isolado, irrelevante.
 - **Lado direito** ($C_1$ + $R_3$): o capacitor carregado com 200 V descarrega através de $R_3$.
 
-![Circuito em t > 0 — Descarga livre](../../_base_dados_ia/imagens_geradas/prova2_q2_t_maior_0.png)
+![Circuito em t > 0 — Descarga livre](../_base_dados_ia/imagens_geradas/prova2_q2_t_maior_0.png)
 
 O capacitor vê apenas um resistor: $R_3$. Não há paralelo nem série — é direto!
 

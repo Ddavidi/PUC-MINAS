@@ -24,7 +24,7 @@ O ponto-chave desse problema é entender **o que a chave K₁ faz**:
 
 **Estado $t < 0$ — Chave Aberta:**
 
-![Circuito com chave aberta (t < 0)](../../_base_dados_ia/imagens_geradas/prova2_q1_circuito_t_antes.png)
+![Circuito com chave aberta (t < 0)](../_base_dados_ia/imagens_geradas/prova2_q1_circuito_t_antes.png)
 
 Em regime permanente de CC, o **indutor se comporta como um fio (curto-circuito)**. Toda a tensão da fonte cai nos resistores:
 
@@ -38,7 +38,7 @@ Pela **continuidade da corrente no indutor**: $i_0(0^+) = i_0(0^-) = \mathbf{5\t
 
 **Estado $t > 0$ — Chave Fechada (K₁ curto-circuita $R_2$):**
 
-![Circuito com chave fechada (t > 0)](../../_base_dados_ia/imagens_geradas/prova2_q1_circuito_t_depois.png)
+![Circuito com chave fechada (t > 0)](../_base_dados_ia/imagens_geradas/prova2_q1_circuito_t_depois.png)
 
 Com $R_2$ bypassado, a resistência equivalente vista pelo indutor é apenas $R_1$:
 

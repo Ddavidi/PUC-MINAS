@@ -72,7 +72,7 @@ $$\boxed{FP_{total} = \cos(8,27°) \approx \mathbf{0,990} \text{ (indutivo)}}$$
 
 ## 📐 Triângulo de Potências
 
-![Triângulo de Potências Q4](../../_base_dados_ia/imagens_geradas/prova2_q4_triangulo.png)
+![Triângulo de Potências Q4](../_base_dados_ia/imagens_geradas/prova2_q4_triangulo.png)
 
 | Grandeza | Valor |
 |----------|-------|

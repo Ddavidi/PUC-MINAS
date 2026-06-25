@@ -11,7 +11,7 @@
 
 ## 🔑 Passo 0: Circuito e dados
 
-![Circuito RLC Série](../../_base_dados_ia/imagens_geradas/prova2_q3_circuito_rlc.png)
+![Circuito RLC Série](../_base_dados_ia/imagens_geradas/prova2_q3_circuito_rlc.png)
 
 | Dado | Valor |
 |------|-------|
