@@ -82,6 +82,22 @@ $$\boxed{v_0(t) = 15e^{-12,5t}\text{ V}, \quad t \geq 0}$$
 
 > 💡 **Verificação rápida:** Em $t=0$, $v_0(0) = 15\text{ V}$. Pela Lei de Kirchhoff das Tensões: $E_1 = R_1 \cdot i_0(0) + v_0(0) = 1 \times 5 + 15 = 20\text{ V}$ ✅
 
+**Método Alternativo — Lei de Kirchhoff das Tensões (LKT):**
+
+Podemos chegar ao mesmo resultado sem derivar! Aplicando a LKT na malha principal em $t \geq 0$ (com K₁ fechada, R₂ bypassado):
+
+$$E_1 = v_{R_1}(t) + v_0(t)$$
+
+A queda de tensão no resistor $R_1$ é:
+$$v_{R_1}(t) = R_1 \cdot i_0(t) = 1 \times (20 - 15e^{-12,5t}) = 20 - 15e^{-12,5t}\text{ V}$$
+
+Isolando $v_0(t)$:
+$$v_0(t) = E_1 - v_{R_1}(t) = 20 - (20 - 15e^{-12,5t})$$
+
+$$\boxed{v_0(t) = 15e^{-12,5t}\text{ V}} \quad \checkmark$$
+
+> Ambos os métodos chegam ao mesmo resultado — e o Kirchhoff é ainda mais rápido aqui!
+
 ---
 
 ## ✅ Parte (e): Energia armazenada no indutor
