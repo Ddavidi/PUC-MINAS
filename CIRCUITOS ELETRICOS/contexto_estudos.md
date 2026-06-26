@@ -101,14 +101,10 @@ Este arquivo serve como um índice e registro de tudo o que estamos estudando so
 - [x] Folha de cola exclusiva e passo a passo de Pitágoras (`folha_de_cola_cap11_prova.md`).
 - [x] Resolução da Questão 4 da Prova 2.
 
-## 📝 Próximos Passos Sugeridos
-- **Formato Confirmado da Prova (Baseado na Prova Antiga - [Prova 2_260309_125616.pdf](file:///c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/prova%202/Prova%202_260309_125616.pdf)):**
-  - Questão 1: **Resposta ao Degrau** (Cap 7) $\to$ **[x] Totalmente Reformatada para Estudo**
-  - Questão 2: **Resposta Natural** (Cap 7).
-  - Questão 3: **Fasores envolvendo Impedância** (Cap 9) $\to$ **[x] Totalmente Reformatada para Estudo**
-  - Questão 4: **Fasores com Potência CA** (Cap 11) $\to$ **[x] Totalmente Reformatada para Estudo**
-- O foco total para garantir uma nota excelente deve ser nos **Exercícios Propostos dos Capítulos 7, 9 e 11**.
-- **Revisão Final:** Agora que as Resoluções da Prova 2 estão 100% no formato "Receita de Bolo" com dicas da Casio, o aluno deve treinar reproduzindo os triângulos e as somas fasoriais para consolidar o tempo de resolução.
+## 📝 Status Atual: Aguardando Resultados
+- **Prova 2 Finalizada!** 🎉 (Realizada no final de Junho/2026).
+- Todo o material preparatório (Capítulos 7, 9 e 11, incluindo as "Receitas de Bolo", dicas da Casio fx-991LA CW e Triângulos de Potência) se provou vital para a resolução e o domínio do tempo.
+- **Próximo passo imediato:** Aguardar a nota da avaliação para comemorarmos e decidirmos os rumos (avançar para o próximo módulo/Prova 3 ou revisar algum conceito).
 
 > *Instrução para a IA em chats futuros: Leia este arquivo para entender a organização do repositório, onde salvar novos arquivos e recuperar o contexto do aluno.*
 > **REGRA NOVA:** Sempre que resolver um exercício, coloque a página em que ele se encontra no PDF do livro diretamente no arquivo Markdown gerado (no formato: `*(Página X do PDF)*`).
