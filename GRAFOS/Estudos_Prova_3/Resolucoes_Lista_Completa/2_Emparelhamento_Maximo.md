@@ -15,7 +15,7 @@ Compilação de todas as resoluções das práticas da lista relativas ao tema 2
 - **Caminho aumentante:** É um caminho alternante que começa e termina em vértices **livres** (não cobertos por $M$).
 
 **b. M é maximal? Vértices livres:**
-$M$ não é maximal, pois podemos adicionar $(u_3, v_3)$ sem conflito.
+$M$ não é maximal, pois podemos adicionar $(u_3, v_2)$ sem conflito.
 Vértices livres em $U$: $\{u_1, u_3\}$. Em $V$: $\{v_2, v_3\}$.
 
 **c. Caminho aumentante partindo de $u_1$:**
