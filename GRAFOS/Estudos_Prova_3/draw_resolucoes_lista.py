@@ -49,7 +49,7 @@ def draw_bipartite_5_4():
 
 def draw_bipartite_5_5():
     G = nx.Graph()
-    G.add_edges_from([('U1', 'V2'), ('U1', 'V3'), ('U2', 'V1'), ('U2', 'V3'), ('U3', 'V4'), ('U4', 'V2')])
+    G.add_edges_from([('U1', 'V1'), ('U1', 'V2'), ('U2', 'V1'), ('U2', 'V3'), ('U3', 'V4'), ('U4', 'V2')])
     pos = {'U1':(0,3), 'U2':(0,2), 'U3':(0,1), 'U4':(0,0), 'V1':(1,3), 'V2':(1,2), 'V3':(1,1), 'V4':(1,0)}
     plt.figure(figsize=(4, 4))
     nx.draw(G, pos, with_labels=True, node_size=1000, node_color='lightgreen')
