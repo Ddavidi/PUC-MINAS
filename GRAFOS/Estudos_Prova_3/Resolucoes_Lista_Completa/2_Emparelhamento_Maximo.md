@@ -28,8 +28,14 @@ Vértices livres em $U$: $\{u_1, u_3\}$. Em $V$: $\{v_2, v_3\}$.
 
 Como $v_3$ também é livre, temos um caminho aumentante válido.
 **Diferença Simétrica ($M \oplus P$):**
-- Removemos: $(u_2, v_1)$
-- Adicionamos: $(u_1, v_1)$ e $(u_2, v_3)$
+> [!NOTE] 
+> **Regra de Ouro da Diferença Simétrica:** 
+> - Arestas do caminho que estão **Fora** do emparelhamento atual **Entram** (adicionadas).
+> - Arestas do caminho que estão **Dentro** do emparelhamento atual **Saem** (removidas).
+> *(Isso garante que o emparelhamento sempre cresça em tamanho +1 mantendo a validade, sem vértices com duas arestas).*
+
+- Removemos (Dentro $\rightarrow$ Saem): $(u_2, v_1)$
+- Adicionamos (Fora $\rightarrow$ Entram): $(u_1, v_1)$ e $(u_2, v_3)$
 *Novo emparelhamento:* $M' = \{(u_1, v_1), (u_2, v_3)\}$.
 
 **d. É um casamento perfeito?**
@@ -54,9 +60,14 @@ Ainda não. $u_3$ e $v_2$ continuam livres e existe aresta entre eles. Caminho a
 Começa em $B$ e termina em $Y$.
 Sequência: $B \rightarrow Z$ (Fora), $Z \rightarrow C$ (Dentro), $C \rightarrow Y$ (Fora).
 
-**c. Diferença Simétrica:**
-- Arestas Removidas: $(C, Z)$.
-- Arestas Adicionadas: $(B, Z)$ e $(C, Y)$.
+**c. Diferença Simétrica ($M \oplus P$):**
+> [!NOTE] 
+> **Regra de Ouro da Diferença Simétrica:** 
+> - Arestas do caminho que estão **Fora** do emparelhamento **Entram**.
+> - Arestas do caminho que estão **Dentro** do emparelhamento **Saem**.
+
+- Arestas Removidas (Dentro $\rightarrow$ Saem): $(C, Z)$.
+- Arestas Adicionadas (Fora $\rightarrow$ Entram): $(B, Z)$ e $(C, Y)$.
 *Novo $M'$:* $\{(A, X), (B, Z), (C, Y)\}$.
 
 **Grafo Final Resultante:**
@@ -75,7 +86,14 @@ Livres: $\{C, D\}$ e $\{X, Z\}$. O emparelhamento não é maximal, pois $D$ e $Z
 
 **b. Caminho Aumentante partindo de C:**
 Sequência: $C \rightarrow Y$ (Fora), $Y \rightarrow B$ (Dentro), $B \rightarrow W$ (Fora), $W \rightarrow A$ (Dentro), $A \rightarrow X$ (Fora).
-*Diferença Simétrica:* Removemos $(B, Y)$ e $(A, W)$. Inserimos $(C, Y), (B, W), (A, X)$.
+*Diferença Simétrica ($M \oplus P$):* 
+> [!NOTE] 
+> **Regra de Ouro da Diferença Simétrica:** 
+> - Arestas do caminho que estão **Fora** do emparelhamento **Entram**.
+> - Arestas do caminho que estão **Dentro** do emparelhamento **Saem**.
+
+- Removemos (Dentro $\rightarrow$ Saem): $(B, Y)$ e $(A, W)$. 
+- Inserimos (Fora $\rightarrow$ Entram): $(C, Y), (B, W)$ e $(A, X)$.
 *Novo $M_1$:* $\{(C, Y), (B, W), (A, X)\}$.
 
 **c. Caminho aumentante final:**
@@ -99,9 +117,15 @@ Livres: $U_4$ e $V_3$. A ligação direta $U_4 \rightarrow V_3$ **não é válid
 **b. Caminho aumentante de $U_4$:**
 $U_4 \rightarrow V_2$ (Fora) $\rightarrow U_1$ (Dentro) $\rightarrow V_1$ (Fora) $\rightarrow U_2$ (Dentro) $\rightarrow V_3$ (Fora).
 
-**c. Novo Emparelhamento:**
-Remove: $(U_1, V_2), (U_2, V_1)$.
-Insere: $(U_4, V_2), (U_1, V_1), (U_2, V_3)$. Aresta $(U_3, V_4)$ fica intacta.
+**c. Novo Emparelhamento via Diferença Simétrica ($M \oplus P$):**
+> [!NOTE] 
+> **Regra de Ouro da Diferença Simétrica:** 
+> - Arestas do caminho que estão **Fora** do emparelhamento **Entram**.
+> - Arestas do caminho que estão **Dentro** do emparelhamento **Saem**.
+
+- Remove (Dentro $\rightarrow$ Saem): $(U_1, V_2)$ e $(U_2, V_1)$.
+- Insere (Fora $\rightarrow$ Entram): $(U_4, V_2), (U_1, V_1)$ e $(U_2, V_3)$. 
+Aresta $(U_3, V_4)$ fica intacta (não fazia parte do caminho).
 *Final $M'$:* $\{(U_4, V_2), (U_1, V_1), (U_2, V_3), (U_3, V_4)\}$.
 
 **Grafo Final Resultante:**
