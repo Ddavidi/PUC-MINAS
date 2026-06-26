@@ -36,6 +36,9 @@ Como $v_3$ também é livre, temos um caminho aumentante válido.
 Ainda não. $u_3$ e $v_2$ continuam livres e existe aresta entre eles. Caminho aumentante trivial: $u_3 \rightarrow v_2$.
 *Resultado final:* $M'' = \{(u_1, v_1), (u_2, v_3), (u_3, v_2)\}$. Como cobre todos os 6 vértices, atingimos um casamento perfeito.
 
+**Grafo Final Resultante:**
+![Grafo 5.2 Final](imagens/bipartite_5_2_final.png)
+
 ---
 
 ## 5.3 Prática Hopcroft-Karp 1 (Aumento Simples)
@@ -55,6 +58,9 @@ Sequência: $B \rightarrow Z$ (Fora), $Z \rightarrow C$ (Dentro), $C \rightarrow
 - Arestas Removidas: $(C, Z)$.
 - Arestas Adicionadas: $(B, Z)$ e $(C, Y)$.
 *Novo $M'$:* $\{(A, X), (B, Z), (C, Y)\}$.
+
+**Grafo Final Resultante:**
+![Grafo 5.3 Final](imagens/bipartite_5_3_final.png)
 
 ---
 
@@ -76,6 +82,9 @@ Sequência: $C \rightarrow Y$ (Fora), $Y \rightarrow B$ (Dentro), $B \rightarrow
 Restam livres $D$ e $Z$. Caminho aumentante é a aresta direta $D \rightarrow Z$.
 *Final $M_{final}$:* $\{(C, Y), (B, W), (A, X), (D, Z)\}$.
 
+**Grafo Final Resultante:**
+![Grafo 5.4 Final](imagens/bipartite_5_4_final.png)
+
 ---
 
 ## 5.5 Prática Hopcroft-Karp 3 (Grafo Denso)
@@ -94,3 +103,6 @@ $U_4 \rightarrow V_2$ (Fora) $\rightarrow U_1$ (Dentro) $\rightarrow V_1$ (Fora)
 Remove: $(U_1, V_2), (U_2, V_1)$.
 Insere: $(U_4, V_2), (U_1, V_1), (U_2, V_3)$. Aresta $(U_3, V_4)$ fica intacta.
 *Final $M'$:* $\{(U_4, V_2), (U_1, V_1), (U_2, V_3), (U_3, V_4)\}$.
+
+**Grafo Final Resultante:**
+![Grafo 5.5 Final](imagens/bipartite_5_5_final.png)
