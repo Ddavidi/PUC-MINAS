@@ -8,7 +8,7 @@ def draw_5_2_final():
     G = nx.Graph()
     G.add_nodes_from(['u1', 'u2', 'u3'], bipartite=0)
     G.add_nodes_from(['v1', 'v2', 'v3'], bipartite=1)
-    G.add_edges_from([('u1', 'v1'), ('u1', 'v2'), ('u2', 'v1'), ('u2', 'v3'), ('u3', 'v2'), ('u3', 'v3')])
+    G.add_edges_from([('u1', 'v1'), ('u2', 'v1'), ('u2', 'v3'), ('u3', 'v2')])
     pos = {'u1':(0,2), 'u2':(0,1), 'u3':(0,0), 'v1':(1,2), 'v2':(1,1), 'v3':(1,0)}
     plt.figure(figsize=(4, 3))
     nx.draw(G, pos, with_labels=True, node_size=1000, node_color='lightgreen', edge_color='gray')

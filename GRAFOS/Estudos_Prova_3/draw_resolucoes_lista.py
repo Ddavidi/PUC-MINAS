@@ -19,7 +19,7 @@ def draw_bipartite_5_2():
     V = ['v1', 'v2', 'v3']
     G.add_nodes_from(U, bipartite=0)
     G.add_nodes_from(V, bipartite=1)
-    G.add_edges_from([('u1', 'v2'), ('u2', 'v1'), ('u2', 'v3'), ('u3', 'v2')])
+    G.add_edges_from([('u1', 'v1'), ('u2', 'v1'), ('u2', 'v3'), ('u3', 'v2')])
     pos = {'u1':(0,2), 'u2':(0,1), 'u3':(0,0), 'v1':(1,2), 'v2':(1,1), 'v3':(1,0)}
     plt.figure(figsize=(4, 3))
     nx.draw(G, pos, with_labels=True, node_size=1000, node_color='lightgreen')
