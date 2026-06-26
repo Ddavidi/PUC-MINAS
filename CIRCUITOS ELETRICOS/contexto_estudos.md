@@ -9,8 +9,7 @@ Este arquivo serve como um índice e registro de tudo o que estamos estudando so
 ## 📁 Estrutura do Repositório
 - `Fundamentos de Circuitos Elétricos Sadiku - 5 Edição - Completo.pdf`: O livro base.
 - `contexto_estudos.md`: Este índice.
-- `folha_de_cola_por_capitulo.md`: Resumo consolidado de fórmulas e passo a passo (separado por capítulos 6, 7, 9 e 11) para a prova.
-- `folha_de_cola_por_temas.md`: Resumo consolidado de fórmulas e métodos (separado por lógica/temas) para a prova.
+- `guias_e_resumos/`: Pasta central contendo todos os guias práticos, revisões de base e as "folhas de cola" consolidadas para as provas.
 - `code/`: Scripts Python auxiliares. Esta pasta contém códigos que extraem do PDF os textos em `.txt` e as imagens das páginas para alimentar a base de dados da IA. Além disso, temos também códigos que desenham e geram imagens estruturadas dos circuitos elétricos (usando `schemdraw`), facilitando a visualização dos exercícios e circuitos equivalentes.
 - `capitulo_XX/`: Pastas organizadas por capítulo (06, 07, 09, 11).
   - `conceitos_importantes.md`: Arquivo central com o resumo teórico e passo a passo do capítulo.
@@ -23,8 +22,8 @@ Este arquivo serve como um índice e registro de tudo o que estamos estudando so
 
 ### Resgate da Base (Capítulos 1 a 4)
 - [x] Criação da estrutura de pastas e extração completa de dezenas de páginas.
-- [x] Elaboração do **[Resgate da Base Teórica](file:///c:/Users/Levty/Documents/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/resgate_da_base.md)** focado em Nodal, Malhas e Thevenin (com imagens geradas via Python).
-- [x] Elaboração do **[Guia da Calculadora Casio fx-991LA CW](file:///c:/Users/Levty/Documents/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/guia_calculadora_casio.md)** para resolução matricial.
+- [x] Elaboração do **[Resgate da Base Teórica](file:///c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/guias_e_resumos/resgate_da_base.md)** focado em Nodal, Malhas e Thevenin (com imagens geradas via Python).
+- [x] Elaboração do **[Guia da Calculadora Casio fx-991LA CW](file:///c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/guias_e_resumos/guia_calculadora_casio.md)** para resolução matricial.
 - [x] Resolução de um **[Exemplo Clássico de Análise Nodal](file:///c:/Users/Levty/Documents/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/capitulo_03/atividades/exemplo_resolvido_nodal.md)**.
 - [x] Criação de um **[Exercício Proposto de Análise Nodal](file:///c:/Users/Levty/Documents/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/capitulo_03/atividades/exercicio_proposto_nodal.md)** para o usuário.
 - [x] Resolução de um **[Exemplo Resolvido de Supernó](file:///c:/Users/DD/Documents/DD/PUC%20MINAS/PUC-MINAS/CIRCUITOS%20ELETRICOS/capitulo_03/atividades/exemplo_resolvido_superno.md)**.

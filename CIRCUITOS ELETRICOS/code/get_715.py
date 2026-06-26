@@ -1,21 +1,12 @@
-import fitz  # PyMuPDF
+import fitz
+import os
 
-pdf_path = r"c:\Users\DD\Documents\DD\PUC MINAS\PUC-MINAS\CIRCUITOS ELETRICOS\Fundamentos de Circuitos Elétricos Sadiku - 5 Edição - Completo.pdf"
+pdf_path = [f for f in os.listdir('.') if 'Sadiku' in f and f.endswith('.pdf')][0]
+doc = fitz.open(pdf_path)
 
-try:
-    doc = fitz.open(pdf_path)
-    for i in range(250, 300):
-        page = doc[i]
-        text = page.get_text()
-        if "7.15" in text:
-            print(f"--- Page {i+1} ---")
-            lines = text.split('\n')
-            for j, line in enumerate(lines):
-                if "7.15" in line or "Figura 7.95" in line:
-                    start = max(0, j-5)
-                    end = min(len(lines), j+25)
-                    for k in range(start, end):
-                        print(lines[k])
-                    break
-except Exception as e:
-    print(f"Error: {e}")
+text = '\n'.join([page.get_text() for page in doc.pages(260, 295)])
+i = text.find('7.15')
+if i != -1:
+    print(text[i-50:i+1500])
+else:
+    print("Not found")
