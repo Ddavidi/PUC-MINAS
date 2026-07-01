@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador Visual de Disco - Questão 4</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --text-color: #e2e8f0;
+            --card-bg: #1e293b;
+            --primary: #38bdf8;
+            --secondary: #818cf8;
+            --accent: #f472b6;
+            --border: #334155;
+            --success: #34d399;
+            --danger: #f87171;
+        }
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+        p.subtitle {
+            color: #94a3b8;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .app-container {
+            display: flex;
+            gap: 3rem;
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            max-width: 900px;
+            width: 100%;
+        }
+        .disk-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+        .info-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        canvas {
+            background: rgba(15, 23, 42, 0.5);
+            border-radius: 50%;
+            border: 4px solid var(--border);
+            box-shadow: 0 0 20px rgba(0,0,0,0.5), inset 0 0 20px rgba(0,0,0,0.5);
+            transition: transform 1s ease-in-out;
+        }
+        /* O Braço de leitura fixo no topo */
+        .arm-container {
+            position: absolute;
+            top: 25px; /* Ajuste para sobrepor o canvas */
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            z-index: 10;
+        }
+        .arm-base {
+            width: 40px;
+            height: 20px;
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        .arm-needle {
+            width: 4px;
+            height: 40px;
+            background: #fde047; /* Amarelo brilhante para dar contraste */
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
+            box-shadow: 0 0 10px #fde047;
+        }
+        .controls {
+            margin-top: 2rem;
+            display: flex;
+            gap: 1rem;
+        }
+        button {
+            background: var(--primary);
+            color: #0f172a;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+        }
+        button:hover {
+            background: #7dd3fc;
+            transform: translateY(-2px);
+        }
+        button:disabled {
+            background: var(--border);
+            color: #64748b;
+            cursor: not-allowed;
+            transform: none;
+        }
+        select {
+            background: #0f172a;
+            color: var(--text-color);
+            border: 1px solid var(--border);
+            padding: 0.8rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            outline: none;
+            width: 100%;
+            margin-bottom: 1.5rem;
+        }
+        .msg-box {
+            background: rgba(56, 189, 248, 0.1);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 0 8px 8px 0;
+            font-size: 1.1rem;
+            min-height: 150px;
+        }
+        .time-badge {
+            display: inline-block;
+            background: var(--secondary);
+            color: #fff;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            font-family: monospace;
+            font-size: 1.2rem;
+        }
+        @media (max-width: 768px) {
+            .app-container { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Simulador do Disco (Questão 4)</h1>
+    <p class="subtitle">Veja com seus próprios olhos porque o setor é perdido no Cenário A e salvo no Cenário B.</p>
+
+    <div class="app-container">
+        <div class="disk-section">
+            <div class="arm-container">
+                <div class="arm-base"></div>
+                <div class="arm-needle"></div>
+            </div>
+            <!-- Disco (Canvas) -->
+            <canvas id="diskCanvas" width="300" height="300"></canvas>
+            
+            <div class="controls">
+                <button id="btnPrev" onclick="prevStep()">Anterior</button>
+                <button id="btnNext" onclick="nextStep()">Próximo Passo</button>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <select id="scenarioSelect" onchange="changeScenario()">
+                <option value="A">Cenário A: Ordem Sequencial (Gargalo 15ms)</option>
+                <option value="B">Cenário B: Interleaving Simples (Solução 15ms)</option>
+                <option value="C">Cenário C: Interleaving Simples (Taxa 40ms -> Gargalo)</option>
+                <option value="D">Cenário D: Interleaving Duplo (Solução 40ms)</option>
+            </select>
+
+            <div class="time-badge" id="timeBadge">t = 0 ms</div>
+            
+            <div class="msg-box" id="msgBox">
+                Selecione o cenário e avance os passos para entender o movimento.
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('diskCanvas');
+        const ctx = canvas.getContext('2d');
+        const centerX = canvas.width / 2;
+        const centerY = canvas.height / 2;
+        const radius = 140;
+
+        // Ângulo inicial para o desenho (-90 graus é o topo, 12 horas, onde o braço está)
+        const OFFSET = -Math.PI / 2;
+
+        let currentStep = 0;
+        let currentRotationDegrees = 0;
+        
+        // Define a ordem lógica dos setores para cada cenário
+        const layouts = {
+            'A': [0, 1, 2, 3, 4, 5, 6, 7], // Sequencial
+            'B': [0, 4, 1, 5, 2, 6, 3, 7], // Interleaving Simples (pula 1)
+            'C': [0, 4, 1, 5, 2, 6, 3, 7], // Interleaving Simples (pula 1)
+            'D': [0, 3, 6, 1, 4, 7, 2, 5]  // Interleaving Duplo (pula 2)
+        };
+
+        // Função auxiliar para calcular rotação exata baseada no tempo (em ms)
+        // t=0 -> rot=180. 1 volta = 200ms = 360deg.
+        const getRot = (t) => 180 + (t / 200) * 360;
+
+        function buildEvents(layout, transferTime) {
+            let evs = [];
+            evs.push({ time: 0, rot: getRot(0), msg: "<strong>Braço aguardando.</strong><br><br>O braço mecânico (agulha amarela) está parado. O Setor Lógico 0 está do lado oposto. Precisamos de '0,5 rotação' (100ms) de atraso rotacional para que ele chegue sob a cabeça." });
+            evs.push({ time: 100, rot: getRot(100), msg: "<strong>Atraso Rotacional concluído!</strong><br><br>O disco girou meia volta (100ms). O início do Setor Lógico 0 chegou sob o braço. A leitura vai começar." });
+
+            let t = 100;
+            let logToPhys = [];
+            for(let i=0; i<8; i++) logToPhys[layout[i]] = i;
+
+            for(let L=0; L<8; L++) {
+                let phys = logToPhys[L];
+                let nextStart = 100 + phys * 25;
+                while(nextStart < t) nextStart += 200;
+
+                if (nextStart > t && L > 0) {
+                    let wait = nextStart - t;
+                    if (wait > 25) { 
+                        evs.push({ time: nextStart, rot: getRot(nextStart), msg: `<strong style='color:var(--danger)'>Gargalo! Lógico ${L} foi perdido!</strong><br><br>A controladora ficou ocupada transferindo o bloco anterior e ficou cega. O início do Lógico ${L} passou direto! Tivemos que esperar o disco dar uma volta e chegar aos ${nextStart}ms para ele aparecer de novo.` });
+                    } else {
+                        evs.push({ time: nextStart, rot: getRot(nextStart), msg: `<strong style='color:var(--success)'>Sucesso no Interleaving!</strong><br><br>A controladora terminou a transferência anterior aos ${t}ms, e o Lógico ${L} chegou logo depois aos ${nextStart}ms. Deu tempo de pegar sem perder a volta!` });
+                    }
+                    t = nextStart;
+                } else if (L > 0) {
+                    evs.push({ time: nextStart, rot: getRot(nextStart), msg: `<strong style='color:var(--success)'>Sincronia Perfeita!</strong><br><br>O Lógico ${L} está exatamente sob o braço no instante em que a controladora ficou livre (${t}ms).` });
+                }
+
+                let readEnd = t + 25;
+                evs.push({ time: readEnd, rot: getRot(readEnd), msg: `<strong>Leitura do Lógico ${L} concluída.</strong><br><br>Levou 25ms de leitura magnética. Agora a controladora ficará ocupada transferindo para a RAM por ${transferTime}ms.` });
+
+                let transEnd = readEnd + transferTime;
+                if (L === 7) {
+                    evs.push({ time: transEnd, rot: getRot(transEnd), msg: `<strong>Fim da Leitura Total (${transEnd}ms).</strong><br><br>A transferência do último bloco terminou. A operação completa de todos os blocos exigiu ${transEnd}ms!` });
+                } else {
+                    evs.push({ time: transEnd, rot: getRot(transEnd), msg: `<strong>Transferência do Lógico ${L} concluída.</strong><br><br>Aos ${transEnd}ms a controladora volta a prestar atenção no disco.` });
+                }
+                t = transEnd;
+            }
+            return evs;
+        }
+
+        const eventsA = buildEvents(layouts.A, 15);
+        const eventsB = buildEvents(layouts.B, 15);
+        const eventsC = buildEvents(layouts.C, 40);
+        const eventsD = buildEvents(layouts.D, 40);
+
+        let currentEvents = eventsA;
+
+        function drawDisk(layout) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            // O disco gira no sentido horário.
+            // Para desenharmos os setores de forma que o 0 chegue no topo após rodar, 
+            // precisamos desenhá-los em sentido anti-horário em relação ao disco lógico.
+            // Cada setor = 45 graus = Math.PI / 4 radianos
+            const anglePerSector = (2 * Math.PI) / 8;
+
+            for (let i = 0; i < 8; i++) {
+                const logicalSector = layout[i];
+                
+                // Desenhamos no sentido anti-horário para que, ao girar no sentido horário, 
+                // eles passem na ordem 0, 1, 2, 3...
+                const startAngle = OFFSET - (i * anglePerSector);
+                const endAngle = OFFSET - ((i + 1) * anglePerSector);
+
+                ctx.beginPath();
+                ctx.moveTo(centerX, centerY);
+                ctx.arc(centerX, centerY, radius, startAngle, endAngle, true); // true = anti-horário
+                ctx.closePath();
+
+                // Cores: Setor Lógico 0 e 1 em destaque, os outros cinzas.
+                if (logicalSector === 0) {
+                    ctx.fillStyle = '#38bdf8'; // Primary (Azul)
+                } else if (logicalSector === 1) {
+                    ctx.fillStyle = '#f472b6'; // Accent (Rosa)
+                } else {
+                    // Tom de cinza alternado para os demais
+                    ctx.fillStyle = (i % 2 === 0) ? '#334155' : '#475569'; 
+                }
+                
+                ctx.fill();
+                ctx.strokeStyle = '#0f172a';
+                ctx.lineWidth = 2;
+                ctx.stroke();
+
+                // Desenhar o texto (Número do Setor Lógico)
+                const textAngle = startAngle - (anglePerSector / 2);
+                const textX = centerX + Math.cos(textAngle) * (radius * 0.7);
+                const textY = centerY + Math.sin(textAngle) * (radius * 0.7);
+                
+                ctx.fillStyle = '#ffffff';
+                ctx.font = 'bold 18px Inter';
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                ctx.fillText(logicalSector.toString(), textX, textY);
+            }
+            
+            // Furo do meio
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, 20, 0, 2 * Math.PI);
+            ctx.fillStyle = '#0f172a';
+            ctx.fill();
+            ctx.stroke();
+        }
+
+        function updateUI() {
+            const ev = currentEvents[currentStep];
+            
+            // Atualizar Rotação do Canvas (CSS Transform)
+            // A rotação no CSS é horário.
+            canvas.style.transform = `rotate(${ev.rot}deg)`;
+            
+            // Atualizar Textos
+            document.getElementById('timeBadge').innerText = `t = ${ev.time} ms`;
+            document.getElementById('msgBox').innerHTML = ev.msg;
+
+            // Botoes
+            document.getElementById('btnPrev').disabled = (currentStep === 0);
+            document.getElementById('btnNext').disabled = (currentStep === currentEvents.length - 1);
+        }
+
+        function nextStep() {
+            if (currentStep < currentEvents.length - 1) {
+                currentStep++;
+                updateUI();
+            }
+        }
+
+        function prevStep() {
+            if (currentStep > 0) {
+                currentStep--;
+                updateUI();
+            }
+        }
+
+        function changeScenario() {
+            const scenario = document.getElementById('scenarioSelect').value;
+            if (scenario === 'A') {
+                currentEvents = eventsA;
+                drawDisk(layouts.A);
+            } else if (scenario === 'B') {
+                currentEvents = eventsB;
+                drawDisk(layouts.B);
+            } else if (scenario === 'C') {
+                currentEvents = eventsC;
+                drawDisk(layouts.C);
+            } else if (scenario === 'D') {
+                currentEvents = eventsD;
+                drawDisk(layouts.D);
+            }
+            currentStep = 0;
+            updateUI();
+        }
+
+        // Inicialização
+        drawDisk(layouts.A);
+        updateUI();
+
+    </script>
+</body>
+</html>

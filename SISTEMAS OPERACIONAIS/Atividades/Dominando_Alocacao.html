@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dominando Métodos de Alocação de Arquivos</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --text-color: #e2e8f0;
+            --card-bg: #1e293b;
+            --primary: #8b5cf6;
+            --secondary: #3b82f6;
+            --accent: #f43f5e;
+            --border: #334155;
+            --success: #10b981;
+            --danger: #ef4444;
+        }
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
+            margin: 0;
+            padding: 3rem 1rem;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background: var(--card-bg);
+            padding: 3rem;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        h1 {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-top: 0;
+            font-size: 2.5rem;
+            text-align: center;
+        }
+        .subtitle {
+            text-align: center;
+            color: #94a3b8;
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+        }
+        .method-card {
+            background: rgba(15, 23, 42, 0.4);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .method-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--primary);
+        }
+        .method-card h2 {
+            margin-top: 0;
+            color: #fff;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .method-concept {
+            font-size: 1.05rem;
+            color: #cbd5e1;
+            margin-bottom: 1.5rem;
+        }
+        .pros-cons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        @media (max-width: 768px) {
+            .pros-cons { grid-template-columns: 1fr; }
+        }
+        .pros h4 { color: var(--success); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 5px; }
+        .cons h4 { color: var(--danger); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 5px; }
+        .pros-cons ul {
+            padding-left: 1.2rem;
+            margin: 0;
+        }
+        .pros-cons li {
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+        .highlight-word {
+            color: var(--secondary);
+            font-weight: bold;
+        }
+        .summary-box {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(59, 130, 246, 0.1));
+            border: 1px solid var(--primary);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+        .summary-box h3 {
+            color: var(--primary);
+            margin-top: 0;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+        .summary-item {
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px dashed var(--border);
+        }
+        .summary-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Dominando Alocação de Arquivos</h1>
+        <p class="subtitle">Como o SO decide onde gravar os dados no disco físico (Visão de Tanenbaum)</p>
+
+        <!-- Contígua -->
+        <div class="method-card" style="--primary: #3b82f6;">
+            <h2>1. Alocação Contígua</h2>
+            <p class="method-concept">O arquivo inteiro é gravado em <strong>blocos sequenciais e vizinhos</strong> no disco. Se precisa de 50 blocos, eles têm que estar colados um no outro.</p>
+            
+            <div class="pros-cons">
+                <div class="pros">
+                    <h4>✅ Vantagens</h4>
+                    <ul>
+                        <li><strong>Desempenho Extremo:</strong> Leitura mais rápida de todas (1 único <em>seek</em> e lê direto).</li>
+                        <li><strong>Implementação:</strong> Muito simples. O diretório só anota o bloco inicial e o tamanho.</li>
+                    </ul>
+                </div>
+                <div class="cons">
+                    <h4>❌ Desvantagens</h4>
+                    <ul>
+                        <li><strong>Fragmentação Externa:</strong> O disco vira um queijo suíço. Buracos vazios se espalham, e arquivos novos não cabem.</li>
+                        <li><strong>Crescimento Impossível:</strong> Se o arquivo crescer e o bloco vizinho estiver ocupado, o SO tem que copiar o arquivo inteiro para outra área.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Encadeada -->
+        <div class="method-card" style="--primary: #8b5cf6;">
+            <h2>2. Alocação Encadeada (Lista Ligada)</h2>
+            <p class="method-concept">O arquivo é espalhado em <strong>blocos isolados</strong>. O truque: o primeiro bloco guarda os dados e um <strong>ponteiro (link)</strong> físico apontando para o endereço do próximo bloco no disco.</p>
+            
+            <div class="pros-cons">
+                <div class="pros">
+                    <h4>✅ Vantagens</h4>
+                    <ul>
+                        <li><strong>Zero Fragmentação Externa:</strong> Qualquer buraco livre serve. Acabou o queijo suíço.</li>
+                        <li><strong>Crescimento Fácil:</strong> O arquivo cresce indefinidamente achando blocos soltos.</li>
+                    </ul>
+                </div>
+                <div class="cons">
+                    <h4>❌ Desvantagens</h4>
+                    <ul>
+                        <li><strong>Acesso Randômico Destruído:</strong> Para ir ao bloco 50, o SO é obrigado a ir no disco e ler fisicamente o bloco 1, 2, 3... até chegar no 50. Muito lento!</li>
+                        <li><strong>Overhead Interno:</strong> O ponteiro rouba espaço dos dados, quebrando a potência de 2 do bloco (ex: de 512 sobram 508 bytes).</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAT -->
+        <div class="method-card" style="--primary: #ec4899;">
+            <h2>3. Alocação Encadeada com Tabela em Memória (FAT)</h2>
+            <p class="method-concept">Evolução do anterior. Arranca-se os ponteiros de dentro dos blocos no disco, e coloca-se todos juntos numa tabela (File Allocation Table), carregada <strong>inteira na Memória RAM</strong>.</p>
+            
+            <div class="pros-cons">
+                <div class="pros">
+                    <h4>✅ Vantagens</h4>
+                    <ul>
+                        <li><strong>Salvação do Acesso Randômico:</strong> O SO percorre a corrente de ponteiros na RAM (quase instantâneo) e vai no disco apenas 1 vez, direto no alvo.</li>
+                        <li><strong>Blocos Íntegros:</strong> O bloco volta a ser 100% livre para dados de usuário.</li>
+                    </ul>
+                </div>
+                <div class="cons">
+                    <h4>❌ Desvantagens</h4>
+                    <ul>
+                        <li><strong>Gasto de RAM Alto:</strong> A tabela precisa mapear o disco <strong>inteiro</strong> na RAM o tempo todo. Discos muito grandes esgotam a memória facilmente.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Indexada (i-nodes) -->
+        <div class="method-card" style="--primary: #10b981;">
+            <h2>4. Alocação Indexada (i-nodes do UNIX)</h2>
+            <p class="method-concept">A solução definitiva: cria-se um bloco especial no disco (o <strong>i-node</strong> ou bloco de índice) para CADA arquivo. Esse bloco guarda o endereço de todos os blocos de dados do arquivo.</p>
+            
+            <div class="pros-cons">
+                <div class="pros">
+                    <h4>✅ Vantagens</h4>
+                    <ul>
+                        <li><strong>Economia de RAM:</strong> A tabela não é global. O SO só carrega o índice (i-node) para a RAM se o arquivo for aberto pelo usuário.</li>
+                        <li><strong>Acesso Randômico Direto:</strong> Lê-se a linha do índice e o ponteiro já dá o endereço final do disco.</li>
+                    </ul>
+                </div>
+                <div class="cons">
+                    <h4>❌ Desvantagens</h4>
+                    <ul>
+                        <li><strong>Fragmentação Interna / Overhead:</strong> Um arquivo minúsculo gasta 2 blocos (1 pro dado e 1 inteiro só pro índice).</li>
+                        <li><strong>Arquivos Gigantes:</strong> Requer índices multiníveis (blocos de índices apontando para mais índices).</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="summary-box">
+            <h3>📌 Resumo Matador para Fixar</h3>
+            <div class="summary-item">
+                <strong>Alocação Contígua:</strong> Perfeita para ler rápido. Inviável se o arquivo precisa crescer. Sofre com fragmentação externa.
+            </div>
+            <div class="summary-item">
+                <strong>Alocação Encadeada (Disco):</strong> Excelente para crescer. Péssima se você quiser dar pulos randômicos no arquivo.
+            </div>
+            <div class="summary-item">
+                <strong>Encadeada com Tabela (FAT):</strong> Resolve o acesso randômico botando os ponteiros na RAM, mas consome a RAM inteira.
+            </div>
+            <div class="summary-item">
+                <strong>Indexada (i-nodes):</strong> Resolve todos os problemas anteriores, gastando RAM só com os arquivos que estiverem abertos (mas gasta espaço extra no disco com índices).
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

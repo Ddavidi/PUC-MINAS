@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo Prova 3 - Sistemas Operacionais</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --text-color: #e2e8f0;
+            --card-bg: #1e293b;
+            --primary: #38bdf8;
+            --secondary: #818cf8;
+            --accent: #f472b6;
+            --border: #334155;
+            --success: #34d399;
+            --danger: #f87171;
+        }
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 4rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+            letter-spacing: -1px;
+        }
+        .subtitle {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            font-weight: 500;
+        }
+        h2 {
+            color: var(--text-color);
+            font-size: 1.8rem;
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        h2::before {
+            content: "";
+            display: inline-block;
+            width: 8px;
+            height: 28px;
+            background: var(--primary);
+            border-radius: 4px;
+        }
+        h3 {
+            color: var(--secondary);
+            font-size: 1.3rem;
+            margin-top: 1.5rem;
+        }
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 1.8rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--border);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .card:hover {
+            transform: translateY(-3px);
+            border-color: var(--primary);
+        }
+        ul {
+            padding-left: 1.5rem;
+        }
+        li {
+            margin-bottom: 0.8rem;
+        }
+        strong {
+            color: #f1f5f9;
+            font-weight: 600;
+        }
+        .highlight {
+            color: var(--accent);
+            font-weight: 600;
+        }
+        .badge {
+            background: rgba(56, 189, 248, 0.15);
+            color: var(--primary);
+            padding: 0.2rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        .pro-con {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .pro-con div {
+            background: rgba(15, 23, 42, 0.5);
+            padding: 1rem;
+            border-radius: 8px;
+            font-size: 0.95rem;
+        }
+        .pro::before { content: "✓ "; color: var(--success); font-weight: bold; }
+        .con::before { content: "✕ "; color: var(--danger); font-weight: bold; }
+        
+        @media (max-width: 768px) {
+            .pro-con { grid-template-columns: 1fr; }
+            h1 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Resumo Definitivo: Prova 3</h1>
+            <p class="subtitle">Sistemas Operacionais — Sistemas de Arquivos, I/O, FAT, File Carving e Esteganografia</p>
+        </header>
+
+        <section>
+            <h2>1. O Conceito de Arquivo e Sistemas de Arquivos</h2>
+            <p>Um <strong>Sistema de Arquivos</strong> é a parte do SO responsável por gerenciar a forma como os dados são armazenados e recuperados do disco.</p>
+            
+            <div class="card">
+                <h3>Conceitos Básicos</h3>
+                <ul>
+                    <li><strong>Arquivo:</strong> Unidade lógica de armazenamento. Seus atributos (nome, tipo, tamanho, permissões) ficam armazenados em uma estrutura chamada <em>diretório</em> ou <em>i-node</em>.</li>
+                    <li><strong>Acesso Sequencial:</strong> Dados lidos em ordem, do início ao fim (ex: fitas magnéticas).</li>
+                    <li><strong>Acesso Direto (Randômico):</strong> Permite pular diretamente a um bloco específico do arquivo sem ler os anteriores (essencial para bancos de dados).</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Métodos de Alocação (No Disco)</h3>
+                <p>Como os SOs distribuem os arquivos pelos blocos do disco:</p>
+                <ul>
+                    <li>
+                        <span class="badge">CONTÍGUA</span> O arquivo ocupa blocos vizinhos no disco.
+                        <div class="pro-con">
+                            <div class="pro">Acesso extremamente rápido (pouco <i>seek</i> da cabeça).</div>
+                            <div class="con">Sofre de grave <strong>fragmentação externa</strong> e dificuldade para aumentar o arquivo.</div>
+                        </div>
+                    </li>
+                    <li style="margin-top: 1.5rem;">
+                        <span class="badge">ENCADEADA</span> Blocos espalhados, cada um aponta para o próximo.
+                        <div class="pro-con">
+                            <div class="pro">Zero fragmentação externa, muito fácil aumentar o arquivo.</div>
+                            <div class="con">Acesso direto lento (é preciso ler o bloco 1 para achar o 2, etc).</div>
+                        </div>
+                    </li>
+                    <li style="margin-top: 1.5rem;">
+                        <span class="badge">INDEXADA</span> Um bloco central (índice) guarda todos os ponteiros.
+                        <div class="pro-con">
+                            <div class="pro">Acesso direto excelente, sem fragmentação externa.</div>
+                            <div class="con">Desperdício (fragmentação interna) em arquivos muito pequenos, pois gasta um bloco inteiro só pro índice.</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>2. File Allocation Table (FAT)</h2>
+            <div class="card">
+                <p>O <strong>FAT System</strong> é uma evolução inteligente e essencial da Alocação Encadeada.</p>
+                <ul>
+                    <li>O SO cria uma tabela (a FAT) no início do volume lógico do disco e a carrega <span class="highlight">inteiramente para a Memória RAM</span>.</li>
+                    <li>Cada entrada na tabela representa um bloco (cluster) do disco. Se um arquivo usa o bloco X, a entrada X na tabela contém o número do próximo bloco.</li>
+                    <li><strong>A Grande Vantagem:</strong> O acesso randômico fica rápido! O SO não precisa ler o disco mecanicamente para seguir a corrente de ponteiros; ele faz isso na velocidade da memória RAM e depois vai ao disco apenas uma vez, direto no bloco que precisa ler.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>3. I/O (Entrada e Saída) e Discos</h2>
+            <div class="card">
+                <h3>DMA (Acesso Direto à Memória)</h3>
+                <p>Em vez de a CPU gastar tempo movendo cada byte do disco para a RAM, ela terceiriza o trabalho para a <strong>Controladora de DMA</strong>. O DMA transfere os dados pelos barramentos e avisa a CPU com uma <em>interrupção</em> apenas quando termina, liberando a CPU para outras tarefas.</p>
+            </div>
+            <div class="card">
+                <h3>Desempenho de Discos Magnéticos</h3>
+                <p>O tempo total para acessar e transferir algo do disco é a soma de:</p>
+                <ul>
+                    <li><strong>Tempo de Busca (Seek):</strong> Mover o braço mecânico para o cilindro/trilha correta (é a etapa mais demorada).</li>
+                    <li><strong>Atraso Rotacional (Latência):</strong> Esperar o prato girar até que o setor passe embaixo da cabeça de leitura.</li>
+                    <li><strong>Tempo de Transferência:</strong> O tempo para ler os dados e enviá-los à memória.
+                        <br><br><span class="badge">DICA PROVA</span> O <em>Interleaving</em> (entrelaçamento) é usado para dar tempo da controladora transferir um bloco para a RAM antes que o próximo bloco passe sob a cabeça, evitando perder uma rotação inteira do disco.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>4. File Carving (Esculpimento)</h2>
+            <div class="card">
+                <p>Técnica avançada de Computação Forense para recuperar arquivos apagados ou de discos formatados, quando a tabela de sistema de arquivos (FAT, MFT) foi destruída.</p>
+                <ul>
+                    <li>O software varre o disco "cru" setor por setor (raw data).</li>
+                    <li>Procura por <span class="highlight">Magic Numbers (Assinaturas)</span>. Todo arquivo JPEG, por exemplo, começa com os bytes <code>FF D8</code> e termina com <code>FF D9</code>.</li>
+                    <li>Ao achar o início e o fim correspondentes, o programa "esculpe" os blocos que estão no meio e recupera a foto, sem depender do Sistema Operacional saber onde o arquivo estava.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>5. Esteganografia</h2>
+            <div class="card">
+                <p>Diferente da <em>Criptografia</em> (que transforma a mensagem em código embaralhado visível), a <strong>Esteganografia</strong> é a arte de <span class="highlight">ocultar a EXISTÊNCIA</span> da mensagem secreta.</p>
+                <ul>
+                    <li>Um dado confidencial é embutido dentro de um "arquivo hospedeiro" perfeitamente normal (uma imagem ou áudio inofensivo).</li>
+                    <li><strong>Técnica LSB (Least Significant Bit):</strong> Substitui o último bit das cores de cada pixel por bits da mensagem secreta. A olho nu, a foto continua idêntica, mas softwares extraem a mensagem perfeitamente. Muito usado em espionagem industrial e vazamento de dados dissimulado.</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

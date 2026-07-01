@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resoluções da Lista 7 - Sistemas Operacionais</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --text-color: #e2e8f0;
+            --card-bg: #1e293b;
+            --primary: #38bdf8;
+            --secondary: #818cf8;
+            --accent: #f472b6;
+            --border: #334155;
+            --success: #34d399;
+            --warning: #fbbf24;
+            --danger: #f87171;
+            --question-bg: rgba(56, 189, 248, 0.05);
+        }
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 4rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+            letter-spacing: -1px;
+        }
+        .subtitle {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            font-weight: 500;
+        }
+        .question-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--border);
+            overflow: hidden;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .question-card:hover {
+            border-color: var(--primary);
+        }
+        .question-header {
+            background-color: var(--question-bg);
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .question-header h2 {
+            margin: 0 0 1rem 0;
+            color: var(--primary);
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .enunciado {
+            font-style: italic;
+            color: #cbd5e1;
+            font-size: 0.95rem;
+            margin: 0;
+        }
+        .resolution-body {
+            padding: 1.8rem;
+        }
+        h3 {
+            color: var(--secondary);
+            font-size: 1.2rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        ul, ol {
+            padding-left: 1.5rem;
+        }
+        li {
+            margin-bottom: 0.8rem;
+        }
+        strong {
+            color: #f1f5f9;
+            font-weight: 600;
+        }
+        .highlight {
+            color: var(--accent);
+            font-weight: 600;
+        }
+        .badge {
+            background: rgba(56, 189, 248, 0.15);
+            color: var(--primary);
+            padding: 0.2rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+        .math-box {
+            background: rgba(15, 23, 42, 0.6);
+            border-left: 4px solid var(--secondary);
+            padding: 1rem 1.5rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1.5rem 0;
+            font-family: monospace;
+            font-size: 1rem;
+            color: #38bdf8;
+        }
+        .scenario {
+            background: rgba(15, 23, 42, 0.4);
+            border: 1px solid var(--border);
+            padding: 1.2rem;
+            border-radius: 8px;
+            margin-top: 1.5rem;
+        }
+        .scenario h4 {
+            margin-top: 0;
+            color: var(--accent);
+            font-size: 1.1rem;
+            border-bottom: 1px dashed var(--border);
+            padding-bottom: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2rem; }
+            .resolution-body { padding: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Resoluções: Lista 7</h1>
+            <p class="subtitle">I/O e Sistemas de Arquivos (Contas e Teoria)</p>
+        </header>
+
+        <!-- Questão 1 -->
+        <div class="question-card">
+            <div class="question-header">
+                <h2>Questão 1 (Métodos de Alocação de Arquivos)</h2>
+                <p class="enunciado">Compare os métodos de alocação de arquivos em disco por alocação contígua, encadeada e indexada, discutindo: facilidade de inserção e remoção de blocos, rapidez no acesso a registros, formas de acesso possíveis, necessidade de armazenamento adicional, fragmentação interna e externa.</p>
+            </div>
+            <div class="resolution-body">
+                <ul>
+                    <li>
+                        <strong>Facilidade de inserção e remoção de blocos:</strong><br>
+                        - <em>Contígua:</em> Muito difícil. Arquivos precisam crescer em blocos vizinhos; se não houver espaço, o arquivo todo deve ser movido.<br>
+                        - <em>Encadeada:</em> Muito fácil. Basta achar qualquer bloco livre e conectar ao último.<br>
+                        - <em>Indexada:</em> Fácil. Basta adicionar o endereço no bloco de índice.
+                    </li>
+                    <li>
+                        <strong>Rapidez no acesso a registros (desempenho):</strong><br>
+                        - <em>Contígua:</em> Extremamente rápido (apenas uma busca inicial).<br>
+                        - <em>Encadeada:</em> Lento para acessos diretos/randômicos (necessário ler toda a corrente anterior).<br>
+                        - <em>Indexada:</em> Rápido (índice aponta direto para o alvo).
+                    </li>
+                    <li>
+                        <strong>Formas de acesso possíveis:</strong><br>
+                        - <em>Contígua:</em> Sequencial e Randômica excelentes.<br>
+                        - <em>Encadeada:</em> Apenas Sequencial. Randômica ineficiente.<br>
+                        - <em>Indexada:</em> Sequencial e Randômica muito eficientes.
+                    </li>
+                    <li>
+                        <strong>Fragmentação:</strong><br>
+                        - <em>Contígua:</em> Muita fragmentação externa (buracos entre arquivos).<br>
+                        - <em>Encadeada:</em> Nenhuma fragmentação externa. Fragmentação interna apenas no último bloco.<br>
+                        - <em>Indexada:</em> Nenhuma fragmentação externa. Pode haver fragmentação interna grave (desperdício de um bloco de índice inteiro para arquivos minúsculos).
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Questão 2 -->
+        <div class="question-card">
+            <div class="question-header">
+                <h2>Questão 2 (DMA e Transferência de I/O)</h2>
+                <p class="enunciado">Descreva o processo de transferência de dados de um disco para a memória, com acesso direto à memória (DMA). Deixe claros os papeis da CPU, driver, controladoras e barramentos neste processo.</p>
+            </div>
+            <div class="resolution-body">
+                <ol>
+                    <li>O <strong>driver do SO</strong> (a mando da <strong>CPU</strong>) prepara e programa a <strong>Controladora de DMA</strong> informando: endereço no disco, destino na RAM e quantidade de bytes.</li>
+                    <li>A <strong>CPU</strong> fica livre para fazer outras tarefas.</li>
+                    <li>A <strong>Controladora de Disco</strong> lê os setores mecanicamente e os joga no seu buffer interno.</li>
+                    <li>A <strong>Controladora de DMA</strong> pede autorização para usar o <strong>Barramento</strong> e copia os bytes direto do buffer do disco para a RAM.</li>
+                    <li>Ao terminar, a Controladora de DMA envia uma <strong>interrupção de hardware</strong> à <strong>CPU</strong>, informando que os dados já estão na memória prontos para uso.</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Questão 3 -->
+        <div class="question-card">
+            <div class="question-header">
+                <h2>Questão 3 (File Allocation Table - FAT System)</h2>
+                <p class="enunciado">O que é uma FAT (Tabela de alocação de arquivos)? Qual seu papel no método de alocação encadeado?</p>
+            </div>
+            <div class="resolution-body">
+                <p>A <strong>FAT</strong> é uma tabela estrutural criada no início do disco e que o SO carrega integralmente para a <strong>memória principal (RAM)</strong>.</p>
+                <p>O papel dela na alocação encadeada é <strong>resolver o problema da lentidão no acesso randômico</strong>. Em vez de o SO precisar ler o disco inteiro mecanicamente para achar qual é o bloco "50" de um arquivo, ele percorre a corrente de ponteiros dentro da tabela na RAM (o que é quase instantâneo) e depois vai ao disco apenas 1 vez diretamente no bloco desejado.</p>
+            </div>
+        </div>
+
+        <!-- Questão 4 -->
+        <div class="question-card">
+            <div class="question-header">
+                <h2>Questão 4 (Desempenho de Disco e Interleaving)</h2>
+                <p class="enunciado">Exercício: Um disco tem 8 setores de 512 bytes por trilha, e rotação de 300rpm. O braço está posicionado, mas 0,5 rotação é necessária para achar o setor 0. Calcule o tempo para ler todos os setores em ordem considerando taxa de transferência de 15ms. E com interleaving simples? E se a taxa for de 40ms? E com interleaving duplo?</p>
+            </div>
+            <div class="resolution-body">
+                <h3>Passo a Passo Detalhado (Receita de Interleaving)</h3>
+                
+                <p><strong>PASSO 1: Levantamento de Variáveis (A Base)</strong></p>
+                <div class="math-box">
+                    • <strong>T<sub>rot</sub> (1 Rotação):</strong> 60.000 ms / 300 rpm = <strong>200 ms</strong>.<br>
+                    • <strong>T<sub>setor</sub> (1 Setor):</strong> 200 ms / 8 setores = <strong>25 ms</strong>.<br>
+                    • <strong>T<sub>transf</sub>:</strong> O enunciado fornece (15ms ou 40ms).<br>
+                    • <strong>T<sub>cego</sub> (Leitura + Transf):</strong> 25 ms + T<sub>transf</sub>.
+                </div>
+
+                <div class="scenario">
+                    <h4>Cenário A: Ordem Sequencial Bruta (Taxa = 15ms)</h4>
+                    <ul>
+                        <li><strong>Passo 1:</strong> T<sub>cego</sub> = 25 + 15 = 40 ms.</li>
+                        <li><strong>Passo 2 (T<sub>pulo</sub>):</strong> Sem interleaving (pula 1 setor). T<sub>pulo</sub> = 1 × 25 = 25 ms.</li>
+                        <li><strong>Passo 3 (Teste Gargalo):</strong> T<sub>cego</sub> (40ms) &gt; T<sub>pulo</sub> (25ms). <strong style="color:var(--danger)">Gargalo!</strong><br>
+                            Custo do Salto Punitivo = T<sub>pulo</sub> + T<sub>rot</sub> = 25 + 200 = 225 ms.</li>
+                        <li><strong>Passo 4 (Anomalias):</strong> N=8, Pulo=1. MDC(8,1)=1. MDC - 1 = <strong>0 pulos anômalos</strong>.</li>
+                        <li><strong>Passo 5 (Transf. Total):</strong> São 7 saltos totais.<br>
+                            Soma = (7 normais × 225) + (0 anômalos) = 1575 ms.<br>
+                            Transf. Total = Soma + Último Bloco (40) = 1615 ms.</li>
+                        <li><strong>Tempo Total (Tanenbaum):</strong><br>
+                            <code>Busca (0) + Atraso Rotacional (100) + Transferência Total (1615)</code> = <strong style="color:var(--danger)">1715 ms</strong>.</li>
+                    </ul>
+                </div>
+
+                <div class="scenario">
+                    <h4>Cenário B: Interleaving Simples (Taxa = 15ms)</h4>
+                    <ul>
+                        <li><strong>Passo 1:</strong> T<sub>cego</sub> = 25 + 15 = 40 ms.</li>
+                        <li><strong>Passo 2 (T<sub>pulo</sub>):</strong> Interleaving Simples (pula 2). T<sub>pulo</sub> = 2 × 25 = 50 ms.</li>
+                        <li><strong>Passo 3 (Teste Gargalo):</strong> T<sub>cego</sub> (40ms) &le; T<sub>pulo</sub> (50ms). <strong style="color:var(--success)">Fluxo Ideal!</strong><br>
+                            Custo do Salto Normal = 50 ms.</li>
+                        <li><strong>Passo 4 (Anomalias):</strong> N=8, Pulo=2. MDC(8,2)=2. <strong>1 pulo anômalo</strong>.<br>
+                            Distância do anômalo = 50 + 25 = 75 ms. Não sofre gargalo (40 &le; 75).</li>
+                        <li><strong>Passo 5 (Transf. Total):</strong> São 7 saltos totais.<br>
+                            Soma = (6 normais × 50) + (1 anômalo × 75) = 300 + 75 = 375 ms.<br>
+                            Transf. Total = Soma + Último Bloco (40) = 415 ms.</li>
+                        <li><strong>Tempo Total (Tanenbaum):</strong><br>
+                            <code>Busca (0) + Atraso Rotacional (100) + Transferência Total (415)</code> = <strong style="color:var(--success)">515 ms</strong>.</li>
+                    </ul>
+                </div>
+
+                <div class="scenario">
+                    <h4>Cenário C: A Taxa da Controladora piora para 40ms</h4>
+                    <ul>
+                        <li><strong>Passo 1:</strong> T<sub>cego</sub> = 25 + 40 = 65 ms.</li>
+                        <li><strong>Passo 2 (T<sub>pulo</sub>):</strong> Interleaving Simples (pula 2). T<sub>pulo</sub> = 2 × 25 = 50 ms.</li>
+                        <li><strong>Passo 3 (Teste Gargalo):</strong> T<sub>cego</sub> (65ms) &gt; T<sub>pulo</sub> (50ms). <strong style="color:var(--danger)">Gargalo!</strong><br>
+                            Custo do Salto Punitivo = 50 + 200 = 250 ms.</li>
+                        <li><strong>Passo 4 (Anomalias):</strong> N=8, Pulo=2. MDC(8,2)=2. <strong>1 pulo anômalo de 75ms</strong>.<br>
+                            <em>Teste do anômalo:</em> T<sub>cego</sub> (65) &le; T<sub>anomalo</sub> (75). Escapou do gargalo! Custa 75 ms.</li>
+                        <li><strong>Passo 5 (Transf. Total):</strong> São 7 saltos totais.<br>
+                            Soma = (6 punitivos × 250) + (1 livre × 75) = 1500 + 75 = 1575 ms.<br>
+                            Transf. Total = Soma + Último Bloco (65) = 1640 ms.</li>
+                        <li><strong>Tempo Total (Tanenbaum):</strong><br>
+                            <code>Busca (0) + Atraso Rotacional (100) + Transferência Total (1640)</code> = <strong style="color:var(--danger)">1740 ms</strong>.</li>
+                    </ul>
+                </div>
+
+                <div class="scenario">
+                    <h4>Cenário D: Interleaving Duplo (Taxa = 40ms)</h4>
+                    <ul>
+                        <li><strong>Passo 1:</strong> T<sub>cego</sub> = 25 + 40 = 65 ms.</li>
+                        <li><strong>Passo 2 (T<sub>pulo</sub>):</strong> Interleaving Duplo (pula 3). T<sub>pulo</sub> = 3 × 25 = 75 ms.</li>
+                        <li><strong>Passo 3 (Teste Gargalo):</strong> T<sub>cego</sub> (65ms) &le; T<sub>pulo</sub> (75ms). <strong style="color:var(--success)">Fluxo Ideal!</strong><br>
+                            Custo do Salto Normal = 75 ms.</li>
+                        <li><strong>Passo 4 (Anomalias):</strong> N=8, Pulo=3. MDC(8,3)=1. MDC - 1 = <strong>0 pulos anômalos</strong>.</li>
+                        <li><strong>Passo 5 (Transf. Total):</strong> São 7 saltos totais.<br>
+                            Soma = (7 normais × 75) + (0 anômalos) = 525 ms.<br>
+                            Transf. Total = Soma + Último Bloco (65) = 590 ms.</li>
+                        <li><strong>Tempo Total (Tanenbaum):</strong><br>
+                            <code>Busca (0) + Atraso Rotacional (100) + Transferência Total (590)</code> = <strong style="color:var(--success)">690 ms</strong>.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Questão 5 -->
+        <div class="question-card">
+            <div class="question-header">
+                <h2>Questão 5 (i-node e Estrutura de Arquivos no UNIX)</h2>
+                <p class="enunciado">Foi sugerido que a primeira parte de cada arquivo UNIX fosse mantido no mesmo bloco de disco com o seu i-node. Que benefícios está política gera?</p>
+            </div>
+            <div class="resolution-body">
+                <p>O principal benefício é a <span class="highlight">drástica redução no tempo de leitura (e economia de acessos a disco)</span> para arquivos pequenos, como scripts e arquivos de configuração (que são maioria no UNIX).</p>
+                <p>Normalmente o UNIX precisa ir ao disco 2 vezes: uma para ler o i-node, e outra para ler os dados que o i-node apontou. Se os dados já vierem "embutidos" no próprio i-node, o arquivo pequeno é lido com apenas 1 ida ao disco mecânico, reduzindo a latência do SO pela metade.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

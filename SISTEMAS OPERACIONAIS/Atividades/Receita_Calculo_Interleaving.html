@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receita de Bolo: Como Calcular Interleaving de Disco</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --text-color: #e2e8f0;
+            --card-bg: #1e293b;
+            --primary: #38bdf8;
+            --secondary: #818cf8;
+            --accent: #f472b6;
+            --border: #334155;
+            --success: #34d399;
+            --danger: #f87171;
+            --warning: #fbbf24;
+        }
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
+            margin: 0;
+            padding: 3rem 1rem;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background: var(--card-bg);
+            padding: 3rem;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        h1 {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-top: 0;
+            font-size: 2.5rem;
+            text-align: center;
+        }
+        .subtitle {
+            text-align: center;
+            color: #94a3b8;
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+        }
+        h2 {
+            color: var(--primary);
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.5rem;
+            margin-top: 2.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        h3 {
+            color: var(--accent);
+            margin-top: 2rem;
+        }
+        ul, ol {
+            margin-left: 1.5rem;
+            padding-left: 0;
+        }
+        li {
+            margin-bottom: 0.8rem;
+        }
+        strong {
+            color: #fff;
+        }
+        code, .math {
+            background: #0f172a;
+            color: var(--secondary);
+            padding: 0.2rem 0.5rem;
+            border-radius: 6px;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.95rem;
+            border: 1px solid var(--border);
+        }
+        .alert {
+            background: rgba(248, 113, 113, 0.1);
+            border-left: 4px solid var(--danger);
+            padding: 1rem 1.5rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1.5rem 0;
+        }
+        .alert-success {
+            background: rgba(52, 211, 153, 0.1);
+            border-left: 4px solid var(--success);
+        }
+        .alert-warning {
+            background: rgba(251, 191, 36, 0.1);
+            border-left: 4px solid var(--warning);
+        }
+        .box {
+            background: #0f172a;
+            border: 1px solid var(--border);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+        }
+        .box h4 {
+            margin-top: 0;
+            color: var(--secondary);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Receita de Bolo: Como Calcular Interleaving</h1>
+        <p class="subtitle">Este guia foi criado para você resolver <strong>qualquer</strong> questão de desempenho de disco matematicamente, sem precisar desenhar a rotação do disco. Siga estes 4 passos!</p>
+
+        <h2>⚙️ PASSO 1: Levantamento de Variáveis</h2>
+        <p>Antes de tudo, descubra as 4 grandezas de tempo fundamentais do problema (sempre em milissegundos):</p>
+        <ol>
+            <li><strong>T<sub>rot</sub> (Tempo de 1 Rotação):</strong><br>Ex: Se o disco gira a 300 rpm -> <code>60.000 ms / 300 voltas = 200 ms por volta</code>.</li>
+            <li><strong>T<sub>setor</sub> (Tempo do Setor):</strong><br>É o T<sub>rot</sub> dividido pelo número total de setores na trilha (N).<br>Ex: Trilha de 8 setores -> <code>200 ms / 8 = 25 ms por setor</code>.</li>
+            <li><strong>T<sub>transf</sub> (Tempo de Transferência):</strong><br>Tempo que a controladora demora para empurrar o bloco para a memória RAM. (Ex: <code>15 ms</code> ou <code>40 ms</code>).</li>
+            <li><strong>T<sub>cego</sub> (Tempo Cego da Controladora):</strong><br>É o tempo total desde o início da leitura até o final da transferência para a RAM.<br>
+                Fórmula: <code>T<sub>cego</sub> = T<sub>setor</sub> + T<sub>transf</sub></code><br>
+                Durante esse tempo, a controladora não pode capturar o próximo bloco lógico.
+            </li>
+        </ol>
+
+        <h2>📏 PASSO 2: Descobrir o Tempo do Pulo (T<sub>pulo</sub>)</h2>
+        <p>A técnica de <em>Interleaving</em> dita o espaçamento físico entre os setores lógicos no disco. Quantos setores físicos passam da agulha desde o início de um setor lógico até o próximo?</p>
+        <ul>
+            <li><strong>Ordem Sequencial (Sem Interleaving):</strong> Os lógicos são colados. Distância é o próprio bloco (1 setor físico).<br><code>T<sub>pulo</sub> = 1 × T<sub>setor</sub></code> (Ex: <code>25 ms</code>)</li>
+            <li><strong>Interleaving Simples:</strong> Pula 1 setor físico inútil. Distância vira 2 setores físicos.<br><code>T<sub>pulo</sub> = 2 × T<sub>setor</sub></code> (Ex: <code>50 ms</code>)</li>
+            <li><strong>Interleaving Duplo:</strong> Pula 2 setores inúteis. Distância vira 3 setores físicos.<br><code>T<sub>pulo</sub> = 3 × T<sub>setor</sub></code> (Ex: <code>75 ms</code>)</li>
+        </ul>
+
+        <h2>🚨 PASSO 3: O Teste de Gargalo (A Regra de Ouro)</h2>
+        <p>Compare o tempo que a controladora fica ocupada e "cega" (<code>T<sub>cego</sub></code>) com o tempo cronometrado que o próximo bloco demora pra chegar (<code>T<sub>pulo</sub></code>).</p>
+
+        <div class="alert alert-success">
+            <strong>Caso 1: Fluxo Ideal (T<sub>cego</sub> &le; T<sub>pulo</sub>)</strong><br>
+            A controladora termina todo o trabalho de RAM antes (ou no exato momento) que o próximo alvo passa. Não há atrasos por rotações desperdiçadas. O tempo que separa o início de cada bloco é estritamente o <code>T<sub>pulo</sub></code>.
+        </div>
+
+        <div class="alert">
+            <strong>Caso 2: O Gargalo e a Punição (T<sub>cego</sub> &gt; T<sub>pulo</sub>)</strong><br>
+            A controladora ainda está empurrando dados para a RAM quando o alvo passa voando pela agulha.<br>
+            <strong>A Punição:</strong> Teremos que esperar dar uma volta inteira no disco.<br>
+            <strong>O Custo:</strong> A distância passa a ser <code>T<sub>pulo</sub> + T<sub>rot</sub></code> (Ex: 50 ms + 200 ms = 250 ms).
+        </div>
+
+        <h2>🐛 PASSO 4: A Anomalia do "Pulo Grátis" (IMPORTANTE)</h2>
+        <p>Se você caiu no <strong>Caso 2 (Gargalo)</strong>, preste muita atenção nisto:</p>
+        <p>O espaçamento <code>T<sub>pulo</sub></code> só será matematicamente constante se a distância do pulo e o Total de Setores (N) forem <strong>primos entre si</strong>. Se tiverem divisores em comum (ex: disco de 8, pulo de 2), o disco sofrerá uma anomalia de <em>wrap-around</em>:</p>
+        
+        <ol>
+            <li>Ao fechar um ciclo par, o formatador dá um "passinho a mais" caindo no próximo bloco ímpar livre.</li>
+            <li>Isso cria <strong>pulos atípicos</strong> onde a distância física real ali será dilatada para <code>T<sub>pulo</sub> + 1 setor</code> (engorda de 50ms para 75ms).</li>
+            <li><strong>O "Pulo Grátis":</strong> Se nesse pulo maior o seu <code>T<sub>cego</sub></code> for <strong>menor</strong> que o tempo dilatado, você ganha um respiro e <strong>escapa da punição da volta extra</strong> só ali!</li>
+        </ol>
+
+        <div class="alert alert-warning">
+            <strong>Como descobrir na prova se tem anomalias?</strong><br>
+            Tire o Máximo Divisor Comum (MDC) entre <code>N</code> (ex: 8) e o <code>Tamanho do Pulo Físico</code> (ex: 2 para interleave simples).<br>
+            Número de pulos anômalos no disco = <strong>MDC - 1</strong>.<br>
+            Para 8 e 2, MDC = 2. Logo, existe <strong>1 salto anômalo</strong> (com distância de 3 setores físicos) entre os 8 blocos.
+        </div>
+
+        <h2>📝 PASSO 5: A Fórmula da Transferência Total (O Segredo)</h2>
+        <p>Para ficar extremamente fácil na prova, vamos transformar os saltos em uma fórmula de substituição direta. Para ler <code>N</code> blocos lógicos, o disco precisa dar <code>(N - 1)</code> saltos entre os inícios dos blocos, e depois processar o último bloco isoladamente.</p>
+        
+        <div class="box">
+            <h4>Fórmula da Transferência</h4>
+            <code>Transf. Total = Soma dos Saltos + Último Bloco</code><br><br>
+            <code>Soma dos Saltos = (Qtd Normais × Custo Normal) + (Qtd Anômalos × Custo Anômalo)</code>
+        </div>
+        
+        <p><strong>Como achar as quantidades rapidamente:</strong></p>
+        <ul>
+            <li><strong>Qtd Total de Saltos</strong> = <code>N - 1</code></li>
+            <li><strong>Qtd de Saltos Anômalos</strong> = <code>MDC(N, Pulo) - 1</code></li>
+            <li><strong>Qtd de Saltos Normais</strong> = <code>(Qtd Total) - (Qtd Anômalos)</code></li>
+            <li><strong>Último Bloco</strong> = Custa sempre apenas o seu <code>T<sub>cego</sub></code>.</li>
+        </ul>
+
+        <h2>🧮 O CÁLCULO FINAL (MONTANDO A EQUAÇÃO)</h2>
+        <p>Juntando tudo na Regra de Desempenho de Tanenbaum:</p>
+        <div class="box">
+            <h4>Fórmula Geral</h4>
+            <code>Tempo Total = Busca + Atraso Rotacional + Tempo de Transferência Total</code>
+        </div>
+
+        <h3>Exemplo Prático (Cenário C da Questão 4)</h3>
+        <p><em>(Trilha de 8 setores, T<sub>rot</sub> de 200ms, T<sub>setor</sub> de 25ms, T<sub>transf</sub> RAM de 40ms. Interleaving Simples).</em></p>
+        
+        <ul>
+            <li><strong>Tempo de Busca:</strong> <code>0 ms</code></li>
+            <li><strong>Atraso Rotacional:</strong> <code>100 ms</code> (Achar o Setor 0)</li>
+            <li><strong>Tempo de Transferência Total:</strong>
+                <ol>
+                    <li>São 8 blocos, o que significa <strong>7 saltos</strong>, mais a leitura final.</li>
+                    <li>T<sub>cego</sub> (25+40 = <code>65ms</code>) &gt; T<sub>pulo</sub> normal (<code>50ms</code>). CAIU NO GARGALO! Punição = <code>250ms</code> por salto.</li>
+                    <li>Anomalias: N=8 e Pulo=2. MDC=2, logo tem <strong>1 pulo anômalo</strong>. Novo tempo do pulo anômalo será 50+25 = <code>75ms</code>.</li>
+                    <li>Testamos o anômalo: T<sub>cego</sub> (<code>65</code>) &lt; Novo T<sub>pulo</sub> (<code>75</code>). Escapou! Custa <strong>75ms</strong>.</li>
+                    <li>Dos 7 saltos totais: <strong>6 saltos sofrem punição de 250ms</strong> e <strong>1 salto escapou ileso (75ms)</strong>.</li>
+                    <li>Finalizamos lendo e transferindo o último bloco (o T<sub>cego</sub> de <code>65ms</code>).</li>
+                    <li>Soma = <code>(6 * 250) + 75 + 65 = 1640 ms</code>.</li>
+                </ol>
+            </li>
+            <li><strong>Tempo Final de Resposta:</strong> <code>0 + 100 + 1640 = 1740 ms</code>.</li>
+        </ul>
+
+    </div>
+</body>
+</html>
